@@ -1,6 +1,0 @@
-site_name: DeviceConnect Users
-theme: 'readthedocs'
-pages:
-- 'Top': 'index.md'
-- 'DeviceConnectについて': 'about.md'
-

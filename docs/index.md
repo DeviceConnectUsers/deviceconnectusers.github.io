@@ -1,0 +1,21 @@
+# DeviceConnect WebAPI Users
+
+このサイトはDeviceConnect WebAPIに関するドキュメントをまとめたページになります。
+
+## [DeviceConnect WebAPIって？](./about)
+
+DeviceConnect WebAPIとはAndroid/iOSが組み込まれたデバイスにWeb APIを組み込むことで、Webブラウザなどから簡単にデバイスのデータを送受信ができるようになる技術です。[詳細についてはこちら](./about)を参考にしてください。
+
+## [はじめてみよう（Android）](./getting-started/android)
+
+デモアプリを使って、Webブラウザから実機を操作します。
+
+## [はじめてみよう（iOS）](./getting-started/ios)
+
+デモアプリを使って、Webブラウザから実機を操作します。
+
+## [対応デバイスについて](./support-devices)
+
+DeviceConnectで使えるデバイスについてです（2016年06月現在）。
+
+## [DeviceConnectの利点と欠点](./pros-cons)

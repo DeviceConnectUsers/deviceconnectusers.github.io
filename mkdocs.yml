@@ -1,0 +1,12 @@
+site_name: DeviceConnect Users
+theme: 'readthedocs'
+remote_branch: 'master'
+google_analytics: ['UA-79831666-1', 'deviceconnectusers.github.io']
+pages:
+- 'Top': 'index.md'
+- 'DeviceConnectについて': 'about.md'
+- 'はじめてみよう（Android）': 'getting-started/android.md'
+- 'はじめてみよう（iOS）': 'getting-started/ios.md'
+- 'はじめてみよう（JavaScript）': 'getting-started/javascript.md'
+- '対応デバイスについて': 'support-devices.md'
+- '利点&欠点': 'pros-cons.md'

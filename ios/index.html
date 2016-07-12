@@ -8,7 +8,7 @@
   
   
   
-  <title>DeviceConnectについて - DeviceConnect Users</title>
+  <title>はじめてみよう（iOS） - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "DeviceConnectについて";
-    var mkdocs_page_input_path = "about.md";
-    var mkdocs_page_url = "/about/";
+    var mkdocs_page_name = "はじめてみよう（iOS）";
+    var mkdocs_page_input_path = "ios.md";
+    var mkdocs_page_url = "/ios/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -72,21 +72,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">DeviceConnectについて</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#deviceconnect-webapi">DeviceConnect WebAPIについて</a></li>
-                
-                    <li><a class="toctree-l4" href="#_1">対応環境について</a></li>
-                
-                    <li><a class="toctree-l4" href="#sdk">SDKについて</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">プラグインについて</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../about/">DeviceConnectについて</a>
         
     </li>
 <li>
@@ -121,8 +108,21 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../ios/">はじめてみよう（iOS）</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">はじめてみよう（iOS）</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#ios">はじめてみよう（iOS）</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">必要なもの</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">アプリのインストール</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">アプリの起動</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -170,7 +170,7 @@
     
       
     
-    <li>DeviceConnectについて</li>
+    <li>はじめてみよう（iOS）</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -180,23 +180,34 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="deviceconnect-webapi">DeviceConnect WebAPIについて</h1>
-<p>DeviceConnect WebAPIはウェアラブルデバイスをはじめ、様々なガジェットをスマートフォンを介して操作できるWebAPIを提供する技術です。DeviceConnectはスマートフォン上にWeb APIサーバを立てます。そして、そのWeb APIを通じて各種デバイスのデータを送受信できるようになります。</p>
-<p>簡単な図にすると次のようになります。</p>
-<p><img alt="" src="../images/deviceconnect-webapi.png" /></p>
-<p>WebブラウザとスマートデバイスをつなぐのがDeviceConnect WebAPIになります。もちろん、WebAPIなのでWebブラウザに限らず各種プログラミング言語から操作することもできるようになります。</p>
-<p>主なガジェットとしては、スマートウォッチ、スマートトイ、ライト、赤外線リモコン、グラス、カメラ、Android/Android Wear、血圧計、体重計、歩数計などがあります。詳しくは<a href="../support-devices/">対応デバイスについて - DeviceConnect Users</a>を確認してください。</p>
-<h2 id="_1">対応環境について</h2>
-<p>AndroidとiOSで使えます。</p>
-<h2 id="sdk">SDKについて</h2>
+                <h1 id="ios">はじめてみよう（iOS）</h1>
+<p>iOS端末を使ってDeviceConnectを体験します。今回はPebbleと連携してみたいと思います。</p>
+<h2 id="_1">必要なもの</h2>
 <ul>
-<li>JavaScript</li>
-<li>Android</li>
-<li>iOS</li>
+<li>iOS端末</li>
+<li>Pebble</li>
 </ul>
-<p>に対応したSDKが提供されています。</p>
-<h2 id="_2">プラグインについて</h2>
-<p>DeviceConnect WebAPIを拡張するプラグインが開発できます。SDKも用意されています。</p>
+<h2 id="_2">アプリのインストール</h2>
+<p>今回はアプリのビルドを行わず、GClue社がリリースしている<a href="http://www.gclue.io/dwa/index.html">Device Web API Manager</a>をインストールします。</p>
+<p><a href="https://itunes.apple.com/jp/app/devicewebapibrowser/id994422987?mt=8&amp;ign-mpt=uo%3D4">DeviceWebAPIBrowserを App Store で</a></p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-1.png" /></p>
+<p>このアプリはDeviceConnectのフロントエンドとして使えるアプリです。</p>
+<h2 id="_3">アプリの起動</h2>
+<p>アプリを起動すると次のような画面が表示されます。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-2.png" /></p>
+<p>ここで、URLに <code>https://www.gclue.io/dwa/demo/</code> と入力して検索ボタンをタップします。次のような画面が出てくればOKです。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-5.png" /></p>
+<p>ここでは加速度 + ライトをタップします。そうすると、次のようにデータ取得に関する承認ダイアログが表示されます。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-6.png" /></p>
+<p>今回は加速度センサーとしてPebbleを使います。チュートリアルに沿って進めていきます。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-8.png" /></p>
+<p>DeviceConnect用のアプリをPebbleにインストールします。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-9.png" /></p>
+<p>アプリがインストールされると、加速度センサーの候補としてPebbleが表示されるようになります。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-10.png" /></p>
+<p>このようにPebbleとDeviceConnectとで通信を行っているログが表示されます。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-12.jpg" /></p>
+<p>DeviceConnectにはたくさんのプラグインがリリースされており、それを使うことでウェアラブルデバイスがJavaScriptから操作できるようになります。ぜひ試してみてください！</p>
               
             </div>
           </div>
@@ -204,10 +215,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../android/" class="btn btn-neutral float-right" title="はじめてみよう">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../javascript/" class="btn btn-neutral float-right" title="はじめてみよう（JavaScript）">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href=".." class="btn btn-neutral" title="Top"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../android/plugin/" class="btn btn-neutral" title="プラグインをビルドする"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -233,10 +244,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../android/plugin/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../android/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../javascript/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

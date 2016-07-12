@@ -11,27 +11,27 @@
   <title>はじめてみよう（JavaScript） - DeviceConnect Users</title>
   
 
-  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <link rel="shortcut icon" href="../img/favicon.ico">
 
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
 
   
   <script>
     // Current page data
     var mkdocs_page_name = "はじめてみよう（JavaScript）";
-    var mkdocs_page_input_path = "getting-started/javascript.md";
-    var mkdocs_page_url = "/getting-started/javascript/";
+    var mkdocs_page_input_path = "javascript.md";
+    var mkdocs_page_url = "/javascript/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
 
   
   <script>
@@ -53,9 +53,9 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> DeviceConnect Users</a>
+        <a href=".." class="icon icon-home"> DeviceConnect Users</a>
         <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
@@ -66,23 +66,45 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../..">Top</a>
+        <a class="" href="..">Top</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../about/">DeviceConnectについて</a>
+        <a class="" href="../about/">DeviceConnectについて</a>
         
     </li>
 <li>
           
             <li>
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
     <li class="toctree-l1 ">
-        <a class="" href="../android/">はじめてみよう（Android）</a>
+        <a class="" href="../android/">はじめてみよう</a>
         
     </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/device_connect_manager/">DeviceConnectManagerについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../android/plugin/">プラグインをビルドする</a>
+        
+    </li>
+
+        
+    </ul>
 <li>
           
             <li>
@@ -118,14 +140,14 @@
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../support-devices/">対応デバイスについて</a>
+        <a class="" href="../support-devices/">対応デバイスについて</a>
         
     </li>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../../pros-cons/">利点&欠点</a>
+        <a class="" href="../pros-cons/">利点&欠点</a>
         
     </li>
 <li>
@@ -140,7 +162,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">DeviceConnect Users</a>
+        <a href="..">DeviceConnect Users</a>
       </nav>
 
       
@@ -148,7 +170,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
       
     
@@ -171,7 +193,7 @@
 </ul>
 <h2 id="_2">デモのダウンロード</h2>
 <p>まず<a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">デモファイル</a>をダウンロード、解凍します。</p>
-<p><img alt="" src="../../images/android/deviceconnect-android-34.png" /></p>
+<p><img alt="" src="../images/android/deviceconnect-android-34.png" /></p>
 <h2 id="web">Webブラウザでアクセス</h2>
 <p><a href="../android">Android用ドキュメントの外部から操作してみる</a>に沿ってインストールとDeviceConnect Managerの起動、設定を行ってください。それが終わったら、デスクトップのブラウザ（Google Chromeなど）で <code>file:///path/to/demoWebSite/index.html?ip=(Android端末のIPアドレス)</code> にアクセスします。Android端末のIPアドレスはそれぞれ読み替えてください。</p>
 <p>後はDevToolsのコンソールを使って試していきたいと思います。</p>
@@ -238,7 +260,7 @@ dConnect.authorization(scopes, myAppName,
 <li>gpio</li>
 </ul>
 <p>アクセス許可ですが、デスクトップではなくAndroid側に承認画面が出るので注意してください。</p>
-<p><img alt="" src="../../images/javascript/deviceconnect-javascript.png" /></p>
+<p><img alt="" src="../images/javascript/deviceconnect-javascript.png" /></p>
 <p>許可すると、myAccessTokenに文字列が入ります。</p>
 <pre><code>&gt; myAccessToken
 &quot;3e5...66&quot;
@@ -312,7 +334,7 @@ dConnect.get(uri, null,
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../support-devices/" class="btn btn-neutral float-right" title="対応デバイスについて">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../support-devices/" class="btn btn-neutral float-right" title="対応デバイスについて">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../ios/" class="btn btn-neutral" title="はじめてみよう（iOS）"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -344,7 +366,7 @@ dConnect.get(uri, null,
         <span><a href="../ios/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../support-devices/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../support-devices/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

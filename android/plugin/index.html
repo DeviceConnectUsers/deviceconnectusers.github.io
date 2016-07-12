@@ -8,7 +8,7 @@
   
   
   
-  <title>はじめてみよう（iOS） - DeviceConnect Users</title>
+  <title>プラグインをビルドする - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "はじめてみよう（iOS）";
-    var mkdocs_page_input_path = "getting-started/ios.md";
-    var mkdocs_page_url = "/getting-started/ios/";
+    var mkdocs_page_name = "プラグインをビルドする";
+    var mkdocs_page_input_path = "android/plugin.md";
+    var mkdocs_page_url = "/android/plugin/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -79,35 +79,57 @@
 <li>
           
             <li>
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
     <li class="toctree-l1 ">
-        <a class="" href="../android/">はじめてみよう（Android）</a>
+        <a class="" href="../">はじめてみよう</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../device_connect_manager/">DeviceConnectManagerについて</a>
+        
+    </li>
+
+        
+            
     <li class="toctree-l1 current">
-        <a class="current" href="./">はじめてみよう（iOS）</a>
+        <a class="current" href="./">プラグインをビルドする</a>
         
             <ul>
             
-                <li class="toctree-l3"><a href="#ios">はじめてみよう（iOS）</a></li>
+                <li class="toctree-l3"><a href="#_1">プラグインについて</a></li>
                 
-                    <li><a class="toctree-l4" href="#_1">必要なもの</a></li>
+                    <li><a class="toctree-l4" href="#git">Gitリポジトリの取得</a></li>
                 
-                    <li><a class="toctree-l4" href="#_2">アプリのインストール</a></li>
+                    <li><a class="toctree-l4" href="#android-studio">Android Studioで開く</a></li>
                 
-                    <li><a class="toctree-l4" href="#_3">アプリの起動</a></li>
+                    <li><a class="toctree-l4" href="#_2">プラグインをビルドする</a></li>
                 
             
             </ul>
         
     </li>
+
+        
+    </ul>
 <li>
           
             <li>
     <li class="toctree-l1 ">
-        <a class="" href="../javascript/">はじめてみよう（JavaScript）</a>
+        <a class="" href="../../ios/">はじめてみよう（iOS）</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/">はじめてみよう（JavaScript）</a>
         
     </li>
 <li>
@@ -147,8 +169,12 @@
     <li><a href="../..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Android &raquo;</li>
+        
+      
     
-    <li>はじめてみよう（iOS）</li>
+    <li>プラグインをビルドする</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -158,34 +184,29 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="ios">はじめてみよう（iOS）</h1>
-<p>iOS端末を使ってDeviceConnectを体験します。今回はPebbleと連携してみたいと思います。</p>
-<h2 id="_1">必要なもの</h2>
-<ul>
-<li>iOS端末</li>
-<li>Pebble</li>
-</ul>
-<h2 id="_2">アプリのインストール</h2>
-<p>今回はアプリのビルドを行わず、GClue社がリリースしている<a href="http://www.gclue.io/dwa/index.html">Device Web API Manager</a>をインストールします。</p>
-<p><a href="https://itunes.apple.com/jp/app/devicewebapibrowser/id994422987?mt=8&amp;ign-mpt=uo%3D4">DeviceWebAPIBrowserを App Store で</a></p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-1.png" /></p>
-<p>このアプリはDeviceConnectのフロントエンドとして使えるアプリです。</p>
-<h2 id="_3">アプリの起動</h2>
-<p>アプリを起動すると次のような画面が表示されます。</p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-2.png" /></p>
-<p>ここで、URLに <code>https://www.gclue.io/dwa/demo/</code> と入力して検索ボタンをタップします。次のような画面が出てくればOKです。</p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-5.png" /></p>
-<p>ここでは加速度 + ライトをタップします。そうすると、次のようにデータ取得に関する承認ダイアログが表示されます。</p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-6.png" /></p>
-<p>今回は加速度センサーとしてPebbleを使います。チュートリアルに沿って進めていきます。</p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-8.png" /></p>
-<p>DeviceConnect用のアプリをPebbleにインストールします。</p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-9.png" /></p>
-<p>アプリがインストールされると、加速度センサーの候補としてPebbleが表示されるようになります。</p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-10.png" /></p>
-<p>このようにPebbleとDeviceConnectとで通信を行っているログが表示されます。</p>
-<p><img alt="" src="../../images/ios/deviceconnect-ios-12.jpg" /></p>
-<p>DeviceConnectにはたくさんのプラグインがリリースされており、それを使うことでウェアラブルデバイスがJavaScriptから操作できるようになります。ぜひ試してみてください！</p>
+                <h1 id="_1">プラグインについて</h1>
+<p>ここではAndroid向けにDeviceConnectのプラグインをインストールする方法を紹介します。</p>
+<p>DeviceConnectのプラグインはDeviceConnect Managerの中で動作します。UIは特になく、デバイスとDeviceConnect Managerの間を仲介する役割になります。</p>
+<p>今回は例えばPebble用プラグインをビルドします。</p>
+<h2 id="git">Gitリポジトリの取得</h2>
+<p>最初にGitリポジトリを取得します。<a href="https://github.com/DeviceConnect/DeviceConnect-Android/archive/master.zip">Zipでダウンロード</a>しても良いですし、 <code>git clone</code> でも良いです。</p>
+<pre><code>$ git clone https://github.com/DeviceConnect/DeviceConnect-Android.git
+</code></pre>
+
+<h2 id="android-studio">Android Studioで開く</h2>
+<p>次にAndroid Studioで <code>DeviceConnect-Android/dConnectDevicePlugin/dConnectDevicePebble</code> を開きます。</p>
+<p>環境によって、 Android SDK Platform 19などが必要になりますが、Android Studioがインストールしてくれるでしょう。</p>
+<p><img alt="" src="../../images/android/android-studio-1.png" /></p>
+<p>ライブラリのインストールが終わってAndroid Studioの画面が表示されると、上の方にあるAndroidアイコンのところにバツ印があるのが分かるかと思います。</p>
+<p><img alt="" src="../../images/android/android-studio-2.png" /></p>
+<p>この状態ではビルドできません。アイコンをクリックして、Edit Configurationsを選択します。</p>
+<p>左側のメニューでAppを選ぶと、Launch OptionsのLaunchがDefault Activityになっているかと思います。</p>
+<p><img alt="" src="../../images/android/android-studio-3.png" /></p>
+<p>これをNothingにすると、ビルドできるようになります。</p>
+<p><img alt="" src="../../images/android/android-studio-4.png" /></p>
+<h2 id="_2">プラグインをビルドする</h2>
+<p>プラグインをビルドするとAndroidのDeviceConnect Managerのプラグイン一覧の中にビルドしたプラグインが追加されているのが確認できるでしょう。これでDeviceConnectを通じてデバイスがコントロールできるようになります。</p>
+<p><img alt="" src="../../images/android/android-studio-5.png" /></p>
               
             </div>
           </div>
@@ -193,10 +214,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../javascript/" class="btn btn-neutral float-right" title="はじめてみよう（JavaScript）">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../ios/" class="btn btn-neutral float-right" title="はじめてみよう（iOS）">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../android/" class="btn btn-neutral" title="はじめてみよう（Android）"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../device_connect_manager/" class="btn btn-neutral" title="DeviceConnectManagerについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -222,10 +243,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../android/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../device_connect_manager/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../javascript/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../ios/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

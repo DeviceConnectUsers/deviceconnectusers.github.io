@@ -8,7 +8,7 @@
   
   
   
-  <title>バイブレーションAPI - DeviceConnect Users</title>
+  <title>WebSocket/イベント通知について - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "バイブレーションAPI";
-    var mkdocs_page_input_path = "webapi/vibration.md";
-    var mkdocs_page_url = "/webapi/vibration/";
+    var mkdocs_page_name = "WebSocket/イベント通知について";
+    var mkdocs_page_input_path = "webapi/websocket.md";
+    var mkdocs_page_url = "/webapi/websocket/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -134,8 +134,23 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../websocket/">WebSocket/イベント通知について</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">WebSocket/イベント通知について</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#websocket">WebSocketについて</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">エンドポイントについて</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">便利なツール</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">接続してみる</a></li>
+                
+                    <li><a class="toctree-l4" href="#web-api">Web APIをコールする</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -155,19 +170,8 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">バイブレーションAPI</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#api">バイブレーションAPI</a></li>
-                
-                    <li><a class="toctree-l4" href="#_1">基本情報</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">パス</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../vibration/">バイブレーションAPI</a>
         
     </li>
 
@@ -215,7 +219,7 @@
         
       
     
-    <li>バイブレーションAPI</li>
+    <li>WebSocket/イベント通知について</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -225,97 +229,43 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="api">バイブレーションAPI</h1>
-<p>デバイスを指定したパターンで動かします。</p>
-<h2 id="_1">基本情報</h2>
-<p>エンドポイントなどは<a href="../../webapi/#_1">Web APIについて</a>を参照してください。</p>
-<h2 id="_2">パス</h2>
+                <h1 id="websocket">WebSocketについて</h1>
+<p>DeviceConnectのWeb APIを使う際に、幾つかイベント通知系のAPIがあります。これらを利用する際にはWebSocketを使って接続しておく必要があります。</p>
+<h2 id="_1">エンドポイントについて</h2>
 <ul>
-<li><strong>メソッド</strong><br />
-PUT</li>
 <li><strong>パス</strong><br />
-/gotapi/vibration/vibrate</li>
+/websocket</li>
+<li><strong>プロトコル</strong><br />
+WebSocket</li>
 </ul>
-<p><strong>URLの例</strong></p>
-<p>http://localhost:4035/gotapi/vibration/vibrate</p>
-<h3 id="_3">リクエストパラメータ</h3>
-<p>パラメータは以下が指定可能です。</p>
-<table>
-<thead>
-<tr>
-<th>パラメータ名</th>
-<th>型</th>
-<th>説明</th>
-<th>例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>serviceId</td>
-<td>文字列</td>
-<td>サービスIDを指定します</td>
-<td>Pebble00...org</td>
-</tr>
-<tr>
-<td>accessToken</td>
-<td>文字列</td>
-<td>取得したアクセストークン</td>
-<td>c363...216</td>
-</tr>
-<tr>
-<td>pattern</td>
-<td>文字列</td>
-<td>バイブレーションを実行するパターン（数字）をカンマでつないで指定します</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="_4">バイブレーションパターンの設定例</h4>
-<p>バイブレーションを実行する時間はmsで指定します。</p>
-<p>例）100msを4回繰り返す場合</p>
-<p>pattern=100%2C100%2C100%2C100</p>
-<h3 id="_5">返却値</h3>
-<p>アクセスが成功すると次のような結果が得られます。</p>
-<pre><code>{
-    &quot;product&quot;: &quot;Device Connect Manager&quot;, 
-    &quot;result&quot;: 0, 
-    &quot;version&quot;: &quot;2.0.0&quot;
-}
+<h2 id="_2">便利なツール</h2>
+<p>Node.jsではコンソールからWebSocketサーバに接続できるwscatコマンドが利用できます。</p>
+<pre><code>npm install -g wscat
 </code></pre>
 
-<table>
-<thead>
-<tr>
-<th>キー</th>
-<th>&nbsp;</th>
-<th>型</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>result</td>
-<td>&nbsp;</td>
-<td>数値</td>
-<td>エラーがなければ0</td>
-</tr>
-<tr>
-<td>product</td>
-<td>&nbsp;</td>
-<td>文字列</td>
-<td>DeviceConnectを提供しているアプリの名前</td>
-</tr>
-<tr>
-<td>version</td>
-<td>&nbsp;</td>
-<td>文字列</td>
-<td>バージョン番号</td>
-</tr>
-</tbody>
-</table>
-<h3 id="_6">アクセス例</h3>
-<pre><code>$ curl -X PUT -H &quot;Origin: Null&quot; &quot;http://localhost:4035/gotapi/vibration/vibrate?serviceId=Host.e87...org&amp;accessToken=c36...216&amp;pattern=100%2C100%2C100%2C100&quot;
+<p>でインストールできます。</p>
+<h2 id="_3">接続してみる</h2>
+<p>例えばDeviceConnect Managerが 192.168.0.20 で動作している場合、</p>
+<pre><code>$ wscat -c ws://192.168.0.20:4035/websocket -o &quot;Null&quot;
+</code></pre>
+
+<p>で接続できます。接続したらセッションキー（任意の文字列）を指定します。</p>
+<pre><code>&gt; {&quot;sessionKey&quot;: &quot;aaa&quot;}
+&gt; 
+</code></pre>
+
+<p>これでWebSocket側は準備完了です。</p>
+<h2 id="web-api">Web APIをコールする</h2>
+<p>次にWeb API側を準備します。例えば[バッテリーステータス変更API]をコールします。</p>
+<pre><code>$ curl -H &quot;Origin: Null&quot; -X PUT &quot;http://192.168.0.20:4035/gotapi/battery/onchargingchange?serviceId=Host...org&amp;accessToken=16f...5af&amp;sessionKey=aaa&quot;
 {&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;version&quot;:&quot;2.0.0&quot;}
+</code></pre>
+
+<p>この時、セッションキー（sessionKey）はWebSocketで指定した文字列と同じものを使います。</p>
+<h3 id="_4">イベントを受け取る</h3>
+<p>後はバッテリーを抜き差ししてイベントがWebSocket側に通知されればOKです。</p>
+<pre><code>&lt; {&quot;battery&quot;:{&quot;charging&quot;:false},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
+&lt; {&quot;battery&quot;:{&quot;charging&quot;:true},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
 </code></pre>
               
             </div>
@@ -324,10 +274,10 @@ PUT</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../support-devices/" class="btn btn-neutral float-right" title="対応デバイスについて">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../error/" class="btn btn-neutral float-right" title="エラーについて">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../scope/" class="btn btn-neutral" title="スコープについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="Web APIについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -353,10 +303,10 @@ PUT</li>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../scope/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../support-devices/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../error/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

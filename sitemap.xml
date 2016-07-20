@@ -64,6 +64,12 @@
     </url>
         
     <url>
+     <loc>None/webapi/websocket/</loc>
+     <lastmod>2016-07-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None/webapi/error/</loc>
      <lastmod>2016-07-20</lastmod>
      <changefreq>daily</changefreq>

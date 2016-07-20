@@ -32,50 +32,6 @@
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
   <script src="../js/theme.js"></script> 
-  <script src="../manager/js/demo.js"></script>
-  <script src="../manager/js/jqm-datebox-1.4.4.core.min.js"></script>
-  <script src="../manager/js/jqm-datebox-1.4.4.mode.datebox.min.js"></script>
-  <script src="../manager/js/jquery-1.11.0.min.js"></script>
-  <script src="../manager/js/jquery-1.4.2.min.js"></script>
-  <script src="../manager/js/jquery.mobile-1.4.2.min.js"></script>
-  <script src="../manager/js/profile/airconditioner.js"></script>
-  <script src="../manager/js/profile/battery.js"></script>
-  <script src="../manager/js/profile/camera.js"></script>
-  <script src="../manager/js/profile/canvas.js"></script>
-  <script src="../manager/js/profile/connect.js"></script>
-  <script src="../manager/js/profile/deviceorientation.js"></script>
-  <script src="../manager/js/profile/dice.js"></script>
-  <script src="../manager/js/profile/drivecontroller.js"></script>
-  <script src="../manager/js/profile/file.js"></script>
-  <script src="../manager/js/profile/filedescriptor.js"></script>
-  <script src="../manager/js/profile/gpio.js"></script>
-  <script src="../manager/js/profile/health.js"></script>
-  <script src="../manager/js/profile/humandetect.js"></script>
-  <script src="../manager/js/profile/humidity.js"></script>
-  <script src="../manager/js/profile/illuminance.js"></script>
-  <script src="../manager/js/profile/keyevent.js"></script>
-  <script src="../manager/js/profile/light.js"></script>
-  <script src="../manager/js/profile/mediaplayer.js"></script>
-  <script src="../manager/js/profile/mediastreamrecording.js"></script>
-  <script src="../manager/js/profile/mhealth.js"></script>
-  <script src="../manager/js/profile/notification.js"></script>
-  <script src="../manager/js/profile/omnidirectionalimage.js"></script>
-  <script src="../manager/js/profile/phone.js"></script>
-  <script src="../manager/js/profile/powermeter.js"></script>
-  <script src="../manager/js/profile/proximity.js"></script>
-  <script src="../manager/js/profile/remotecontroller.js"></script>
-  <script src="../manager/js/profile/servicediscovery.js"></script>
-  <script src="../manager/js/profile/serviceinformation.js"></script>
-  <script src="../manager/js/profile/settings.js"></script>
-  <script src="../manager/js/profile/sphero.js"></script>
-  <script src="../manager/js/profile/system.js"></script>
-  <script src="../manager/js/profile/temperature.js"></script>
-  <script src="../manager/js/profile/touch.js"></script>
-  <script src="../manager/js/profile/tv.js"></script>
-  <script src="../manager/js/profile/vibration.js"></script>
-  <script src="../manager/js/profile/videochat.js"></script>
-  <script src="../manager/js/sdk/dconnectsdk-2.0.0.js"></script>
-  <script src="../manager/js/sdk/util.js"></script>
 
   
   <script>
@@ -320,11 +276,13 @@ GET</li>
 <p>http://localhost:4035/gotapi/availability</p>
 <h3 id="_2">返却値</h3>
 <p>以下のような結果が得られます。</p>
-<p>{
-    "result":0,
-    "product":"Device Connect Manager",
-    "version":"2.0.0"
-    }</p>
+<pre><code>{
+  &quot;result&quot;:0,
+  &quot;product&quot;:&quot;Device Connect Manager&quot;,
+  &quot;version&quot;:&quot;2.0.0&quot;
+}
+</code></pre>
+
 <table>
 <thead>
 <tr>
@@ -485,7 +443,7 @@ GET</li>
 </table>
 <h3 id="_7">アクセス例</h3>
 <pre><code>$ curl -H &quot;Origin: Null&quot; http://localhost:4035/gotapi/authorization/grant
-{&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;errorCode&quot;:0,&quot;version&quot;:&quot;2.0.0&quot;,&quot;clientId&quot;:&quot;679613d3-6a9a-4ff6-b150-33041f99593e&quot;,&quot;errorMessage&quot;:&quot;&quot;}
+{&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;errorCode&quot;:0,&quot;version&quot;:&quot;2.0.0&quot;,&quot;clientId&quot;:&quot;679...93e&quot;,&quot;errorMessage&quot;:&quot;&quot;}
 </code></pre>
 
 <h2 id="_8">アクセストークンを取得する</h2>
@@ -614,8 +572,8 @@ GET</li>
 </tbody>
 </table>
 <h3 id="_11">アクセス例</h3>
-<pre><code>$ curl -H &quot;Origin: Null&quot; &quot;http://localhost:4035/gotapi/authorization/accesstoken?clientId=679613d3-6a9a-4ff6-b150-33041f99593e&amp;scope=servicediscovery%2Cserviceinformation%2Csystem%2Cbattery&amp;applicationName=Demo%20App&quot;
-{&quot;accessToken&quot;:&quot;0041c8ffb1b90aa838893f6ca857676b8601114301fc97e98b25436051f52664fd40cff1fb8a3c13&quot;,&quot;result&quot;:0,&quot;scopes&quot;:[{&quot;scope&quot;:&quot;servicediscovery&quot;,&quot;expirePeriod&quot;:15552000},{&quot;scope&quot;:&quot;serviceinformation&quot;,&quot;expirePeriod&quot;:15552000},{&quot;scope&quot;:&quot;system&quot;,&quot;expirePeriod&quot;:15552000},{&quot;scope&quot;:&quot;battery&quot;,&quot;expirePeriod&quot;:15552000}],&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;errorCode&quot;:0,&quot;version&quot;:&quot;2.0.0&quot;,&quot;errorMessage&quot;:&quot;&quot;}
+<pre><code>$ curl -H &quot;Origin: Null&quot; &quot;http://localhost:4035/gotapi/authorization/accesstoken?clientId=679...593e&amp;scope=servicediscovery%2Cserviceinformation%2Csystem%2Cbattery&amp;applicationName=Demo%20App&quot;
+{&quot;accessToken&quot;:&quot;004...c13&quot;,&quot;result&quot;:0,&quot;scopes&quot;:[{&quot;scope&quot;:&quot;servicediscovery&quot;,&quot;expirePeriod&quot;:15552000},{&quot;scope&quot;:&quot;serviceinformation&quot;,&quot;expirePeriod&quot;:15552000},{&quot;scope&quot;:&quot;system&quot;,&quot;expirePeriod&quot;:15552000},{&quot;scope&quot;:&quot;battery&quot;,&quot;expirePeriod&quot;:15552000}],&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;errorCode&quot;:0,&quot;version&quot;:&quot;2.0.0&quot;,&quot;errorMessage&quot;:&quot;&quot;}
 </code></pre>
 
 <h2 id="_12">サービスを検索する</h2>
@@ -755,8 +713,8 @@ GET</li>
 </tbody>
 </table>
 <h3 id="_15">アクセス例</h3>
-<pre><code>$ curl -H &quot;Origin: Null&quot; &quot;http://localhost:4035/gotapi/servicediscovery?accessToken=0041c8ffb1b90aa838893f6ca857676b8601114301fc97e98b25436051f52664fd40cff1fb8a3c13&quot;
-{&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;version&quot;:&quot;2.0.0&quot;,&quot;services&quot;:[{&quot;config&quot;:&quot;HostConfig&quot;,&quot;online&quot;:true,&quot;scopes&quot;:[&quot;vibration&quot;,&quot;mediastream_recording&quot;,&quot;file_descriptor&quot;,&quot;settings&quot;,&quot;canvas&quot;,&quot;phone&quot;,&quot;system&quot;,&quot;serviceinformation&quot;,&quot;keyevent&quot;,&quot;connect&quot;,&quot;authorization&quot;,&quot;notification&quot;,&quot;touch&quot;,&quot;servicediscovery&quot;,&quot;file&quot;,&quot;proximity&quot;,&quot;deviceorientation&quot;,&quot;media_player&quot;,&quot;battery&quot;],&quot;id&quot;:&quot;Host.e87e3213b730843a437ff6c676899df0.localhost.deviceconnect.org&quot;,&quot;name&quot;:&quot;Host&quot;,&quot;type&quot;:&quot;Wifi&quot;},{&quot;online&quot;:true,&quot;scopes&quot;:[&quot;vibration&quot;,&quot;notification&quot;,&quot;servicediscovery&quot;,&quot;settings&quot;,&quot;canvas&quot;,&quot;system&quot;,&quot;serviceinformation&quot;,&quot;keyevent&quot;,&quot;deviceorientation&quot;,&quot;authorization&quot;,&quot;battery&quot;],&quot;id&quot;:&quot;Pebble0017e96d0f2b.d82c1741835939ddedeabe7ac55da10.localhost.deviceconnect.org&quot;,&quot;name&quot;:&quot;Pebble 0F2B&quot;,&quot;type&quot;:&quot;Bluetooth&quot;}]}
+<pre><code>$ curl -H &quot;Origin: Null&quot; &quot;http://localhost:4035/gotapi/servicediscovery?accessToken=004...c13&quot;
+{&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;version&quot;:&quot;2.0.0&quot;,&quot;services&quot;:[{&quot;config&quot;:&quot;HostConfig&quot;,&quot;online&quot;:true,&quot;scopes&quot;:[&quot;vibration&quot;,&quot;mediastream_recording&quot;,&quot;file_descriptor&quot;,&quot;settings&quot;,&quot;canvas&quot;,&quot;phone&quot;,&quot;system&quot;,&quot;serviceinformation&quot;,&quot;keyevent&quot;,&quot;connect&quot;,&quot;authorization&quot;,&quot;notification&quot;,&quot;touch&quot;,&quot;servicediscovery&quot;,&quot;file&quot;,&quot;proximity&quot;,&quot;deviceorientation&quot;,&quot;media_player&quot;,&quot;battery&quot;],&quot;id&quot;:&quot;Hos...org&quot;,&quot;name&quot;:&quot;Host&quot;,&quot;type&quot;:&quot;Wifi&quot;},{&quot;online&quot;:true,&quot;scopes&quot;:[&quot;vibration&quot;,&quot;notification&quot;,&quot;servicediscovery&quot;,&quot;settings&quot;,&quot;canvas&quot;,&quot;system&quot;,&quot;serviceinformation&quot;,&quot;keyevent&quot;,&quot;deviceorientation&quot;,&quot;authorization&quot;,&quot;battery&quot;],&quot;id&quot;:&quot;Peb...org&quot;,&quot;name&quot;:&quot;Pebble 0F2B&quot;,&quot;type&quot;:&quot;Bluetooth&quot;}]}
 </code></pre>
 
 <h3 id="_16">サービス情報を得る</h3>
@@ -853,7 +811,7 @@ GET</li>
 </tbody>
 </table>
 <h3 id="_19">アクセス例</h3>
-<pre><code>$ curl -H &quot;Origin: Null&quot; &quot;http://localhost:4035/gotapi/serviceinformation?serviceId=Host.e87e3213b730843a437ff6c676899df0.localhost.deviceconnect.org&amp;accessToken=c363c203b662d044085465213ee64c9c4b0b64a7802f1adaee4c98729d2dc9cf96d8d6cbeaeba216&quot;
+<pre><code>$ curl -H &quot;Origin: Null&quot; &quot;http://localhost:4035/gotapi/serviceinformation?serviceId=Hos...org&amp;accessToken=c36...216&quot;
 {&quot;supports&quot;:[&quot;vibration&quot;,&quot;mediastream_recording&quot;,&quot;file_descriptor&quot;,&quot;settings&quot;,&quot;canvas&quot;,&quot;phone&quot;,&quot;system&quot;,&quot;serviceinformation&quot;,&quot;keyevent&quot;,&quot;connect&quot;,&quot;authorization&quot;,&quot;notification&quot;,&quot;touch&quot;,&quot;servicediscovery&quot;,&quot;file&quot;,&quot;proximity&quot;,&quot;deviceorientation&quot;,&quot;media_player&quot;,&quot;battery&quot;],&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;version&quot;:&quot;2.0.0&quot;,&quot;connect&quot;:{}}
 </code></pre>
 

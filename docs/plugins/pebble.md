@@ -9,7 +9,7 @@
 - **DeviceConnect Manager**  
 ビルドしてインストール、または[Google Playからダウンロード](https://play.google.com/store/apps/details?id=org.deviceconnect.android.manager&hl=ja)します。
 - **Pebble (Device Connect Dice Plug-in)**  
-ビルドしてインストール、または[dConnectDevicePebble.apk](http://deviceconnectusers.github.io/manager/apk/dConnectDevicePebble.apk)をダウンロードしてください（野良なのでご注意ください）。 自分でビルドする場合は、[プラグインのビルド](/android/plugin/)を参考に、 [DeviceConnect-Android/dConnectDevicePlugin/dConnectDevicePebble](https://github.com/DeviceConnect/DeviceConnect-Android/tree/master/dConnectDevicePlugin/dConnectDevicePebble)をビルド、インストールしてください。
+ビルドしてインストール、または[dConnectDevicePebble.apk](https://github.com/DeviceConnectUsers/deviceconnectusers.github.io/releases/download/0.1/dConnectDevicePebble.apk)をダウンロードしてください（野良なのでご注意ください）。 自分でビルドする場合は、[プラグインのビルド](/android/plugin/)を参考に、 [DeviceConnect-Android/dConnectDevicePlugin/dConnectDevicePebble](https://github.com/DeviceConnect/DeviceConnect-Android/tree/master/dConnectDevicePlugin/dConnectDevicePebble)をビルド、インストールしてください。
 - **Pebbleアプリ**  
 古いバージョンのものをインストールします。[Pebble OLD VERSION - Google Play の Android アプリ](https://play.google.com/store/apps/details?id=com.getpebble.android&hl=ja)
 

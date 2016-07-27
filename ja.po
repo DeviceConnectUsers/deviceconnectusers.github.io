@@ -1,0 +1,636 @@
+
+# gotapi.md
+msgid "Gotapi API"
+msgstr "Gotapi API"
+
+# gotapi.md
+msgid "バイブレーションを停止"
+msgstr "バイブレーションを停止"
+
+# gotapi.md
+msgid "### Basic specifications"
+msgstr "### 基本情報"
+
+# gotapi.md
+msgid "API Path"
+msgstr "APIパス"
+
+# gotapi.md
+msgid ": /gotapi/vibration/vibrate"
+msgstr ": /gotapi/vibration/vibrate"
+
+# gotapi.md
+msgid "Method"
+msgstr "HTTPメソッド"
+
+# gotapi.md
+msgid ": Put"
+msgstr ": PUT"
+
+# gotapi.md
+msgid "### Request"
+msgstr "### リクエスト"
+
+# gotapi.md
+msgid "#### Header"
+msgstr "#### HTTPヘッダー"
+
+# gotapi.md row
+msgid "Header type"
+msgstr "ヘッダーの種類"
+
+# gotapi.md row
+msgid "Content"
+msgstr "内容"
+
+# gotapi.md row
+msgid "Content-Type"
+msgstr "Content-Type"
+
+# gotapi.md row
+msgid "application/json"
+msgstr "application/json"
+
+# gotapi.md
+msgid "#### Parameters"
+msgstr "#### パラメータ"
+
+# gotapi.md row
+msgid "Key"
+msgstr "キー"
+
+# gotapi.md row
+msgid "Required"
+msgstr "必須"
+
+# gotapi.md row
+msgid "Type"
+msgstr "型"
+
+# gotapi.md row
+msgid "Place"
+msgstr "場所"
+
+# gotapi.md row
+msgid "Description"
+msgstr "説明"
+
+# gotapi.md row
+msgid "serviceId"
+msgstr "serviceId"
+
+# gotapi.md row
+msgid "✓"
+msgstr "✓"
+
+# gotapi.md row
+msgid "String"
+msgstr "文字列"
+
+# gotapi.md row
+msgid "query"
+msgstr "クエリー"
+
+# gotapi.md row
+msgid "サービスID"
+msgstr "サービスID"
+
+# gotapi.md row
+msgid "accessToken"
+msgstr "accessToken"
+
+# gotapi.md row
+msgid "アクセストークン"
+msgstr "アクセストークン"
+
+# gotapi.md row
+msgid "pattern"
+msgstr "pattern"
+
+# gotapi.md row
+msgid "バイブレーションのパターン。ms単位でカンマつなぎの数字で指定"
+msgstr "バイブレーションのパターン。ms単位でカンマつなぎの数字で指定"
+
+# gotapi.md
+msgid "### Response"
+msgstr "### レスポンス"
+
+# gotapi.md
+msgid "#### HTTP responses"
+msgstr "#### HTTPレスポンス"
+
+# gotapi.md row
+msgid "HTTP response status"
+msgstr "HTTPステータスコード"
+
+# gotapi.md
+msgid "|200||"
+msgstr "|200||"
+
+# gotapi.md
+msgid "Please check [Error codes](./error.md) for details."
+msgstr "エラーについては [エラーについて](./error.md) を参照してください。"
+
+# gotapi.md
+msgid "#### Response fields"
+msgstr "#### レスポンス内容"
+
+# gotapi.md row
+msgid "result"
+msgstr "result"
+
+# gotapi.md row
+msgid "Number"
+msgstr "数値"
+
+# gotapi.md row
+msgid "product"
+msgstr "product"
+
+# gotapi.md row
+msgid "version"
+msgstr "version"
+
+# gotapi.md
+msgid ": Delete"
+msgstr ": DELETE"
+
+# gotapi.md
+msgid "通知を表示した際のイベントを受け取るための設定を行う"
+msgstr "通知を表示した際のイベントを受け取るための設定を行う"
+
+# gotapi.md
+msgid ": /gotapi/notification/onshow"
+msgstr ": /gotapi/notification/onshow"
+
+# gotapi.md row
+msgid "sessionKey"
+msgstr "sessionKey"
+
+# gotapi.md row
+msgid "WebSocketでイベントを受け取るためのユニークなキー"
+msgstr "WebSocketでイベントを受け取るためのユニークなキー"
+
+# gotapi.md
+msgid "通知がタップされた際のイベントを受け取るための設定を行う"
+msgstr "通知がタップされた際のイベントを受け取るための設定を行う"
+
+# gotapi.md
+msgid ": /gotapi/notification/onclick"
+msgstr ": /gotapi/notification/onclick"
+
+# gotapi.md
+msgid "通知が閉じられた際のイベントを受け取るための設定を行う"
+msgstr "通知が閉じられた際のイベントを受け取るための設定を行う"
+
+# gotapi.md
+msgid ": /gotapi/notification/onclose"
+msgstr ": /gotapi/notification/onclose"
+
+# availabillity.md
+msgid "Availabillity API"
+msgstr "Availabillity API"
+
+# availabillity.md
+msgid "DeviceConnectが使えるかどうかをチェック"
+msgstr "DeviceConnectが使えるかどうかをチェック"
+
+# availabillity.md
+msgid ": /availabillity"
+msgstr ": /availabillity"
+
+# availabillity.md
+msgid ": Get"
+msgstr ": GET"
+
+# availabillity.md row
+msgid "200"
+msgstr "200"
+
+# availabillity.md row
+msgid "利用可能"
+msgstr "利用可能"
+
+# availabillity.md row
+msgid "errorCode"
+msgstr "errorCode"
+
+# availabillity.md row
+msgid "errorMessage"
+msgstr "errorMessage"
+
+# authorization.md
+msgid "Authorization API"
+msgstr "認証 API"
+
+# authorization.md
+msgid "接続するためのクライアントを作成する"
+msgstr "接続するためのクライアントを作成する"
+
+# authorization.md
+msgid ": /authorization/grant"
+msgstr ": /authorization/grant"
+
+# authorization.md row
+msgid "クライアント作成完了"
+msgstr "クライアント作成完了"
+
+# authorization.md row
+msgid "clientId"
+msgstr "clientId"
+
+# gotapi.md
+msgid "アクセストークンを取得する"
+msgstr "アクセストークンを取得する"
+
+# gotapi.md
+msgid ": /gotapi/authorization/accesstoken"
+msgstr ": /gotapi/authorization/accesstoken"
+
+# gotapi.md row
+msgid "上記で取得したクライアントID"
+msgstr "上記で取得したクライアントID"
+
+# gotapi.md row
+msgid "scope"
+msgstr "scope"
+
+# gotapi.md row
+msgid "利用する機能をカンマ区切りで指定。スコープ名は[スコープについて](./webapi/scope)を参照してください。"
+msgstr "利用する機能をカンマ区切りで指定。スコープ名は[スコープについて](./webapi/scope)を参照してください。"
+
+# gotapi.md row
+msgid "applicationName"
+msgstr "applicationName"
+
+# gotapi.md row
+msgid "アプリケーション名。任意の名前をつけます"
+msgstr "アプリケーション名。任意の名前をつけます"
+
+# gotapi.md row
+msgid "取得成功"
+msgstr "取得成功"
+
+# gotapi.md row
+msgid "scopes"
+msgstr "scopes"
+
+# gotapi.md row
+msgid "Array"
+msgstr "配列"
+
+# gotapi.md row
+msgid "expirePeriod"
+msgstr "expirePeriod"
+
+# gotapi.md
+msgid "サービスを検索する"
+msgstr "サービスを検索する"
+
+# gotapi.md
+msgid ": /gotapi/servicediscovery"
+msgstr ": /gotapi/servicediscovery"
+
+# gotapi.md row
+msgid "以前の処理で取得したアクセストークン"
+msgstr "以前の処理で取得したアクセストークン"
+
+# gotapi.md row
+msgid "services"
+msgstr "services"
+
+# gotapi.md
+msgid "サービス情報を得る"
+msgstr "サービス情報を得る"
+
+# gotapi.md
+msgid ": /gotapi/serviceinformation"
+msgstr ": /gotapi/serviceinformation"
+
+# gotapi.md row
+msgid "以前の処理で取得したサービスIDを指定します"
+msgstr "以前の処理で取得したサービスIDを指定します"
+
+# gotapi.md row
+msgid "supports"
+msgstr "supports"
+
+# gotapi.md row
+msgid "connect"
+msgstr "connect"
+
+# gotapi.md row
+msgid "Object"
+msgstr "Object"
+
+# gotapi.md
+msgid "バッテリー情報の取得"
+msgstr "バッテリー情報の取得"
+
+# gotapi.md
+msgid ": /gotapi/battery"
+msgstr ": /gotapi/battery"
+
+# gotapi.md row
+msgid "charging"
+msgstr "charging"
+
+# gotapi.md row
+msgid "Boolean"
+msgstr "真偽値"
+
+# gotapi.md row
+msgid "level"
+msgstr "level"
+
+# gotapi.md
+msgid "充電中かどうかの判断"
+msgstr "充電中かどうかの判断"
+
+# gotapi.md
+msgid ": /gotapi/battery/charging"
+msgstr ": /gotapi/battery/charging"
+
+# gotapi.md row
+msgid "サービスIDを指定します"
+msgstr "サービスIDを指定します"
+
+# gotapi.md row
+msgid "取得したアクセストークン"
+msgstr "取得したアクセストークン"
+
+# gotapi.md row
+msgid "取得成功時のデータ形式。"
+msgstr "取得成功時のデータ形式。"
+
+# gotapi.md
+msgid "バッテリーの状態が変わったらイベント通知を受け取る設定をする"
+msgstr "バッテリーの状態が変わったらイベント通知を受け取る設定をする"
+
+# gotapi.md
+msgid ": /gotapi/battery/onchargingchange"
+msgstr ": /gotapi/battery/onchargingchange"
+
+# gotapi.md row
+msgid "WebSocket側と共通の通知を受け取るためのセッションキー"
+msgstr "WebSocket側と共通の通知を受け取るためのセッションキー"
+
+# gotapi.md row
+msgid "設定完了"
+msgstr "設定完了"
+
+# gotapi.md
+msgid "バッテリーの状態が変わったらイベント通知を受け取る設定を削除する。"
+msgstr "バッテリーの状態が変わったらイベント通知を受け取る設定を削除する。"
+
+# gotapi.md row
+msgid "WebSocketで受け取るための一意のキー"
+msgstr "WebSocketで受け取るための一意のキー"
+
+# gotapi.md row
+msgid "HTTP経由でアクセスするファイル情報"
+msgstr "HTTP経由でアクセスするファイル情報"
+
+# gotapi.md
+msgid "録画を開始する"
+msgstr "録画を開始する"
+
+# gotapi.md
+msgid ": /gotapi/mediastream_recording/record"
+msgstr ": /gotapi/mediastream_recording/record"
+
+# gotapi.md
+msgid ": Post"
+msgstr ": POST"
+
+# gotapi.md
+msgid "録画を停止する"
+msgstr "録画を停止する"
+
+# gotapi.md
+msgid ": /gotapi/mediastream_recording/stop"
+msgstr ": /gotapi/mediastream_recording/stop"
+
+# gotapi.md
+msgid "レコーダーの情報を取得"
+msgstr "レコーダーの情報を取得"
+
+# gotapi.md
+msgid ": /gotapi/mediastream_recording/mediarecorder"
+msgstr ": /gotapi/mediastream_recording/mediarecorder"
+
+# gotapi.md row
+msgid "recorders"
+msgstr "recorders"
+
+# gotapi.md row
+msgid "imageWidth"
+msgstr "imageWidth"
+
+# gotapi.md row
+msgid "mimeType"
+msgstr "mimeType"
+
+# gotapi.md row
+msgid "config"
+msgstr "config"
+
+# gotapi.md row
+msgid "id"
+msgstr "id"
+
+# gotapi.md row
+msgid "name"
+msgstr "name"
+
+# gotapi.md row
+msgid "state"
+msgstr "state"
+
+# gotapi.md row
+msgid "imageHeight"
+msgstr "imageHeight"
+
+# gotapi.md
+msgid ": /gotapi/file/list"
+msgstr ": /gotapi/file/list"
+
+# gotapi.md row
+msgid "path"
+msgstr "path"
+
+# gotapi.md row
+msgid "files"
+msgstr "files"
+
+# gotapi.md row
+msgid "items"
+msgstr "items"
+
+# gotapi.md
+msgid ": /gotapi/file/remove"
+msgstr ": /gotapi/file/remove"
+
+# gotapi.md row
+msgid "ファイルのパス"
+msgstr "ファイルのパス"
+
+# gotapi.md row
+msgid "ファイルを削除した後のレスポンス"
+msgstr "ファイルを削除した後のレスポンス"
+
+# gotapi.md
+msgid ": /gotapi/file/receive"
+msgstr ": /gotapi/file/receive"
+
+# gotapi.md row
+msgid "uri"
+msgstr "uri"
+
+# gotapi.md
+msgid "写真撮影を実行"
+msgstr "写真撮影を実行"
+
+# gotapi.md
+msgid ": /gotapi/mediastream_recording/onphoto"
+msgstr ": /gotapi/mediastream_recording/onphoto"
+
+# gotapi.md row
+msgid "成功した際の情報"
+msgstr "成功した際の情報"
+
+# gotapi.md
+msgid "カメラの映像をプレビューする"
+msgstr "カメラの映像をプレビューする"
+
+# gotapi.md
+msgid ": /gotapi/mediastream_recording/preview"
+msgstr ": /gotapi/mediastream_recording/preview"
+
+# gotapi.md row
+msgid "target"
+msgstr "target"
+
+# gotapi.md row
+msgid "対象となるデバイスのカメラID"
+msgstr "対象となるデバイスのカメラID"
+
+# gotapi.md
+msgid "デバイス上のファイルを開く"
+msgstr "デバイス上のファイルを開く"
+
+# gotapi.md
+msgid ": /gotapi/file_descriptor/open"
+msgstr ": /gotapi/file_descriptor/open"
+
+# gotapi.md row
+msgid "flag"
+msgstr "flag"
+
+# gotapi.md row
+msgid "ファイルの読み書きフラグ。rで読み取りのみ、rwで読み書き。"
+msgstr "ファイルの読み書きフラグ。rで読み取りのみ、rwで読み書き。"
+
+# gotapi.md
+msgid ": /gotapi/file_descriptor/write"
+msgstr ": /gotapi/file_descriptor/write"
+
+# gotapi.md row
+msgid "media"
+msgstr "media"
+
+# gotapi.md row
+msgid "File"
+msgstr "File"
+
+# gotapi.md row
+msgid "formData"
+msgstr "formData"
+
+# gotapi.md row
+msgid "書き込む内容。画像、動画、テキストファイルなど"
+msgstr "書き込む内容。画像、動画、テキストファイルなど"
+
+# gotapi.md row
+msgid "position"
+msgstr "position"
+
+# gotapi.md row
+msgid "ファイルの書き込み位置を指定"
+msgstr "ファイルの書き込み位置を指定"
+
+# gotapi.md
+msgid "ファイルを読み込む"
+msgstr "ファイルを読み込む"
+
+# gotapi.md
+msgid ": /gotapi/file_descriptor/read"
+msgstr ": /gotapi/file_descriptor/read"
+
+# gotapi.md row
+msgid "length"
+msgstr "length"
+
+# gotapi.md row
+msgid "ファイルを読み込む長さ"
+msgstr "ファイルを読み込む長さ"
+
+# gotapi.md row
+msgid "fileData"
+msgstr "fileData"
+
+# gotapi.md row
+msgid "size"
+msgstr "size"
+
+# gotapi.md
+msgid "ファイルのポインタを閉じる"
+msgstr "ファイルのポインタを閉じる"
+
+# gotapi.md
+msgid ": /gotapi/file_descriptor/close"
+msgstr ": /gotapi/file_descriptor/close"
+
+# gotapi.md
+msgid "ファイルの変更を監視する"
+msgstr "ファイルの変更を監視する"
+
+# gotapi.md
+msgid ": /gotapi/file_descriptor/onwatchfile"
+msgstr ": /gotapi/file_descriptor/onwatchfile"
+
+# vibration.md
+msgid "Vibration API"
+msgstr "バイブレーション API"
+
+# notification.md
+msgid "Notification API"
+msgstr "通知 API"
+
+# grant.md
+msgid "Grant API"
+msgstr "認可 API"
+
+# servicediscovery.md
+msgid "Servicediscovery API"
+msgstr "サービス検索 API"
+
+# serviceinformation.md
+msgid "Serviceinformation API"
+msgstr "サービス情報 API"
+
+# battery.md
+msgid "Battery API"
+msgstr "バッテリー API"
+
+# mediastream_recording.md
+msgid "Mediastream_recording API"
+msgstr "メディアストリーミング録画 API"
+
+# file.md
+msgid "File API"
+msgstr "ファイル API"
+
+# file_descriptor.md
+msgid "File_descriptor API"
+msgstr "ファイル参照 API"

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/about/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/demosite/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/android/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/android/device_connect_manager/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/android/plugin/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/android/plugins/pebble/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/ios/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/javascript/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>None/webapi/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/authorization/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/availabillity/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/battery/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/file_descriptor/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/file/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/grant/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/humidity/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/illuminance/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/mediastream_recording/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/notification/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/powermeter/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/light/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/temperature/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/servicediscovery/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/serviceinformation/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/vibration/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/scope/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/webapi/error/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/websocket/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/websocket/battery/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/websocket/deviceorientation/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/websocket/file_descriptor/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/websocket/keyevent/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/support-devices/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/pros-cons/</loc>
+     <lastmod>2016-07-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>

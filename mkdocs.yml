@@ -1,0 +1,53 @@
+site_name: DeviceConnect Users
+theme: 'readthedocs'
+remote_branch: 'master'
+google_analytics: ['UA-79831666-1', 'deviceconnectusers.github.io']
+extra_css: []
+extra_javascript: []
+pages:
+- 'Top': 'index.md'
+- 'DeviceConnectについて': 'about.md'
+- 'デモサイトの使い方': 'demosite.md'
+- 'Android':
+  - 'はじめてみよう': 'android.md'
+  - 'DeviceConnectManagerについて': 'android/device_connect_manager.md'
+  - 'プラグインをビルドする': 'android/plugin.md'
+  - 'Pebbleプラグイン': 'android/plugins/pebble.md'
+- 'はじめてみよう（iOS）': 'ios.md'
+- 'はじめてみよう（JavaScript）': 'javascript.md'
+- 'Web API':
+  - 'Web APIについて': 'webapi.md'
+  - '認証API': 'webapi/authorization.md'
+  - '死活確認API': 'webapi/availabillity.md'
+  - 'バッテリーAPI': 'webapi/battery.md'
+  - 'Canvas API': 'webapi/canvas.md'
+  - 'ファイル参照API': 'webapi/file_descriptor.md'
+  - 'ファイルAPI': 'webapi/file.md'
+  - '認可API': 'webapi/grant.md'
+  - '湿度API': 'webapi/humidity.md'
+  - '照度 API': 'webapi/illuminance.md'
+  #- 'デバイス向き/加速度API': 'webapi/deviceorientation.md'
+  - 'メディアストリーミング録画API': 'webapi/mediastream_recording.md'
+  - '通知API': 'webapi/notification.md'
+  - '電力メーターAPI': 'webapi/powermeter.md'
+  - 'ライトAPI': 'webapi/light.md'
+  - '温度 API': 'webapi/temperature.md'
+  - 'サービス検索API': 'webapi/servicediscovery.md'
+  - 'サービス情報API': 'webapi/serviceinformation.md'
+  - 'デバイス設定API': 'webapi/settings.md'
+  - 'バイブレーションAPI': 'webapi/vibration.md'
+  - '電話API': 'webapi/phone.md'
+  - 'スコープについて': 'webapi/scope.md'
+  - 'エラーについて': 'webapi/error.md'
+- 'WebSocket':
+  - 'WebSocketについて': 'websocket.md'
+  - 'バッテリーAPI': 'websocket/battery.md'
+  - 'デバイス向き/加速度API': 'websocket/deviceorientation.md'
+  - 'ファイル参照API': 'websocket/file_descriptor.md'
+  - 'キーイベントAPI': 'websocket/keyevent.md'
+  - '電話API': 'websocket/phone.md'
+- '対応デバイス':
+  - '対応デバイスについて': 'devices.md'
+  - 'THETA m15': 'devices/theta_m15.md'
+- '利点&欠点': 'pros-cons.md'
+

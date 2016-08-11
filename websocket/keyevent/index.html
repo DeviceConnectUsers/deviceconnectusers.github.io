@@ -170,7 +170,21 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../../webapi/connect/">コネクトAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../../webapi/canvas/">Canvas API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/deviceorientation/">デバイス向き/加速度API</a>
         
     </li>
 
@@ -212,6 +226,27 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../../webapi/keyevent/">キーイベントAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/light/">ライトAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/media_player/">メディアプレイヤーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../../webapi/mediastream_recording/">メディアストリーミング録画API</a>
         
     </li>
@@ -226,6 +261,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../../webapi/phone/">電話API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../../webapi/powermeter/">電力メーターAPI</a>
         
     </li>
@@ -233,14 +275,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/light/">ライトAPI</a>
+        <a class="" href="../../webapi/proximity/">近接センサーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/temperature/">温度 API</a>
+        <a class="" href="../../webapi/remote_controller/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -268,14 +310,21 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/vibration/">バイブレーションAPI</a>
+        <a class="" href="../../webapi/temperature/">温度 API</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/phone/">電話API</a>
+        <a class="" href="../../webapi/touch/">タッチAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/vibration/">バイブレーションAPI</a>
         
     </li>
 
@@ -318,6 +367,13 @@
         
             
     <li class="toctree-l1 ">
+        <a class="" href="../connect/">コネクトAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
         <a class="" href="../deviceorientation/">デバイス向き/加速度API</a>
         
     </li>
@@ -340,7 +396,7 @@
                 
                     <li><a class="toctree-l4" href="#_1">キー入力（ダウン）</a></li>
                 
-                    <li><a class="toctree-l4" href="#_2">キー入力（アップ）</a></li>
+                    <li><a class="toctree-l4" href="#_3">キー入力（アップ）</a></li>
                 
             
             </ul>
@@ -351,6 +407,20 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../phone/">電話API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../proximity/">近接センサーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../touch/">タッチAPI</a>
         
     </li>
 
@@ -373,6 +443,41 @@
             
     <li class="toctree-l1 ">
         <a class="" href="../../devices/theta_m15/">THETA m15</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/theta_s/">THETA S</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/color_1000/">Color 1000</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/f_plug/">F-PLUG</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/chromecast/">Chromecast</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/android/">Android</a>
         
     </li>
 
@@ -425,7 +530,8 @@
               
                 <h1 id="api">キーイベントAPI</h1>
 <h2 id="_1">キー入力（ダウン）</h2>
-<p>キーが押されたタイミングでイベントの通知がきます。</p>
+<p>キーが押されたタイミングでイベントの通知がきます。あらかじめ <a href="../../webapi/keyevent">キーイベントAPI</a>の<strong>キーが押された時に呼ばれるイベントを設定</strong>を実行しておきます。</p>
+<h3 id="_2">受け取る内容</h3>
 <p>例えばPebbleの場合、次のようなメッセージになります。</p>
 <pre><code>{
     &quot;attribute&quot;: &quot;ondown&quot;, 
@@ -506,8 +612,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_2">キー入力（アップ）</h2>
-<p>キーが押され、指が離れたタイミングでイベントの通知がきます。</p>
+<h2 id="_3">キー入力（アップ）</h2>
+<p>キーが押され、指が離れたタイミングでイベントの通知がきます。あらかじめ <a href="../../webapi/keyevent">キーイベントAPI</a>の<strong>キーが押された後に呼ばれるイベントを設定</strong>を実行しておきます。</p>
+<h3 id="_4">受け取る内容</h3>
 <p>Androidデバイスの場合、次のようになります。</p>
 <pre><code>{
     &quot;attribute&quot;: &quot;onup&quot;, 

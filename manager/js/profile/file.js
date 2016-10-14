@@ -325,7 +325,7 @@ function doFileAction(serviceId, path, mimeType) {
         (mimeType == 'audio/ogg') || (mimeType == 'audio/mp4')) {
       doMediaPlay(serviceId, path);
     } else if ((mimeType == 'image/png') || (mimeType == 'image/jpeg') ||
-        (mimeType == 'image/jpg') || (mimeType == 'image/bmp')) {
+        (mimeType == 'image/jpg') || (mimeType == 'image/bmp') || (mimeType == 'image/gif')) {
       doImageShow(serviceId, path);
     } else if ((mimeType == 'video/3gpp') || (mimeType == 'video/mp4') ||
         (mimeType == 'video/m4v') || (mimeType == 'video/3gpp2') ||
@@ -506,6 +506,7 @@ function showFileSend(serviceId) {
   str += '<input type="hidden" name="accessToken" value="' +
         accessToken + '"/>';
   str += makeInputText('path', 'path', 'path');
+  str += makeInputText('uri', 'uri', 'uri');
   str += '<input type="file" name="data" id="data"/>';
   str += '<input type="button" name="sendButton" id="sendButton"' +
         ' value="Upload" onclick="doFileSend(\'' + serviceId + '\');"/>';
@@ -517,10 +518,8 @@ function showFileSend(serviceId) {
       function() {
         if (!this.files.length) {
           alert('File is null');
-          return;
         } else {
           var file = '/' + this.files[0].name;
-          $('#path').val(file);
         }
       }
   );
@@ -537,8 +536,15 @@ function doFileSend(serviceId) {
 
   var myForm = document.getElementById('fileForm');
   var myFormData = new FormData(myForm);
-  var myXhr = new XMLHttpRequest();
+  
+  try {
+    if (myFormData.get('uri') === '') {
+      myFormData.delete('uri');
+    }
+  } catch (e) {
+  }
 
+  var myXhr = new XMLHttpRequest();
   myXhr.open(myForm.method, myForm.action, true);
   myXhr.onreadystatechange = function() {
     if (myXhr.readyState === 4) {
@@ -550,8 +556,6 @@ function doFileSend(serviceId) {
         var obj = JSON.parse(myXhr.responseText);
         if (obj.result == 0) {
           alert('success:file/send');
-          $('#path').val('');
-          $('#data').val('');
         } else {
           showError('PUT file/send', obj.errorCode, obj.errorMessage);
         }

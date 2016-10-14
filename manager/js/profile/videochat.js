@@ -5,9 +5,8 @@
  http://opensource.org/licenses/mit-license.php
  */
 
-var _skywayApiKey = "[ YOUR API KEY ]";
-var _skywayDomain = "[ YOUR DOMAIN ]";
-
+var _skywayApiKey = "aaba9b2b-7cb0-4cb9-b5ea-d1c7394b3567";
+var _skywayDomain = "test.gclue.io";
 /**
  * Show VideoChat Menu
  *
@@ -44,9 +43,6 @@ function showVideoChat(serviceId) {
   str += makeInputText('Input Address', 'call-addressId', 'call-addressId');
   str += makeInputText('Input Video', 'call-video', 'call-video');
   str += makeInputText('Input Audio', 'call-audio', 'call-audio');
-  str += makeInputText('Audio SampleRate', 'call-audioSampleRate', 'call-audioSampleRate');
-  str += makeInputText('Audio Bit Depth', 'call-audioBitDepth', 'call-audioBitDepth');
-  str += makeInputText('Audio Channel', 'call-audioChannel', 'call-audioChannel');
   str += makeInputText('Result', 'call-result', 'call-result');
   str += vcMakeButton('Call','doVideoChatCall',serviceId);
 
@@ -132,19 +128,12 @@ function doVideoChatCall(serviceId){
   var addressId = $('#call-addressId').val();
   var video = $('#call-video').val();
   var audio = $('#call-audio').val();
-  var audioSampleRate = $('#call-audioSampleRate').val();
-  var audioBitDepth = $('#call-audioBitDepth').val();
-  var audioChannel = $('#call-audioChannel').val();
 
   var builder = vcMakeUriBuilder(serviceId,'call');
   builder.addParameter('addressId', addressId);
   builder.addParameter('video', video);
   builder.addParameter('audio', audio);
   builder.addParameter('config', vcMakeConfig());
-  builder.addParameter('audioSampleRate', audioSampleRate);
-  builder.addParameter('audioBitDepth', audioBitDepth);
-  builder.addParameter('audioChannel', audioChannel);
-
   var successCallback = function(json){
     $('#call-result').val(json.result);
   };
@@ -292,7 +281,6 @@ function vcMakeEventUriBuilder(serviceId, sessionKey, attribute){
   builder.setProfile('videochat');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
-  builder.addParameter('sessionKey',  sessionKey);
   builder.setAttribute(attribute);
   return builder;
 }

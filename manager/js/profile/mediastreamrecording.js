@@ -123,7 +123,7 @@ function showRecorderInfo(serviceId) {
 
 function doRecorderOptions(serviceId, target) {
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('options');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
@@ -135,7 +135,7 @@ function doRecorderOptions(serviceId, target) {
   dConnect.get(uri, null, function(json) {
     showOptionList(serviceId, target, json);
   }, function(errorCode, errorMessage) {
-    showError('GET mediastream_recording/options', errorCode, errorMessage);
+    showError('GET mediastreamrecording/options', errorCode, errorMessage);
   });
 }
 
@@ -248,7 +248,7 @@ function showOptionList(serviceId, target, currentOptions) {
  */
 function doChangeRecorderOptions(op) {
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('options');
   builder.setServiceId(op.serviceId);
   builder.setAccessToken(accessToken);
@@ -305,7 +305,7 @@ function doChangeRecorderOptions(op) {
     // Options API PUTがサポートされていない等、
     // エラーが発生した場合はデフォルト設定でプレビューを開始する.
     closeLoading();
-    console.log('ERROR: PUT /mediastream_recording/options: errorCode=' + errorCode + ', errorMessage=' + errorMessage);
+    console.log('ERROR: PUT /mediastreamrecording/options: errorCode=' + errorCode + ', errorMessage=' + errorMessage);
     alert('ERROR: Failed to put options: ' + errorMessage);
   });
 }
@@ -323,7 +323,7 @@ function doRegisterPreview(serviceId, target) {
   }
 
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('preview');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
@@ -369,7 +369,7 @@ function doRegisterPreview(serviceId, target) {
       }
     }
   }, function(errorCode, errorMessage) {
-    showError('PUT mediastream_recording/preview', errorCode, errorMessage);
+    showError('PUT mediastreamrecording/preview', errorCode, errorMessage);
   });
 
   function useMJPEG() {
@@ -406,7 +406,7 @@ function doUnregisterPreview(serviceId, recorder) {
   }
 
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('preview');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
@@ -424,7 +424,7 @@ function doUnregisterPreview(serviceId, recorder) {
       console.log('Response: ', json);
     }
   }, function(errorCode, errorMessage) {
-    showError('DELETE mediastream_recording/preview', errorCode, errorMessage);
+    showError('DELETE mediastreamrecording/preview', errorCode, errorMessage);
   });
 }
 
@@ -487,7 +487,7 @@ function doTakePhoto(serviceId, target) {
   });
 
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('takephoto');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
@@ -512,7 +512,7 @@ function doTakePhoto(serviceId, target) {
 
     $('#onPhoto').val(json.uri);
   }, function(errorCode, errorMessage) {
-    showError('POST mediastream_recording/takephoto', errorCode, errorMessage);
+    showError('POST mediastreamrecording/takephoto', errorCode, errorMessage);
     closeLoading();
   });
 
@@ -627,16 +627,16 @@ function doMediaRecord(serviceId, target) {
 
 　sendRecordRequest(serviceId, target, {
     onsuccess: function() {
-      reloadContent(mediaStopButton(serviceId));
+      reloadContent(mediaStopButton(serviceId, target));
     },
     onerror: function(errorCode, errorMessage) {
-      showError('POST mediastream_recording/record', errorCode, errorMessage);
+      showError('POST mediastreamrecording/record', errorCode, errorMessage);
     }
   });
 
   function sendRecordRequest(serviceId, target, cb) {
     var builder = new dConnect.URIBuilder();
-    builder.setProfile('mediastream_recording');
+    builder.setProfile('mediastreamrecording');
     builder.setAttribute('record');
     builder.setServiceId(serviceId);
     builder.setAccessToken(accessToken);
@@ -666,12 +666,15 @@ function doMediaRecord(serviceId, target) {
  *
  * @param {String} serviceId サービスID
  */
-function doMediaStop(serviceId) {
+function doMediaStop(serviceId, target) {
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('stop');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
+  if (target !== null && target !== undefined) {
+    builder.addParameter('target', target);
+  }
   var uri = builder.build();
   if (DEBUG) {
     console.log('Uri:' + uri)
@@ -683,7 +686,7 @@ function doMediaStop(serviceId) {
     }
     showMediastreamRecording(serviceId);
   }, function(errorCode, errorMessage) {
-    showError('PUT mediastream_recording/stop', errorCode, errorMessage);
+    showError('PUT mediastreamrecording/stop', errorCode, errorMessage);
   });
 }
 
@@ -695,7 +698,7 @@ function doMediaStop(serviceId) {
  */
 function doGetMediaRecorderList(serviceId, callback) {
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('mediarecorder');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
@@ -721,7 +724,7 @@ function doGetMediaRecorderList(serviceId, callback) {
  */
 function doGetMediaRecorder(serviceId, target, callback) {
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('mediarecorder');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
@@ -753,13 +756,19 @@ function doGetMediaRecorder(serviceId, target, callback) {
  * メディアの停止
  *
  * @param {String} serviceId サービスID
+ * @param {String} target 動作させているデバイスのターゲット
  */
-function mediaStopButton(serviceId) {
+function mediaStopButton(serviceId, target) {
   var str = '';
   str += '<center>';
   str += '<input data-icon="stop"  ';
-  str += 'onclick="javascript:doMediaStop(\'' +
+  if (target !== undefined && target !== null) {
+    str += 'onclick="javascript:doMediaStop(\'' +
+          serviceId + '\', \'' + target + '\');" type="button" value="Stop"/>';
+  } else {
+    str += 'onclick="javascript:doMediaStop(\'' +
           serviceId + '\');" type="button" value="Stop"/>';
+  }
   str += '</center>';
   return str;
 }
@@ -773,8 +782,13 @@ function takePhotoButton(serviceId, target) {
   var str = '';
   str += '<center>';
   str += '<input data-icon="stop"  ';
-  str += 'onclick="javascript:doTakePhoto(\'' +
+  if (target !== undefined && target !== null) {
+      str += 'onclick="javascript:doTakePhoto(\'' +
           serviceId + '\', \'' + target + '\');" type="button" value="takePhoto"/>';
+  } else {
+      str += 'onclick="javascript:doTakePhoto(\'' +
+          serviceId + '\');" type="button" value="takePhoto"/>';
+  }
   str += '</center>';
   return str;
 }
@@ -787,11 +801,10 @@ function takePhotoButton(serviceId, target) {
  */
 function doRegisterOnPhoto(serviceId, sessionKey) {
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('onphoto');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
-  builder.addParameter('sessionKey', sessionKey);
 
   var uri = builder.build();
   if (DEBUG) {
@@ -819,11 +832,10 @@ function doRegisterOnPhoto(serviceId, sessionKey) {
  */
 function doUnregisterOnPhoto(serviceId, sessionKey) {
   var builder = new dConnect.URIBuilder();
-  builder.setProfile('mediastream_recording');
+  builder.setProfile('mediastreamrecording');
   builder.setAttribute('onphoto');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
-  builder.addParameter('sessionKey', sessionKey);
   var uri = builder.build();
   if (DEBUG) {
     console.log('Uri:' + uri)

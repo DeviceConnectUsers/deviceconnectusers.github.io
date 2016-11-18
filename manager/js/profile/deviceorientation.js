@@ -23,6 +23,11 @@ function showDeviceOrientation(serviceId) {
   str += '  <input data-icon=\"search\" onclick=\"doDeviceOrientationGet(\'' +
           serviceId + '\')\" type=\"button\" value=\"Get\" />';
   str += '</div>';
+  str += '<div>';
+  str += '<label for="interval">interval</label>';
+  str += '<input type="text" id="set_interval" size="10" maxlength="10">';
+  str += '</div>';
+
   str += '<fieldset class=\"ui-grid-a\">';
   str += '  <div class=\"ui-block-a\">';
   str += '    <input data-icon=\"search\" ' +
@@ -115,12 +120,15 @@ function doDeviceOrientationGet(serviceId) {
  * DeviceOrientation Event
  */
 function doDeviceOrientationRegist(serviceId, sessionKey) {
+  var intervalParam = $('#set_interval').val();
   var builder = new dConnect.URIBuilder();
   builder.setProfile('deviceorientation');
   builder.setAttribute('ondeviceorientation');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
-  builder.setSessionKey(sessionKey);
+  if (intervalParam !== '') {
+    builder.addParameter('interval', intervalParam);
+  }
   var uri = builder.build();
   if (DEBUG) {
     console.log('Uri: ' + uri);
@@ -153,7 +161,6 @@ function doDeviceOrientationUnregister(serviceId, sessionKey) {
   builder.setAttribute('ondeviceorientation');
   builder.setServiceId(serviceId);
   builder.setAccessToken(accessToken);
-  builder.setSessionKey(sessionKey);
   var uri = builder.build();
   if (DEBUG) {
     console.log('Uri : ' + uri);

@@ -12,11 +12,7 @@ Android端末を使ってDeviceConnectを体験します。これは実機だけ
 
 ## Device Connect Managerを起動
 
-DeviceConnect Managerを起動して、Originブロック機能を無効にしてください。
-
-![](/images/android/getting-started-1.png)
-
-設定が終わったらDeviceConnect Managerを有効にして仮想サーバを起動します。
+アプリが起動したら、DeviceConnect Managerを有効にして仮想サーバを起動します。
 
 ![](/images/android/deviceconnect-android-20.png)
 

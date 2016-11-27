@@ -1,0 +1,4 @@
+site
+.atomignore
+.DS_Store
+deploy.sh

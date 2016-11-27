@@ -15,7 +15,7 @@ JavaScriptを使ってDeviceConnectを体験してみましょう。[Androidの�
 
 ## Webブラウザでアクセス
 
-[Android用ドキュメントの外部から操作してみる](./android)に沿ってインストールとDeviceConnect Managerの起動、設定を行ってください。それが終わったら、デスクトップのブラウザ（Google Chromeなど）で `file:///path/to/demoWebSite/index.html?ip=(Android端末のIPアドレス)` にアクセスします。Android端末のIPアドレスはそれぞれ読み替えてください。
+[Android用ドキュメントの外部から操作してみる](./android)に沿ってインストールとDeviceConnect Managerの起動、設定を行ってください。それが終わったら、デスクトップのブラウザ（Google Chromeなど）で `http://deviceconnectusers.github.io/manager/?ip=(Android端末のIPアドレス)` にアクセスします。Android端末のIPアドレスはそれぞれ読み替えてください。またはadbのポートフォワードを使うこともできます。詳しくは[外部ブラウザからの利用 - DeviceConnect Users](http://localhost:8000/android/external/#adb)を参照してください。
 
 後はDevToolsのコンソールを使って試していきたいと思います。
 
@@ -53,18 +53,18 @@ dConnect.authorizationを実行する際にはスコープを設定する必要�
 - battery
 - connect
 - deviceorientation
-- file_descriptor
+- fileDescriptor
 - file
-- media_player
-- mediastream_recording
+- mediaPlayer
+- mediastreamRecording
 - notification
 - phone
 - proximity
 - settings
 - vibration
 - light
-- remote_controller
-- drive_controller
+- remoteController
+- driveController
 - mhealth
 - sphero
 - dice
@@ -75,7 +75,7 @@ dConnect.authorizationを実行する際にはスコープを設定する必要�
 - touch
 - humandetect
 - keyevent
-- omnidirectional_image
+- omnidirectionalImage
 - tv
 - powermeter
 - humidity

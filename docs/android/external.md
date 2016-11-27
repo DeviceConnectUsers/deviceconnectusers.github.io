@@ -26,3 +26,15 @@ DeviceConnectはWeb APIなので、外部からコールすることもできま
 
 このままDeviceConnectのJavaScript SDKを使ってスマートデバイスを使ったアプリケーション開発が行えるでしょう。
 
+## adbを使う
+
+もう一つの方法として、実機をUSB接続した上でadbでポートフォワードを使う方法があります。Android SDKに含まれるadbコマンドを使います。9000、9001番は画像のストリーミング配信用です。
+
+```
+adb forward tcp:4035 tcp:4035
+adb forward tcp:9000 tcp:9000
+adb forward tcp:9001 tcp:9001
+```
+
+後は http://deviceconnectusers.github.io/manager/ にアクセスします。Originヘッダーのチェックを外すか、http://deviceconnectusers.github.io からのアクセスを許可してください。
+

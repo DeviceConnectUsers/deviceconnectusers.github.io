@@ -97,6 +97,9 @@
         <div data-role="header" data-theme="c"><center>Demo</center></div>
         <a data-role="button" onclick="startManagerAndDemo()" data-ajax="false"/ data-icon="arrow-r" data-iconpos="right">
          Launch UI-App (HTML5)</a>
+       <div data-role="header" data-theme="c"><center>APK</center></div>
+        <a data-role="button" href="./apk/index.html" data-ajax="false"/ data-icon="arrow-r" data-iconpos="right">
+         Download APK</a>
         <div data-role="footer"  data-theme="b">
             <h4>Device Connect</h4>
         </div>
@@ -112,8 +115,6 @@
             <div id="host" style="font-size:xx-small"></div>
             <!-- AccessToken -->
             <div id="token" style="font-size:xx-small"></div>
-            <!-- WebSocket接続状態 -->
-            <div id="websocket" style="font-size:xx-small"></div>
 
             <div data-role="controlgroup" data-type="horizontal">
                 <input data-icon="gear" data-inline="true" data-mini="true" onclick="javascript:checkDeviceConnect();" type="button" value="Check" />

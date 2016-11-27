@@ -132,7 +132,7 @@ function showOmnidirectionalImage(serviceId) {
 
 
   // XXXX: For debug
-  omniUri = 'http://192.168.1.15:8080/R0010162.JPG';
+  omniUri = 'http://192.168.1.59:8080/R0010162.JPG';
   $('#omniUri').val(omniUri);
 
   showOmniImageUpdatedDate();
@@ -400,7 +400,7 @@ function showOmnidirectionalImage(serviceId) {
       .addParameter('uri', roiUri)
       .addParameter('width', width.toString())
       .addParameter('height', height.toString())
-      .addParameter(option.pattern.name, parseFloat(num.toString()).toFixed(3))
+      .addParameter(option.pattern.name, num.toString())
       .build();
     dConnect.put(uri, null, null,
       function(json) {

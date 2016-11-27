@@ -8,7 +8,7 @@
   
   
   
-  <title>WebSocketについて - DeviceConnect Users</title>
+  <title>対応デバイスについて - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "WebSocketについて";
-    var mkdocs_page_input_path = "websocket.md";
-    var mkdocs_page_url = "/websocket/";
+    var mkdocs_page_name = "対応デバイスについて";
+    var mkdocs_page_input_path = "devices.md";
+    var mkdocs_page_url = "/devices/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -410,81 +410,64 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">WebSocketについて</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#websocket">WebSocketについて</a></li>
-                
-                    <li><a class="toctree-l4" href="#_1">エンドポイントについて</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">便利なツール</a></li>
-                
-                    <li><a class="toctree-l4" href="#_3">接続してみる</a></li>
-                
-                    <li><a class="toctree-l4" href="#web-api">Web APIをコールする</a></li>
-                
-                    <li><a class="toctree-l4" href="#websocket-api">WebSocket APIについて</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../websocket/">WebSocketについて</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="battery/">バッテリーAPI</a>
+        <a class="" href="../websocket/battery/">バッテリーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="connect/">コネクトAPI</a>
+        <a class="" href="../websocket/connect/">コネクトAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="deviceorientation/">デバイス向き/加速度API</a>
+        <a class="" href="../websocket/deviceorientation/">デバイス向き/加速度API</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="fileDescriptor/">ファイル参照API</a>
+        <a class="" href="../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="keyevent/">キーイベントAPI</a>
+        <a class="" href="../websocket/keyevent/">キーイベントAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="phone/">電話API</a>
+        <a class="" href="../websocket/phone/">電話API</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="proximity/">近接センサーAPI</a>
+        <a class="" href="../websocket/proximity/">近接センサーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="touch/">タッチAPI</a>
+        <a class="" href="../websocket/touch/">タッチAPI</a>
         
     </li>
 
@@ -498,57 +481,64 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../devices/">対応デバイスについて</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">対応デバイスについて</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">現在動作するデバイス</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/moverio/">MOVERIO</a>
+        <a class="" href="moverio/">MOVERIO</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/theta_m15/">THETA m15</a>
+        <a class="" href="theta_m15/">THETA m15</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/theta_s/">THETA S</a>
+        <a class="" href="theta_s/">THETA S</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/color_1000/">Color 1000</a>
+        <a class="" href="color_1000/">Color 1000</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/f_plug/">F-PLUG</a>
+        <a class="" href="f_plug/">F-PLUG</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/chromecast/">Chromecast</a>
+        <a class="" href="chromecast/">Chromecast</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/android/">Android</a>
+        <a class="" href="android/">Android</a>
         
     </li>
 
@@ -585,11 +575,11 @@
     
       
         
-          <li>WebSocket &raquo;</li>
+          <li>対応デバイス &raquo;</li>
         
       
     
-    <li>WebSocketについて</li>
+    <li>対応デバイスについて</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -599,56 +589,392 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="websocket">WebSocketについて</h1>
-<p>DeviceConnectのWeb APIを使う際に、幾つかイベント通知系のAPIがあります。これらを利用する際にはWebSocketを使って接続しておく必要があります。</p>
-<h2 id="_1">エンドポイントについて</h2>
-<ul>
-<li><strong>パス</strong><br />
-/websocket</li>
-<li><strong>プロトコル</strong><br />
-WebSocket</li>
-</ul>
-<h2 id="_2">便利なツール</h2>
-<p>Node.jsではコンソールからWebSocketサーバに接続できるwscatコマンドが利用できます。</p>
-<pre><code>npm install -g wscat
-</code></pre>
-
-<p>でインストールできます。</p>
-<h2 id="_3">接続してみる</h2>
-<p>例えばDeviceConnect Managerが 192.168.0.20 で動作している場合、</p>
-<pre><code>$ wscat -c ws://192.168.0.20:4035/websocket -o &quot;Null&quot;
-</code></pre>
-
-<p>で接続できます。接続したらセッションキー（任意の文字列）を指定します。</p>
-<pre><code>&gt; {&quot;sessionKey&quot;: &quot;aaa&quot;}
-&gt; 
-</code></pre>
-
-<p>これでWebSocket側は準備完了です。</p>
-<h2 id="web-api">Web APIをコールする</h2>
-<p>次にWeb API側を準備します。例えば[バッテリーステータス変更API]をコールします。</p>
-<pre><code>$ curl -H &quot;Origin: Null&quot; -X PUT &quot;http://192.168.0.20:4035/gotapi/battery/onchargingchange?serviceId=Host...org&amp;accessToken=16f...5af&amp;sessionKey=aaa&quot;
-{&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;version&quot;:&quot;2.0.0&quot;}
-</code></pre>
-
-<p>この時、セッションキー（sessionKey）はWebSocketで指定した文字列と同じものを使います。</p>
-<h3 id="_4">イベントを受け取る</h3>
-<p>後はバッテリーを抜き差ししてイベントがWebSocket側に通知されればOKです。</p>
-<pre><code>&lt; {&quot;battery&quot;:{&quot;charging&quot;:false},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
-&lt; {&quot;battery&quot;:{&quot;charging&quot;:true},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
-</code></pre>
-
-<h2 id="websocket-api">WebSocket APIについて</h2>
-<ul>
-<li><a href="../websocket/battery">バッテリーAPI</a></li>
-<li><a href="../websocket/connect">コネクトAPI</a></li>
-<li><a href="../websocket/deviceorientation">デバイス向き/加速度API</a></li>
-<li><a href="../websocket/fileDescriptor">ファイル参照API</a></li>
-<li><a href="../websocket/keyevent">キーイベントAPI</a></li>
-<li><a href="../websocket/phone">電話API</a></li>
-<li><a href="../websocket/proximity">近接センサーAPI</a></li>
-<li><a href="../websocket/touch">タッチAPI</a></li>
-</ul>
+                <h1 id="_1">現在動作するデバイス</h1>
+<p><a href="https://github.com/DeviceConnect/DeviceConnect/blob/master/readme.ja.md">DeviceConnect/readme.ja.md at master · DeviceConnect/DeviceConnect</a>からの転載です。</p>
+<table>
+<thead>
+<tr>
+<th>メーカー</th>
+<th>製品名</th>
+<th>機器種別</th>
+<th>対応プラグイン</th>
+<th>Android</th>
+<th>iOS</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SONY</td>
+<td>SmartWatchMN2</td>
+<td>腕時計型デバイス</td>
+<td>MN2/SW2 プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>通知以外の機能を利用するには、スマートウォッチ側でミニアプリの起動が必要</td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>SmartWatchSW2</td>
+<td>腕時計型デバイス</td>
+<td>MN2/SW2 プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>通知以外の機能を利用するには、スマートウォッチ側でミニアプリの起動が必要</td>
+</tr>
+<tr>
+<td>Orbotix</td>
+<td>Sphero 2.0</td>
+<td>ボール型スマートトイ</td>
+<td>Sphero プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Game Technologies</td>
+<td>DICE+</td>
+<td>サイコロ型スマートトイ</td>
+<td>DICE+ プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>ソースコード開示なし、開発者向けファームウェアへのアップデートが必要</td>
+</tr>
+<tr>
+<td>Philips</td>
+<td>hue</td>
+<td>スマートライト</td>
+<td>hue プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Philips</td>
+<td>Bloom Lamp</td>
+<td>スマートライト</td>
+<td>hue プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Philips</td>
+<td>LightStrips</td>
+<td>スマートライト</td>
+<td>hue プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>IRKit</td>
+<td>IRKit</td>
+<td>赤外線リモコン</td>
+<td>IRKit プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>学習した赤外線機器を紐付け</td>
+</tr>
+<tr>
+<td>Epson</td>
+<td><a href="../devices/moverio">Moverio BT-200</a></td>
+<td>メガネ型デバイス</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>個別の拡張機能にも対応予定</td>
+</tr>
+<tr>
+<td>Vuzix</td>
+<td>M100 Smart Glass</td>
+<td>メガネ型デバイス</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>個別の拡張機能にも対応予定</td>
+</tr>
+<tr>
+<td>ウエストユニティス</td>
+<td>Inforod</td>
+<td>メガネ型デバイス</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>個別の拡張機能にも対応予定</td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>DSC-QX100</td>
+<td>レンズスタイルカメラ</td>
+<td>SonyCamera プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>DSC-QX10</td>
+<td>レンズスタイルカメラ</td>
+<td>SonyCamera プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>ActionCam</td>
+<td>レンズスタイルカメラ</td>
+<td>SonyCamera プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Pebble</td>
+<td><a href="../devices/pebble">Pebble</a></td>
+<td>腕時計型デバイス</td>
+<td>Pebble プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>-</td>
+<td><a href="../devices/android">Android端末 Ver4.2以降</a></td>
+<td>Android端末</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>Ver4.2以降</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>G Watch</td>
+<td>Android Wear端末</td>
+<td>Wear プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>仮対応のため、ADBでのAPKのインストールが必要</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Gear Live</td>
+<td>Android Wear端末</td>
+<td>Wear プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>仮対応のため、ADBでのAPKのインストールが必要</td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="../devices/chromecat">ChromeCast</a></td>
+<td>HDMIドングル</td>
+<td>ChromeCast プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>Google Cast SDK Developer ConsoleのページでデバイスとReceiverアプリの登録が必要</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>NexusPlayer</td>
+<td>AndroidTV</td>
+<td>ChromeCast プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>Google Cast SDK Developer ConsoleのページでデバイスとReceiverアプリの登録が必要</td>
+</tr>
+<tr>
+<td>Polar</td>
+<td>H7</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>Mio Global</td>
+<td>Mio Alpha</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>Mio Global</td>
+<td>Mio Fuse</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>EPSON</td>
+<td>Pulsense PS-500</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>EPSON</td>
+<td>Pulsense PS-100</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>NTTドコモ</td>
+<td>Hitoe</td>
+<td>心拍計、他</td>
+<td>Hitoe プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>開発中</td>
+</tr>
+<tr>
+<td>A&amp;D</td>
+<td>UT-201BLE</td>
+<td>体温計</td>
+<td>○</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OMRON</td>
+<td>HVC-C</td>
+<td>Human Vision Components</td>
+<td>HVC プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>OMRON</td>
+<td>HVC-C2W</td>
+<td>Human Vision Components</td>
+<td>HVC2W プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>OMRON</td>
+<td>HVC-P</td>
+<td>Human Vision Components</td>
+<td>HVCP プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>FUJITSU</td>
+<td><a href="../devices/f_plug">F-PLUG</a></td>
+<td>スマートメーター</td>
+<td>F-PLUG プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>RICOH</td>
+<td><a href="../devices/theta_m15">THETA m15</a></td>
+<td>全天球カメラ</td>
+<td>THETAプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>RICOH THETA Developersにて開発者登録、およびSDKのダウンロードが必要。</td>
+</tr>
+<tr>
+<td>RICOH</td>
+<td><a href="../devices/theta_s">THETA S</a></td>
+<td>全天球カメラ</td>
+<td>THETAプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>RICOH THETA Developersにて開発者登録、およびSDKのダウンロードが必要。</td>
+</tr>
+<tr>
+<td>LIFX</td>
+<td>White 800</td>
+<td>ライト</td>
+<td>AllJoynプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>White 800の色は変えられない。</td>
+</tr>
+<tr>
+<td>LIFX</td>
+<td><a href="../devices/color_100">Color 1000</a></td>
+<td>ライト</td>
+<td>AllJoynプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>EchonetLite</td>
+<td>規格準拠機器全般</td>
+<td>家電製品制御</td>
+<td>EchoneLiteプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>準拠機器全般</td>
+</tr>
+<tr>
+<td>Linking</td>
+<td>Tomoru</td>
+<td>BLE連携デバイス</td>
+<td>Linkingプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>準拠機器全般。開発中</td>
+</tr>
+<tr>
+<td>－</td>
+<td>UVC(USB Video Class)</td>
+<td>USBカメラ</td>
+<td>UVCプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>－</td>
+<td>モバイルカメラ</td>
+<td>テレビ会議、遠隔作業支援</td>
+<td>WebRTCプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>インフィニテグラ</td>
+<td>OWLIFT</td>
+<td>サーマルカメラ</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FaBo</td>
+<td>FaBo</td>
+<td>IoTHWプロトタイプキット</td>
+<td>FaBoプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -656,10 +982,10 @@ WebSocket</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="battery/" class="btn btn-neutral float-right" title="バッテリーAPI">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="moverio/" class="btn btn-neutral float-right" title="MOVERIO">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../webapi/error/" class="btn btn-neutral" title="エラーについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../websocket/touch/" class="btn btn-neutral" title="タッチAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -685,10 +1011,10 @@ WebSocket</li>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../webapi/error/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../websocket/touch/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="battery/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="moverio/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

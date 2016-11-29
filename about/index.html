@@ -8,7 +8,7 @@
   
   
   
-  <title>デモサイトの使い方 - DeviceConnect Users</title>
+  <title>DeviceConnectについて - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "デモサイトの使い方";
-    var mkdocs_page_input_path = "demosite.md";
-    var mkdocs_page_url = "/demosite/";
+    var mkdocs_page_name = "DeviceConnectについて";
+    var mkdocs_page_input_path = "about.md";
+    var mkdocs_page_url = "/about/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -72,28 +72,28 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../about/">DeviceConnectについて</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">DeviceConnectについて</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#deviceconnect-webapi">DeviceConnect WebAPIについて</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">対応環境について</a></li>
+                
+                    <li><a class="toctree-l4" href="#sdk">SDKについて</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">プラグインについて</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">デモサイトの使い方</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#_1">デモサイトの使い方</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">ダウンロード</a></li>
-                
-                    <li><a class="toctree-l4" href="#web">Webからアクセス</a></li>
-                
-                    <li><a class="toctree-l4" href="#_3">使い方</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../demosite/">デモサイトの使い方</a>
         
     </li>
 <li>
@@ -595,7 +595,7 @@
     
       
     
-    <li>デモサイトの使い方</li>
+    <li>DeviceConnectについて</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -605,33 +605,23 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">デモサイトの使い方</h1>
-<p>デモサイトはDeviceConnectのWeb APIを試せるKitchen Sinkになっています。実際には静的なHTMLです。</p>
-<p>導入方法は2つあります。</p>
-<h2 id="_2">ダウンロード</h2>
-<p><a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">こちらのデモファイル</a> をダウンロードして、解凍した内容をAndroidの内部ストレージにコピーします。</p>
-<p>後はAndroidのChromeアプリでindex.htmlを開けばOKです。</p>
-<h2 id="web">Webからアクセス</h2>
-<p><a href="http://deviceconnectusers.github.io/manager/">こちらに</a>同じものをアップロードしてあります。Androidのブラウザで  <a href="http://deviceconnectusers.github.io/manager/">http://deviceconnectusers.github.io/manager/</a>を開いてください。</p>
-<h2 id="_3">使い方</h2>
-<h3 id="_4">トップページ</h3>
-<p>トップページにアクセスしたら、まずは Launch UI-App をタップします。</p>
-<p><img alt="" src="../images/demosite-2.png" /></p>
-<p>そうすると下のような画面が表示されるので、accessTokenボタンをタップします。</p>
-<p><img alt="" src="../images/demosite-3.png" /></p>
-<p>アクセスを許可するためのダイアログが出ますので、ACCEPTをタップしてください。</p>
-<p><img alt="" src="../images/demosite-1.png" /></p>
-<p>そうするとアクセストークンが表示されます。これで準備完了です。</p>
-<p><img alt="" src="../images/demosite-4.png" /></p>
-<h3 id="_5">デバイスリストの取得</h3>
-<p>次に操作するデバイスを検索します。Search Devicesをタップします。そうすると下にあるリストが更新され、利用できるデバイスが一覧されます。</p>
-<p><img alt="" src="../images/demosite-5.png" /></p>
-<p>その中のデバイスをタップすると、利用できる機能が一覧されます。</p>
-<p><img alt="" src="../images/demosite-6.png" /></p>
-<p>例えばこれは<a href="../webapi/vibration">バイブレーションAPI</a>を実行しようとしているところです。</p>
-<p><img alt="" src="../images/demosite-7.png" /></p>
-<hr />
-<p>このようにデモサイトを使えばDeviceConnectでできる機能が一通り試せるようになっています。JavaScript SDKも組み込まれていますので、その実装方法の参考にもなりそうです。</p>
+                <h1 id="deviceconnect-webapi">DeviceConnect WebAPIについて</h1>
+<p>DeviceConnect WebAPIはウェアラブルデバイスをはじめ、様々なガジェットをスマートフォンを介して操作できるWebAPIを提供する技術です。DeviceConnectはスマートフォン上にWeb APIサーバを立てます。そして、そのWeb APIを通じて各種デバイスのデータを送受信できるようになります。</p>
+<p>簡単な図にすると次のようになります。</p>
+<p><img alt="" src="../images/deviceconnect-webapi.png" /></p>
+<p>WebブラウザとスマートデバイスをつなぐのがDeviceConnect WebAPIになります。もちろん、WebAPIなのでWebブラウザに限らず各種プログラミング言語から操作することもできるようになります。</p>
+<p>主なガジェットとしては、スマートウォッチ、スマートトイ、ライト、赤外線リモコン、グラス、カメラ、Android/Android Wear、血圧計、体重計、歩数計などがあります。詳しくは<a href="../support-devices/">対応デバイスについて - DeviceConnect Users</a>を確認してください。</p>
+<h2 id="_1">対応環境について</h2>
+<p>AndroidとiOSで使えます。</p>
+<h2 id="sdk">SDKについて</h2>
+<ul>
+<li>JavaScript</li>
+<li>Android</li>
+<li>iOS</li>
+</ul>
+<p>に対応したSDKが提供されています。</p>
+<h2 id="_2">プラグインについて</h2>
+<p>DeviceConnect Web APIを拡張するプラグインが開発できます。SDKも用意されています。</p>
               
             </div>
           </div>
@@ -639,10 +629,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../toManager/" class="btn btn-neutral float-right" title="→ デモサイトはこちら">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../demosite/" class="btn btn-neutral float-right" title="デモサイトの使い方">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../about/" class="btn btn-neutral" title="DeviceConnectについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Top"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -668,10 +658,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../toManager/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../demosite/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

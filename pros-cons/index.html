@@ -8,7 +8,7 @@
   
   
   
-  <title>デモサイトの使い方 - DeviceConnect Users</title>
+  <title>利点&欠点 - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "デモサイトの使い方";
-    var mkdocs_page_input_path = "demosite.md";
-    var mkdocs_page_url = "/demosite/";
+    var mkdocs_page_name = "利点&欠点";
+    var mkdocs_page_input_path = "pros-cons.md";
+    var mkdocs_page_url = "/pros-cons/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -79,21 +79,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">デモサイトの使い方</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#_1">デモサイトの使い方</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">ダウンロード</a></li>
-                
-                    <li><a class="toctree-l4" href="#web">Webからアクセス</a></li>
-                
-                    <li><a class="toctree-l4" href="#_3">使い方</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../demosite/">デモサイトの使い方</a>
         
     </li>
 <li>
@@ -567,8 +554,19 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../pros-cons/">利点&欠点</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">利点&欠点</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#deviceconnect">DeviceConnectの利点と欠点</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">利点</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">欠点</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -595,7 +593,7 @@
     
       
     
-    <li>デモサイトの使い方</li>
+    <li>利点&欠点</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -605,33 +603,23 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">デモサイトの使い方</h1>
-<p>デモサイトはDeviceConnectのWeb APIを試せるKitchen Sinkになっています。実際には静的なHTMLです。</p>
-<p>導入方法は2つあります。</p>
-<h2 id="_2">ダウンロード</h2>
-<p><a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">こちらのデモファイル</a> をダウンロードして、解凍した内容をAndroidの内部ストレージにコピーします。</p>
-<p>後はAndroidのChromeアプリでindex.htmlを開けばOKです。</p>
-<h2 id="web">Webからアクセス</h2>
-<p><a href="http://deviceconnectusers.github.io/manager/">こちらに</a>同じものをアップロードしてあります。Androidのブラウザで  <a href="http://deviceconnectusers.github.io/manager/">http://deviceconnectusers.github.io/manager/</a>を開いてください。</p>
-<h2 id="_3">使い方</h2>
-<h3 id="_4">トップページ</h3>
-<p>トップページにアクセスしたら、まずは Launch UI-App をタップします。</p>
-<p><img alt="" src="../images/demosite-2.png" /></p>
-<p>そうすると下のような画面が表示されるので、accessTokenボタンをタップします。</p>
-<p><img alt="" src="../images/demosite-3.png" /></p>
-<p>アクセスを許可するためのダイアログが出ますので、ACCEPTをタップしてください。</p>
-<p><img alt="" src="../images/demosite-1.png" /></p>
-<p>そうするとアクセストークンが表示されます。これで準備完了です。</p>
-<p><img alt="" src="../images/demosite-4.png" /></p>
-<h3 id="_5">デバイスリストの取得</h3>
-<p>次に操作するデバイスを検索します。Search Devicesをタップします。そうすると下にあるリストが更新され、利用できるデバイスが一覧されます。</p>
-<p><img alt="" src="../images/demosite-5.png" /></p>
-<p>その中のデバイスをタップすると、利用できる機能が一覧されます。</p>
-<p><img alt="" src="../images/demosite-6.png" /></p>
-<p>例えばこれは<a href="../webapi/vibration">バイブレーションAPI</a>を実行しようとしているところです。</p>
-<p><img alt="" src="../images/demosite-7.png" /></p>
-<hr />
-<p>このようにデモサイトを使えばDeviceConnectでできる機能が一通り試せるようになっています。JavaScript SDKも組み込まれていますので、その実装方法の参考にもなりそうです。</p>
+                <h1 id="deviceconnect">DeviceConnectの利点と欠点</h1>
+<p>DeviceConnectを使うとデバイスをWebAPIから操作できるようになり、かなり夢が広がるのですが、向き不向きはありそうです。ここではそんな利点、欠点をまとめています。</p>
+<h2 id="_1">利点</h2>
+<h3 id="webapi">WebAPIを使ってウェアラブルデバイスやガジェットを操作できる</h3>
+<p>通常、ウェアラブルデバイスやガジェットを操作するデバイスを作る場合、Bluetoothや独自プロトコルの実装が必須です。デバイスによってはSDKを提供している場合もありますが、それでもAPIを使わないと実装できません。</p>
+<p>DeviceConnectはそうした厄介な通信部分をラッピングしてWebAPIとして提供してくれます。WebAPIであればJavaScriptからの操作も可能ということで、ごく手軽にデバイス連携アプリの開発ができるようになります。</p>
+<h3 id="_2">外部デバイスからも操作できる</h3>
+<p>セキュリティ上のリスクはありますが、スマートフォンを通して外部からデバイスを操作できます。これが面白いのは使わなくなったタブレットやスマートフォンをハブとして、自宅やオフィスにある各種デバイスをデスクトップなどから操作したり、スクリプトから自動実行したりできるようになるということです。</p>
+<h2 id="_3">欠点</h2>
+<h3 id="ios">iOSでは擬似的な動作</h3>
+<p>DeviceConnectはスマートフォンの中にWebAPIサーバを立てます。バックグラウンドでも動くためにはAndroidでないと無理でしょう。iOSではそれぞれ独自にアプリ化し、アプリがフォアグラウンドにある時のみ、動作します。</p>
+<p>とは言え、iOSであっても動作させるJavaScriptファイルはアプリ内に限定されないので、アプリに内蔵したWebブラウザを使ってリモートにあるJavaScriptファイルを使ってデバイス連携させることができます。</p>
+<h3 id="_4">プラグインの開発が必須</h3>
+<p>各種デバイスを操作するためにはプラグインの開発が必須になります。その際の仕様としては<a href="https://device-webapi.org/gotapi.html">GotAPI</a>に沿ったものになるようです。</p>
+<p><img alt="" src="../images/gotapi_architecture.png" /></p>
+<p>※ <a href="https://device-webapi.org/gotapi.html">GotAPI | デバイスWebAPIコンソーシアム</a>より。</p>
+<p>なので、DeviceConnectが広まってくれれば各社がウェアラブルデバイスなどを開発する際にGotAPIに準拠したDeviceConnect用プラグインを提供するようになって、開発者はより開発しやすくなるのではないかと思います。</p>
               
             </div>
           </div>
@@ -639,10 +627,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../toManager/" class="btn btn-neutral float-right" title="→ デモサイトはこちら">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../about/" class="btn btn-neutral" title="DeviceConnectについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../devices/android/" class="btn btn-neutral" title="Android"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -668,10 +654,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../devices/android/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../toManager/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

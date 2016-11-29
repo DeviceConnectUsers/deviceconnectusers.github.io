@@ -8,7 +8,7 @@
   
   
   
-  <title>デモサイトの使い方 - DeviceConnect Users</title>
+  <title>はじめてみよう（JavaScript） - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "デモサイトの使い方";
-    var mkdocs_page_input_path = "demosite.md";
-    var mkdocs_page_url = "/demosite/";
+    var mkdocs_page_name = "はじめてみよう（JavaScript）";
+    var mkdocs_page_input_path = "javascript.md";
+    var mkdocs_page_url = "/javascript/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -79,21 +79,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">デモサイトの使い方</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#_1">デモサイトの使い方</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">ダウンロード</a></li>
-                
-                    <li><a class="toctree-l4" href="#web">Webからアクセス</a></li>
-                
-                    <li><a class="toctree-l4" href="#_3">使い方</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../demosite/">デモサイトの使い方</a>
         
     </li>
 <li>
@@ -190,29 +177,46 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../javascript/">はじめてみよう（JavaScript）</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">はじめてみよう（JavaScript）</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#javascript">はじめてみよう（JavaScript）</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">必要なもの</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">デモのダウンロード</a></li>
+                
+                    <li><a class="toctree-l4" href="#web">Webブラウザでアクセス</a></li>
+                
+                    <li><a class="toctree-l4" href="#id">サービスIDを取得する</a></li>
+                
+                    <li><a class="toctree-l4" href="#_4">デバイスデータを取得してみる</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../javascript/basic/">DeviceConnectアプリケーションの作り方</a>
+        <a class="" href="basic/">DeviceConnectアプリケーションの作り方</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        <a class="" href="app/">JavaScript SDKをPromiseベースにする</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../javascript/vibration/">バイブレーションを実行する</a>
+        <a class="" href="vibration/">バイブレーションを実行する</a>
         
     </li>
 
@@ -594,8 +598,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>JavaScript &raquo;</li>
+        
+      
     
-    <li>デモサイトの使い方</li>
+    <li>はじめてみよう（JavaScript）</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -605,33 +613,149 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">デモサイトの使い方</h1>
-<p>デモサイトはDeviceConnectのWeb APIを試せるKitchen Sinkになっています。実際には静的なHTMLです。</p>
-<p>導入方法は2つあります。</p>
-<h2 id="_2">ダウンロード</h2>
-<p><a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">こちらのデモファイル</a> をダウンロードして、解凍した内容をAndroidの内部ストレージにコピーします。</p>
-<p>後はAndroidのChromeアプリでindex.htmlを開けばOKです。</p>
-<h2 id="web">Webからアクセス</h2>
-<p><a href="http://deviceconnectusers.github.io/manager/">こちらに</a>同じものをアップロードしてあります。Androidのブラウザで  <a href="http://deviceconnectusers.github.io/manager/">http://deviceconnectusers.github.io/manager/</a>を開いてください。</p>
-<h2 id="_3">使い方</h2>
-<h3 id="_4">トップページ</h3>
-<p>トップページにアクセスしたら、まずは Launch UI-App をタップします。</p>
-<p><img alt="" src="../images/demosite-2.png" /></p>
-<p>そうすると下のような画面が表示されるので、accessTokenボタンをタップします。</p>
-<p><img alt="" src="../images/demosite-3.png" /></p>
-<p>アクセスを許可するためのダイアログが出ますので、ACCEPTをタップしてください。</p>
-<p><img alt="" src="../images/demosite-1.png" /></p>
-<p>そうするとアクセストークンが表示されます。これで準備完了です。</p>
-<p><img alt="" src="../images/demosite-4.png" /></p>
-<h3 id="_5">デバイスリストの取得</h3>
-<p>次に操作するデバイスを検索します。Search Devicesをタップします。そうすると下にあるリストが更新され、利用できるデバイスが一覧されます。</p>
-<p><img alt="" src="../images/demosite-5.png" /></p>
-<p>その中のデバイスをタップすると、利用できる機能が一覧されます。</p>
-<p><img alt="" src="../images/demosite-6.png" /></p>
-<p>例えばこれは<a href="../webapi/vibration">バイブレーションAPI</a>を実行しようとしているところです。</p>
-<p><img alt="" src="../images/demosite-7.png" /></p>
+                <h1 id="javascript">はじめてみよう（JavaScript）</h1>
+<p>JavaScriptを使ってDeviceConnectを体験してみましょう。<a href="../android">Androidのデモアプリをインストールして、外部アクセスを許可</a>しておけばデスクトップのブラウザから試すこともできます。</p>
+<h2 id="_1">必要なもの</h2>
+<ul>
+<li>Android端末</li>
+<li>母艦（デスクトップ）</li>
+</ul>
+<h2 id="_2">デモのダウンロード</h2>
+<p>まず<a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">デモファイル</a>をダウンロード、解凍します。</p>
+<p><img alt="" src="../images/android/deviceconnect-android-34.png" /></p>
+<h2 id="web">Webブラウザでアクセス</h2>
+<p><a href="../android">Android用ドキュメントの外部から操作してみる</a>に沿ってインストールとDeviceConnect Managerの起動、設定を行ってください。それが終わったら、デスクトップのブラウザ（Google Chromeなど）で <code>http://deviceconnectusers.github.io/manager/?ip=(Android端末のIPアドレス)</code> にアクセスします。Android端末のIPアドレスはそれぞれ読み替えてください。またはadbのポートフォワードを使うこともできます。詳しくは<a href="http://localhost:8000/android/external/#adb">外部ブラウザからの利用 - DeviceConnect Users</a>を参照してください。</p>
+<p>後はDevToolsのコンソールを使って試していきたいと思います。</p>
+<h3 id="_3">アクセストークンを取得する</h3>
+<p>まず最初に行うのはアクセストークンの取得です。次のようにアクセスします。 myAppNameは自由に決められます。</p>
+<pre><code>var myAccessToken = &quot;&quot;;
+
+// アプリ名
+var myAppName = &quot;YOUR_APPLICATION_NAME&quot;;
+
+var scopes = Array(&quot;battery&quot;,&quot;serviceinformation&quot;, &quot;servicediscovery&quot;);
+
+dConnect.authorization(scopes, myAppName,
+  function(clientId, newAccessToken) {
+    // accessToken
+    alert(newAccessToken);
+    myAccessToken = newAccessToken;
+
+  },
+  function(errorCode, errorMessage) {
+    console.log(errorMessage);
+    alert(&quot;Failed to get accessToken.&quot;);
+  }
+)
+</code></pre>
+
+<p>dConnect.authorizationを実行する際にはスコープを設定する必要があります。全部リストアップするとこれくらいあります。Android系で見るようなバッテリー、ファイル、バイブレーションなどもありますが、ヘルスや湿度といったウェアラブル、センサー系のスコープも用意されています。</p>
+<ul>
+<li>servicediscovery</li>
+<li>serviceinformation</li>
+<li>system</li>
+<li>battery</li>
+<li>connect</li>
+<li>deviceorientation</li>
+<li>fileDescriptor</li>
+<li>file</li>
+<li>mediaPlayer</li>
+<li>mediastreamRecording</li>
+<li>notification</li>
+<li>phone</li>
+<li>proximity</li>
+<li>settings</li>
+<li>vibration</li>
+<li>light</li>
+<li>remoteController</li>
+<li>driveController</li>
+<li>mhealth</li>
+<li>sphero</li>
+<li>dice</li>
+<li>temperature</li>
+<li>camera</li>
+<li>canvas</li>
+<li>health</li>
+<li>touch</li>
+<li>humandetect</li>
+<li>keyevent</li>
+<li>omnidirectionalImage</li>
+<li>tv</li>
+<li>powermeter</li>
+<li>humidity</li>
+<li>illuminance</li>
+<li>videochat</li>
+<li>airconditioner</li>
+<li>gpio</li>
+</ul>
+<p>アクセス許可ですが、デスクトップではなくAndroid側に承認画面が出るので注意してください。</p>
+<p><img alt="" src="../images/javascript/deviceconnect-javascript.png" /></p>
+<p>許可すると、myAccessTokenに文字列が入ります。</p>
+<pre><code>&gt; myAccessToken
+&quot;3e5...66&quot;
+</code></pre>
+
+<h2 id="id">サービスIDを取得する</h2>
+<p>次にサービスIDを取得します。これはプラグインごとに異なるサービスIDとなっています。今回のデモアプリの場合、Hostというサービスになっています。</p>
+<p>コードは次のようになります。アクセストークンを使ってアクセスします。</p>
+<pre><code>// サービスIDを格納する
+var myServiceId;
+
+// デバイスの検索
+dConnect.discoverDevices(myAccessToken, function(json) {
+    var str = &quot;&quot;;
+    if (json.result == 0) {
+        console.log(json.services);
+        // サービスIDを取得する。
+        // 名前などから使用するサービスを取得する。
+        for (var i = 0; i &lt; json.services.length; i++) {
+            if (json.services[i].name.toUpperCase() == &quot;HOST&quot;) {
+                myServiceId = json.services[i].id;
+            }
+        }
+    } else {
+        alert(&quot;Failed to get services.&quot;);
+    }
+}, function(errorCode, errorMessage) {
+    alert(errorMessage);
+});
+</code></pre>
+
+<p>この結果、myServiceIdには次のような文字列が入ってきます。</p>
+<pre><code>&gt; myServiceId
+&quot;Host.e87e3213b730843a437ff6c676899df0.localhost.deviceconnect.org&quot;
+</code></pre>
+
+<h2 id="_4">デバイスデータを取得してみる</h2>
+<p>最後にデバイスデータを取得してみます。バッテリーの状態を取得します。あらかじめ設定していたスコープ、サービスIDそしてアクセストークンを使って取得します。</p>
+<pre><code>var builder = new dConnect.URIBuilder();
+builder.setProfile(&quot;battery&quot;);
+builder.setServiceId(myServiceId);
+builder.setAccessToken(myAccessToken);
+
+var uri = builder.build();
+
+dConnect.get(uri, null,
+  // レスポンスが送られてくる
+  function(json) {
+    if (json.result == 0) {
+      var level = json.level * 100;
+      console.log('level', level);
+    } else {
+      alert('Error');
+    }
+  },
+  function(errorCode, errorMessage) {
+    alert(errorMessage);
+});
+</code></pre>
+
+<p>これを実行すると、次のようにバッテリーの状態が返ってきます。100%充電されています。</p>
+<pre><code>level 100
+</code></pre>
+
 <hr />
-<p>このようにデモサイトを使えばDeviceConnectでできる機能が一通り試せるようになっています。JavaScript SDKも組み込まれていますので、その実装方法の参考にもなりそうです。</p>
+<p>基本的にはサービスID、アクセストークン、スコープの3つをgetメソッドで実行すれば結果がコールバックされてきます。インタフェースが統一されれば、各デバイスごとのインタフェースを気にしなくて良くなるので使い勝手が良くなるでしょう。</p>
               
             </div>
           </div>
@@ -639,10 +763,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../toManager/" class="btn btn-neutral float-right" title="→ デモサイトはこちら">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="basic/" class="btn btn-neutral float-right" title="DeviceConnectアプリケーションの作り方">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../about/" class="btn btn-neutral" title="DeviceConnectについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ios/external/" class="btn btn-neutral" title="外部ブラウザから使う"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -668,10 +792,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../ios/external/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../toManager/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="basic/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

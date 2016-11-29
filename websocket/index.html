@@ -86,13 +86,6 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../toManager/">→ デモサイトはこちら</a>
-        
-    </li>
-<li>
-          
-            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -190,13 +183,6 @@
     </li>
 
         
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../javascript/app/">JavaScript SDKをPromiseベースにする</a>
-        
-    </li>
-
-        
     </ul>
 <li>
           
@@ -256,7 +242,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/fileDescriptor/">ファイル参照API</a>
+        <a class="" href="../webapi/file_descriptor/">ファイル参照API</a>
         
     </li>
 
@@ -305,14 +291,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/mediaPlayer/">メディアプレイヤーAPI</a>
+        <a class="" href="../webapi/media_player/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/mediastreamRecording/">メディアストリーミング録画API</a>
+        <a class="" href="../webapi/mediastream_recording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -347,7 +333,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/remoteController/">リモートコントローラーAPI</a>
+        <a class="" href="../webapi/remote_controller/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -463,7 +449,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="fileDescriptor/">ファイル参照API</a>
+        <a class="" href="file_descriptor/">ファイル参照API</a>
         
     </li>
 
@@ -607,11 +593,12 @@
             <div class="section">
               
                 <h1 id="websocket">WebSocketについて</h1>
+<p>ここでは、GotAPI 1.1に対応したイベント通知系のAPIを確認する方法を説明します。</p>
 <p>DeviceConnectのWeb APIを使う際に、幾つかイベント通知系のAPIがあります。これらを利用する際にはWebSocketを使って接続しておく必要があります。</p>
 <h2 id="_1">エンドポイントについて</h2>
 <ul>
 <li><strong>パス</strong><br />
-/websocket</li>
+/gotapi/websocket</li>
 <li><strong>プロトコル</strong><br />
 WebSocket</li>
 </ul>
@@ -622,27 +609,32 @@ WebSocket</li>
 
 <p>でインストールできます。</p>
 <h2 id="_3">接続してみる</h2>
+<p>GotAPI 1.1では、WebSocket経由でもアクセストークンの送信が必要となりました。事前にアクセストークンを取得してください。ただし、Local OAuthをOFFにしている場合は、任意の文字列を指定可能です。<p>
 <p>例えばDeviceConnect Managerが 192.168.0.20 で動作している場合、</p>
-<pre><code>$ wscat -c ws://192.168.0.20:4035/websocket -o &quot;Null&quot;
+<pre><code>$ wscat -c ws://192.168.0.20:4035/gotapi/websocket -o &quot;Null&quot;
 </code></pre>
 
-<p>で接続できます。接続したらセッションキー（任意の文字列）を指定します。</p>
-<pre><code>&gt; {&quot;sessionKey&quot;: &quot;aaa&quot;}
+<p>で接続できます。接続したらアクセストークンを送信します。ただし、Local OAuthをOFFにしている場合は、任意の文字列で構いません。</p>
+<pre><code>&gt; {&quot;accessToken&quot;: &quot;16f...5af&quot;}
 &gt; 
+</code></pre>
+
+<p>正常に受理された場合は、下記のように成功応答が返ってきます。</p>
+<pre><code>&lt; {&quot;result&quot;: 0}
 </code></pre>
 
 <p>これでWebSocket側は準備完了です。</p>
 <h2 id="web-api">Web APIをコールする</h2>
 <p>次にWeb API側を準備します。例えば[バッテリーステータス変更API]をコールします。</p>
-<pre><code>$ curl -H &quot;Origin: Null&quot; -X PUT &quot;http://192.168.0.20:4035/gotapi/battery/onchargingchange?serviceId=Host...org&amp;accessToken=16f...5af&amp;sessionKey=aaa&quot;
+<pre><code>$ curl -H &quot;Origin: Null&quot; -X PUT &quot;http://192.168.0.20:4035/gotapi/battery/onchargingchange?serviceId=Host...org&amp;accessToken=16f...5af&quot;
 {&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;version&quot;:&quot;2.0.0&quot;}
 </code></pre>
 
-<p>この時、セッションキー（sessionKey）はWebSocketで指定した文字列と同じものを使います。</p>
+<p>注意: GotAPI 1.1では、セッションキー（sessionKey）は不要となります。</p>
 <h3 id="_4">イベントを受け取る</h3>
 <p>後はバッテリーを抜き差ししてイベントがWebSocket側に通知されればOKです。</p>
-<pre><code>&lt; {&quot;battery&quot;:{&quot;charging&quot;:false},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
-&lt; {&quot;battery&quot;:{&quot;charging&quot;:true},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
+<pre><code>&lt; {&quot;battery&quot;:{&quot;charging&quot;:false},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;}
+&lt; {&quot;battery&quot;:{&quot;charging&quot;:true},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;}
 </code></pre>
 
 <h2 id="websocket-api">WebSocket APIについて</h2>
@@ -650,7 +642,7 @@ WebSocket</li>
 <li><a href="../websocket/battery">バッテリーAPI</a></li>
 <li><a href="../websocket/connect">コネクトAPI</a></li>
 <li><a href="../websocket/deviceorientation">デバイス向き/加速度API</a></li>
-<li><a href="../websocket/fileDescriptor">ファイル参照API</a></li>
+<li><a href="../websocket/file_descriptor">ファイル参照API</a></li>
 <li><a href="../websocket/keyevent">キーイベントAPI</a></li>
 <li><a href="../websocket/phone">電話API</a></li>
 <li><a href="../websocket/proximity">近接センサーAPI</a></li>

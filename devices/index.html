@@ -8,7 +8,7 @@
   
   
   
-  <title>デモサイトの使い方 - DeviceConnect Users</title>
+  <title>対応デバイスについて - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "デモサイトの使い方";
-    var mkdocs_page_input_path = "demosite.md";
-    var mkdocs_page_url = "/demosite/";
+    var mkdocs_page_name = "対応デバイスについて";
+    var mkdocs_page_input_path = "devices.md";
+    var mkdocs_page_url = "/devices/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -79,21 +79,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">デモサイトの使い方</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#_1">デモサイトの使い方</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">ダウンロード</a></li>
-                
-                    <li><a class="toctree-l4" href="#web">Webからアクセス</a></li>
-                
-                    <li><a class="toctree-l4" href="#_3">使い方</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../demosite/">デモサイトの使い方</a>
         
     </li>
 <li>
@@ -501,57 +488,64 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../devices/">対応デバイスについて</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">対応デバイスについて</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">現在動作するデバイス</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/moverio/">MOVERIO</a>
+        <a class="" href="moverio/">MOVERIO</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/theta_m15/">THETA m15</a>
+        <a class="" href="theta_m15/">THETA m15</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/theta_s/">THETA S</a>
+        <a class="" href="theta_s/">THETA S</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/color_1000/">Color 1000</a>
+        <a class="" href="color_1000/">Color 1000</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/f_plug/">F-PLUG</a>
+        <a class="" href="f_plug/">F-PLUG</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/chromecast/">Chromecast</a>
+        <a class="" href="chromecast/">Chromecast</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../devices/android/">Android</a>
+        <a class="" href="android/">Android</a>
         
     </li>
 
@@ -587,8 +581,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>対応デバイス &raquo;</li>
+        
+      
     
-    <li>デモサイトの使い方</li>
+    <li>対応デバイスについて</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -598,33 +596,392 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">デモサイトの使い方</h1>
-<p>デモサイトはDeviceConnectのWeb APIを試せるKitchen Sinkになっています。実際には静的なHTMLです。</p>
-<p>導入方法は2つあります。</p>
-<h2 id="_2">ダウンロード</h2>
-<p><a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">こちらのデモファイル</a> をダウンロードして、解凍した内容をAndroidの内部ストレージにコピーします。</p>
-<p>後はAndroidのChromeアプリでindex.htmlを開けばOKです。</p>
-<h2 id="web">Webからアクセス</h2>
-<p><a href="http://deviceconnectusers.github.io/manager/">こちらに</a>同じものをアップロードしてあります。Androidのブラウザで  <a href="http://deviceconnectusers.github.io/manager/">http://deviceconnectusers.github.io/manager/</a>を開いてください。</p>
-<h2 id="_3">使い方</h2>
-<h3 id="_4">トップページ</h3>
-<p>トップページにアクセスしたら、まずは Launch UI-App をタップします。</p>
-<p><img alt="" src="../images/demosite-2.png" /></p>
-<p>そうすると下のような画面が表示されるので、accessTokenボタンをタップします。</p>
-<p><img alt="" src="../images/demosite-3.png" /></p>
-<p>アクセスを許可するためのダイアログが出ますので、ACCEPTをタップしてください。</p>
-<p><img alt="" src="../images/demosite-1.png" /></p>
-<p>そうするとアクセストークンが表示されます。これで準備完了です。</p>
-<p><img alt="" src="../images/demosite-4.png" /></p>
-<h3 id="_5">デバイスリストの取得</h3>
-<p>次に操作するデバイスを検索します。Search Devicesをタップします。そうすると下にあるリストが更新され、利用できるデバイスが一覧されます。</p>
-<p><img alt="" src="../images/demosite-5.png" /></p>
-<p>その中のデバイスをタップすると、利用できる機能が一覧されます。</p>
-<p><img alt="" src="../images/demosite-6.png" /></p>
-<p>例えばこれは<a href="../webapi/vibration">バイブレーションAPI</a>を実行しようとしているところです。</p>
-<p><img alt="" src="../images/demosite-7.png" /></p>
-<hr />
-<p>このようにデモサイトを使えばDeviceConnectでできる機能が一通り試せるようになっています。JavaScript SDKも組み込まれていますので、その実装方法の参考にもなりそうです。</p>
+                <h1 id="_1">現在動作するデバイス</h1>
+<p><a href="https://github.com/DeviceConnect/DeviceConnect/blob/master/readme.ja.md">DeviceConnect/readme.ja.md at master · DeviceConnect/DeviceConnect</a>からの転載です。</p>
+<table>
+<thead>
+<tr>
+<th>メーカー</th>
+<th>製品名</th>
+<th>機器種別</th>
+<th>対応プラグイン</th>
+<th>Android</th>
+<th>iOS</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SONY</td>
+<td>SmartWatchMN2</td>
+<td>腕時計型デバイス</td>
+<td>MN2/SW2 プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>通知以外の機能を利用するには、スマートウォッチ側でミニアプリの起動が必要</td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>SmartWatchSW2</td>
+<td>腕時計型デバイス</td>
+<td>MN2/SW2 プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>通知以外の機能を利用するには、スマートウォッチ側でミニアプリの起動が必要</td>
+</tr>
+<tr>
+<td>Orbotix</td>
+<td>Sphero 2.0</td>
+<td>ボール型スマートトイ</td>
+<td>Sphero プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Game Technologies</td>
+<td>DICE+</td>
+<td>サイコロ型スマートトイ</td>
+<td>DICE+ プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>ソースコード開示なし、開発者向けファームウェアへのアップデートが必要</td>
+</tr>
+<tr>
+<td>Philips</td>
+<td>hue</td>
+<td>スマートライト</td>
+<td>hue プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Philips</td>
+<td>Bloom Lamp</td>
+<td>スマートライト</td>
+<td>hue プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Philips</td>
+<td>LightStrips</td>
+<td>スマートライト</td>
+<td>hue プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>IRKit</td>
+<td>IRKit</td>
+<td>赤外線リモコン</td>
+<td>IRKit プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>学習した赤外線機器を紐付け</td>
+</tr>
+<tr>
+<td>Epson</td>
+<td><a href="../devices/moverio">Moverio BT-200</a></td>
+<td>メガネ型デバイス</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>個別の拡張機能にも対応予定</td>
+</tr>
+<tr>
+<td>Vuzix</td>
+<td>M100 Smart Glass</td>
+<td>メガネ型デバイス</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>個別の拡張機能にも対応予定</td>
+</tr>
+<tr>
+<td>ウエストユニティス</td>
+<td>Inforod</td>
+<td>メガネ型デバイス</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>個別の拡張機能にも対応予定</td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>DSC-QX100</td>
+<td>レンズスタイルカメラ</td>
+<td>SonyCamera プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>DSC-QX10</td>
+<td>レンズスタイルカメラ</td>
+<td>SonyCamera プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>SONY</td>
+<td>ActionCam</td>
+<td>レンズスタイルカメラ</td>
+<td>SonyCamera プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>Pebble</td>
+<td><a href="../devices/pebble">Pebble</a></td>
+<td>腕時計型デバイス</td>
+<td>Pebble プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>-</td>
+<td><a href="../devices/android">Android端末 Ver4.2以降</a></td>
+<td>Android端末</td>
+<td>AndroidHost プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>Ver4.2以降</td>
+</tr>
+<tr>
+<td>LG</td>
+<td>G Watch</td>
+<td>Android Wear端末</td>
+<td>Wear プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>仮対応のため、ADBでのAPKのインストールが必要</td>
+</tr>
+<tr>
+<td>Samsung</td>
+<td>Gear Live</td>
+<td>Android Wear端末</td>
+<td>Wear プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>仮対応のため、ADBでのAPKのインストールが必要</td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="../devices/chromecat">ChromeCast</a></td>
+<td>HDMIドングル</td>
+<td>ChromeCast プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>Google Cast SDK Developer ConsoleのページでデバイスとReceiverアプリの登録が必要</td>
+</tr>
+<tr>
+<td>Google</td>
+<td>NexusPlayer</td>
+<td>AndroidTV</td>
+<td>ChromeCast プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>Google Cast SDK Developer ConsoleのページでデバイスとReceiverアプリの登録が必要</td>
+</tr>
+<tr>
+<td>Polar</td>
+<td>H7</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>Mio Global</td>
+<td>Mio Alpha</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>Mio Global</td>
+<td>Mio Fuse</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>EPSON</td>
+<td>Pulsense PS-500</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>EPSON</td>
+<td>Pulsense PS-100</td>
+<td>心拍計</td>
+<td>BLE HeartRate プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>NTTドコモ</td>
+<td>Hitoe</td>
+<td>心拍計、他</td>
+<td>Hitoe プラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>開発中</td>
+</tr>
+<tr>
+<td>A&amp;D</td>
+<td>UT-201BLE</td>
+<td>体温計</td>
+<td>○</td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OMRON</td>
+<td>HVC-C</td>
+<td>Human Vision Components</td>
+<td>HVC プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>OMRON</td>
+<td>HVC-C2W</td>
+<td>Human Vision Components</td>
+<td>HVC2W プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>OMRON</td>
+<td>HVC-P</td>
+<td>Human Vision Components</td>
+<td>HVCP プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>FUJITSU</td>
+<td><a href="../devices/f_plug">F-PLUG</a></td>
+<td>スマートメーター</td>
+<td>F-PLUG プラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>RICOH</td>
+<td><a href="../devices/theta_m15">THETA m15</a></td>
+<td>全天球カメラ</td>
+<td>THETAプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>RICOH THETA Developersにて開発者登録、およびSDKのダウンロードが必要。</td>
+</tr>
+<tr>
+<td>RICOH</td>
+<td><a href="../devices/theta_s">THETA S</a></td>
+<td>全天球カメラ</td>
+<td>THETAプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>RICOH THETA Developersにて開発者登録、およびSDKのダウンロードが必要。</td>
+</tr>
+<tr>
+<td>LIFX</td>
+<td>White 800</td>
+<td>ライト</td>
+<td>AllJoynプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>White 800の色は変えられない。</td>
+</tr>
+<tr>
+<td>LIFX</td>
+<td><a href="../devices/color_100">Color 1000</a></td>
+<td>ライト</td>
+<td>AllJoynプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td></td>
+</tr>
+<tr>
+<td>EchonetLite</td>
+<td>規格準拠機器全般</td>
+<td>家電製品制御</td>
+<td>EchoneLiteプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td>準拠機器全般</td>
+</tr>
+<tr>
+<td>Linking</td>
+<td>Tomoru</td>
+<td>BLE連携デバイス</td>
+<td>Linkingプラグイン</td>
+<td>○</td>
+<td>○</td>
+<td>準拠機器全般。開発中</td>
+</tr>
+<tr>
+<td>－</td>
+<td>UVC(USB Video Class)</td>
+<td>USBカメラ</td>
+<td>UVCプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>－</td>
+<td>モバイルカメラ</td>
+<td>テレビ会議、遠隔作業支援</td>
+<td>WebRTCプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+<tr>
+<td>インフィニテグラ</td>
+<td>OWLIFT</td>
+<td>サーマルカメラ</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>FaBo</td>
+<td>FaBo</td>
+<td>IoTHWプロトタイプキット</td>
+<td>FaBoプラグイン</td>
+<td>○</td>
+<td>×</td>
+<td></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -632,10 +989,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../toManager/" class="btn btn-neutral float-right" title="→ デモサイトはこちら">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="moverio/" class="btn btn-neutral float-right" title="MOVERIO">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../about/" class="btn btn-neutral" title="DeviceConnectについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../websocket/touch/" class="btn btn-neutral" title="タッチAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -661,10 +1018,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../websocket/touch/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../toManager/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="moverio/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

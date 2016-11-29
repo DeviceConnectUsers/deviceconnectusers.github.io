@@ -8,7 +8,7 @@
   
   
   
-  <title>デモサイトの使い方 - DeviceConnect Users</title>
+  <title>はじめてみよう（iOS） - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "デモサイトの使い方";
-    var mkdocs_page_input_path = "demosite.md";
-    var mkdocs_page_url = "/demosite/";
+    var mkdocs_page_name = "はじめてみよう（iOS）";
+    var mkdocs_page_input_path = "ios.md";
+    var mkdocs_page_url = "/ios/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -79,21 +79,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">デモサイトの使い方</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#_1">デモサイトの使い方</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">ダウンロード</a></li>
-                
-                    <li><a class="toctree-l4" href="#web">Webからアクセス</a></li>
-                
-                    <li><a class="toctree-l4" href="#_3">使い方</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../demosite/">デモサイトの使い方</a>
         
     </li>
 <li>
@@ -161,22 +148,37 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../ios/">はじめてみよう（iOS）</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">はじめてみよう（iOS）</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#ios">はじめてみよう（iOS）</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">必要なもの</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">アプリのインストール</a></li>
+                
+                    <li><a class="toctree-l4" href="#_3">アプリの起動</a></li>
+                
+                    <li><a class="toctree-l4" href="#_4">デバイスを検索する</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../ios/browser/">DeviceConnect Browserをビルドする</a>
+        <a class="" href="browser/">DeviceConnect Browserをビルドする</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../ios/external/">外部ブラウザから使う</a>
+        <a class="" href="external/">外部ブラウザから使う</a>
         
     </li>
 
@@ -587,8 +589,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>iOS &raquo;</li>
+        
+      
     
-    <li>デモサイトの使い方</li>
+    <li>はじめてみよう（iOS）</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -598,33 +604,41 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">デモサイトの使い方</h1>
-<p>デモサイトはDeviceConnectのWeb APIを試せるKitchen Sinkになっています。実際には静的なHTMLです。</p>
-<p>導入方法は2つあります。</p>
-<h2 id="_2">ダウンロード</h2>
-<p><a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">こちらのデモファイル</a> をダウンロードして、解凍した内容をAndroidの内部ストレージにコピーします。</p>
-<p>後はAndroidのChromeアプリでindex.htmlを開けばOKです。</p>
-<h2 id="web">Webからアクセス</h2>
-<p><a href="http://deviceconnectusers.github.io/manager/">こちらに</a>同じものをアップロードしてあります。Androidのブラウザで  <a href="http://deviceconnectusers.github.io/manager/">http://deviceconnectusers.github.io/manager/</a>を開いてください。</p>
-<h2 id="_3">使い方</h2>
-<h3 id="_4">トップページ</h3>
-<p>トップページにアクセスしたら、まずは Launch UI-App をタップします。</p>
-<p><img alt="" src="../images/demosite-2.png" /></p>
-<p>そうすると下のような画面が表示されるので、accessTokenボタンをタップします。</p>
-<p><img alt="" src="../images/demosite-3.png" /></p>
-<p>アクセスを許可するためのダイアログが出ますので、ACCEPTをタップしてください。</p>
-<p><img alt="" src="../images/demosite-1.png" /></p>
-<p>そうするとアクセストークンが表示されます。これで準備完了です。</p>
-<p><img alt="" src="../images/demosite-4.png" /></p>
-<h3 id="_5">デバイスリストの取得</h3>
-<p>次に操作するデバイスを検索します。Search Devicesをタップします。そうすると下にあるリストが更新され、利用できるデバイスが一覧されます。</p>
-<p><img alt="" src="../images/demosite-5.png" /></p>
-<p>その中のデバイスをタップすると、利用できる機能が一覧されます。</p>
-<p><img alt="" src="../images/demosite-6.png" /></p>
-<p>例えばこれは<a href="../webapi/vibration">バイブレーションAPI</a>を実行しようとしているところです。</p>
-<p><img alt="" src="../images/demosite-7.png" /></p>
-<hr />
-<p>このようにデモサイトを使えばDeviceConnectでできる機能が一通り試せるようになっています。JavaScript SDKも組み込まれていますので、その実装方法の参考にもなりそうです。</p>
+                <h1 id="ios">はじめてみよう（iOS）</h1>
+<p>iOS端末を使ってDeviceConnectを体験します。今回はPebbleと連携してみたいと思います。</p>
+<h2 id="_1">必要なもの</h2>
+<ul>
+<li>iOS端末</li>
+<li>Pebble</li>
+</ul>
+<h2 id="_2">アプリのインストール</h2>
+<p>今回はアプリのビルドを行わず、GClue社がリリースしている<a href="http://www.gclue.io/dwa/index.html">Device Web API Manager</a>をインストールします。アプリをビルドしてみたい方は<a href="../ios/browser">DeviceConnect Browserをビルドする</a>を参照してください。</p>
+<p><a href="https://itunes.apple.com/jp/app/devicewebapibrowser/id994422987?mt=8&amp;ign-mpt=uo%3D4">DeviceWebAPIBrowserを App Store で</a></p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-1.png" /></p>
+<p>このアプリはDeviceConnectのフロントエンドとして使えるアプリです。</p>
+<h2 id="_3">アプリの起動</h2>
+<p>アプリを起動すると次のような画面が表示されます。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-2.png" /></p>
+<p>ここで、URLに <code>http://deviceconnectusers.github.io/manager/</code> と入力して検索ボタンをタップします。次のような画面が出てくればOKです。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-9.png" /></p>
+<p>さらにLaunch UI-App(HTML5)をタップします。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-8.png" /></p>
+<p>この画面が表示されたら、まずはアクセストークンを取得します。accessTokenをタップします。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-8.png" /></p>
+<p>そうすると下の画面のようにアクセストークンを求めるダイアログが出ますので、ACCEPTをタップします。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-7.png" /></p>
+<p>承認すると先ほどと同じ画面に戻ってきますが、今回はアクセストークンが入っているのが確認できるはずです。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-6.png" /></p>
+<h2 id="_4">デバイスを検索する</h2>
+<p>次に利用できるデバイスを検索します。Search Deviceをタップすると利用できるデバイスが一覧表示されます。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-5.png" /></p>
+<p>今回はHost: iPhone 6 Plusをタップします。そうすると利用できる機能が一覧表示されます。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-4.png" /></p>
+<p>例えばバイブレーションを選択します。パターンを選択してVibrateをタップするとデバイスが震えるはずです。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-3.png" /></p>
+<p>Phone APIを使って電話をかけることもできます。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-2.png" /></p>
+<p>DeviceConnectには他にもたくさんのプラグインがリリースされており、それを使うことでウェアラブルデバイスがWeb APIを通して操作できるようになります。ぜひ試してみてください！</p>
               
             </div>
           </div>
@@ -632,10 +646,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../toManager/" class="btn btn-neutral float-right" title="→ デモサイトはこちら">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="browser/" class="btn btn-neutral float-right" title="DeviceConnect Browserをビルドする">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../about/" class="btn btn-neutral" title="DeviceConnectについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../android/plugins/pebble/" class="btn btn-neutral" title="Pebbleプラグイン"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -661,10 +675,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../android/plugins/pebble/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../toManager/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="browser/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

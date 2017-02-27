@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>DeviceConnectアプリケーションの作り方 - DeviceConnect Users</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "DeviceConnectアプリケーションの作り方";
+    var mkdocs_page_input_path = "javascript/basic.md";
+    var mkdocs_page_url = "/javascript/basic/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-79831666-1', 'deviceconnectusers.github.io');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> DeviceConnect Users</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Top</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/">DeviceConnectについて</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../demosite/">デモサイトの使い方</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Android</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/">はじめてみよう</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/offline/">オフラインでの利用</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/external/">外部ブラウザからの利用</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/device_connect_manager/">DeviceConnectManagerについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/plugin/">プラグインをビルドする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../android/plugins/pebble/">Pebbleプラグイン</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>iOS</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/">はじめてみよう（iOS）</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/browser/">DeviceConnect Browserをビルドする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../ios/external/">外部ブラウザから使う</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>JavaScript</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../">はじめてみよう（JavaScript）</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">DeviceConnectアプリケーションの作り方</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#javascriptdeviceconnect">JavaScriptでのDeviceConnectアプリケーションの作り方</a></li>
+                
+                    <li><a class="toctree-l4" href="#htmlsdk">HTMLファイルでSDK読み込み</a></li>
+                
+                    <li><a class="toctree-l4" href="#javascript">JavaScriptのコード</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Web API</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/">Web APIについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/authorization/">認証API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/availabillity/">死活確認API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/battery/">バッテリーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/connect/">コネクトAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/canvas/">Canvas API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/deviceorientation/">デバイス向き/加速度API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/fileDescriptor/">ファイル参照API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/file/">ファイルAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/grant/">認可API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/humidity/">湿度API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/illuminance/">照度 API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/keyevent/">キーイベントAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/light/">ライトAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/mediaPlayer/">メディアプレイヤーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/mediastreamRecording/">メディアストリーミング録画API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/notification/">通知API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/phone/">電話API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/powermeter/">電力メーターAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/proximity/">近接センサーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/remoteController/">リモートコントローラーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/servicediscovery/">サービス検索API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/serviceinformation/">サービス情報API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/settings/">デバイス設定API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/temperature/">温度 API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/touch/">タッチAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/vibration/">バイブレーションAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/scope/">スコープについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../webapi/error/">エラーについて</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>WebSocket</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/">WebSocketについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/battery/">バッテリーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/connect/">コネクトAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/deviceorientation/">デバイス向き/加速度API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/keyevent/">キーイベントAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/phone/">電話API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/proximity/">近接センサーAPI</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../websocket/touch/">タッチAPI</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>対応デバイス</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/">対応デバイスについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/moverio/">MOVERIO</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/theta_m15/">THETA m15</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/theta_s/">THETA S</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/color_1000/">Color 1000</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/f_plug/">F-PLUG</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/chromecast/">Chromecast</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../devices/android/">Android</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../pros-cons/">利点&欠点</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">DeviceConnect Users</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>JavaScript &raquo;</li>
+        
+      
+    
+    <li>DeviceConnectアプリケーションの作り方</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="javascriptdeviceconnect">JavaScriptでのDeviceConnectアプリケーションの作り方</h1>
+<p>DeviceConnectを利用する際には、</p>
+<ol>
+<li>デバイスコネクトの状態チェック<br />
+<a href="../../webapi/availabillity/">生死確認API</a>を使います。</li>
+<li>DeviceConnectクライアントの作成<br />
+<a href="../../webapi/grant">認可API</a>を使います。</li>
+<li>アクセストークンの取得<br />
+<a href="../../webapi/authorization">認証API</a>を使います。</li>
+</ol>
+<p>までを基本として行わなければなりません。その後のWeb APIを呼ぶ部分については自分で利用したい機能は決まっているので大きな問題はないでしょう。ここではアクセストークンの取得までについて、ごく基本的なコードの書き方を紹介します。</p>
+<h2 id="htmlsdk">HTMLファイルでSDK読み込み</h2>
+<p>まず最初に<a href="https://raw.githubusercontent.com/DeviceConnect/DeviceConnect-JS/master/dConnectSDKForJavascript/dconnectsdk-2.0.0.js">JavaScript SDK</a>を読み込みます。</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;javascripts/dconnectsdk-2.0.0.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<h2 id="javascript">JavaScriptのコード</h2>
+<h3 id="_1">生死確認を行う</h3>
+<p>dconnectsdk-*.jsに含まれる dConnect.checkDeviceConnect を使って生死確認を行います。</p>
+<pre><code>dConnect.checkDeviceConnect(
+  function(apiVersion) {
+    // 動作している場合
+  }, function(errorCode, errorMessage) {
+    // 動作していない場合
+  });
+</code></pre>
+
+<h3 id="_2">認可を得る</h3>
+<p>dconnectsdk-*.jsに含まれる dConnect.authorization を使って認可を得ます。</p>
+<pre><code>var scopes = Array(&quot;battery&quot;, &quot;serviceinformation&quot;,
+                   &quot;servicediscovery&quot;, &quot;file&quot;, 
+                   &quot;mediastream_recording&quot;, &quot;omnidirectional_image&quot;
+                   );
+var applicationName = &quot;YOUR_APPLICATION_NAME&quot;;
+dConnect.authorization(scopes, applicationName,
+  function(clientId, accessToken) {
+    // 許可が得られた場合
+  },
+  function(errorCode, errorMessage) {
+    // 許可が得られなかった場合
+  });
+</code></pre>
+
+<h3 id="_3">認証を得る</h3>
+<p>dconnectsdk-*.jsに含まれる dConnect.discoverDevices を使って認証を得ます。</p>
+<pre><code>// accessToken は先ほど取得したものを使います
+dConnect.discoverDevices(accessToken,
+  function(json) {
+    // json.servicesの中にデバイス情報が返ってきます
+  },
+  function(errorCode, errorMessage) {
+    // 認証が得られなかった場合
+  });
+</code></pre>
+
+<p>ここまでの処理は<a href="../../javascript/examples/base/">DeviceConnectへの接続</a>を使って確認できます。DeviceConnectの動いているAndroidデバイスのIPアドレスを入力して実行してみてください。</p>
+<hr />
+<p>ここからはデバイス毎に処理が分かれます。以下を参照にしてください。</p>
+<h3 id="api"><a href="../vibration">バイブレーションAPIを使ってデバイスを揺らす</a></h3>
+<p><a href="../../webapi/vibration/">バイブレーションAPI</a>を使うデモです。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../app/" class="btn btn-neutral float-right" title="JavaScript SDKをPromiseベースにする">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../" class="btn btn-neutral" title="はじめてみよう（JavaScript）"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../app/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

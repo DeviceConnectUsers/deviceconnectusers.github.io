@@ -8,7 +8,7 @@
   
   
   
-  <title>WebSocketについて - DeviceConnect Users</title>
+  <title>はじめてみよう（iOS） - DeviceConnect Users</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "WebSocketについて";
-    var mkdocs_page_input_path = "websocket.md";
-    var mkdocs_page_url = "/websocket/";
+    var mkdocs_page_name = "はじめてみよう（iOS）";
+    var mkdocs_page_input_path = "ios.md";
+    var mkdocs_page_url = "/ios/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -148,22 +148,38 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../ios/">はじめてみよう（iOS）</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">はじめてみよう（iOS）</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">必要なもの</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_2">アプリのインストール</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_3">アプリの起動</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_4">デバイスを検索する</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../ios/browser/">DeviceConnect Browserをビルドする</a>
+        <a class="" href="browser/">DeviceConnect Browserをビルドする</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../ios/external/">外部ブラウザから使う</a>
+        <a class="" href="external/">外部ブラウザから使う</a>
         
     </li>
 
@@ -445,81 +461,64 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">WebSocketについて</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#websocket">WebSocketについて</a></li>
-                
-                    <li><a class="toctree-l4" href="#_1">エンドポイントについて</a></li>
-                
-                    <li><a class="toctree-l4" href="#_2">便利なツール</a></li>
-                
-                    <li><a class="toctree-l4" href="#_3">接続してみる</a></li>
-                
-                    <li><a class="toctree-l4" href="#web-api">Web APIをコールする</a></li>
-                
-                    <li><a class="toctree-l4" href="#websocket-api">WebSocket APIについて</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../websocket/">WebSocketについて</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="battery/">バッテリーAPI</a>
+        <a class="" href="../websocket/battery/">バッテリーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="connect/">コネクトAPI</a>
+        <a class="" href="../websocket/connect/">コネクトAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="deviceorientation/">デバイス向き/加速度API</a>
+        <a class="" href="../websocket/deviceorientation/">デバイス向き/加速度API</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="fileDescriptor/">ファイル参照API</a>
+        <a class="" href="../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="keyevent/">キーイベントAPI</a>
+        <a class="" href="../websocket/keyevent/">キーイベントAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="phone/">電話API</a>
+        <a class="" href="../websocket/phone/">電話API</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="proximity/">近接センサーAPI</a>
+        <a class="" href="../websocket/proximity/">近接センサーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="touch/">タッチAPI</a>
+        <a class="" href="../websocket/touch/">タッチAPI</a>
         
     </li>
 
@@ -620,11 +619,11 @@
     
       
         
-          <li>WebSocket &raquo;</li>
+          <li>iOS &raquo;</li>
         
       
     
-    <li>WebSocketについて</li>
+    <li>はじめてみよう（iOS）</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -634,56 +633,40 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="websocket">WebSocketについて</h1>
-<p>DeviceConnectのWeb APIを使う際に、幾つかイベント通知系のAPIがあります。これらを利用する際にはWebSocketを使って接続しておく必要があります。</p>
-<h2 id="_1">エンドポイントについて</h2>
+                <p>iOS端末を使ってDeviceConnectを体験します。今回はPebbleと連携してみたいと思います。</p>
+<h2 id="_1">必要なもの</h2>
 <ul>
-<li><strong>パス</strong><br />
-/websocket</li>
-<li><strong>プロトコル</strong><br />
-WebSocket</li>
+<li>iOS端末</li>
+<li>Pebble</li>
 </ul>
-<h2 id="_2">便利なツール</h2>
-<p>Node.jsではコンソールからWebSocketサーバに接続できるwscatコマンドが利用できます。</p>
-<pre><code>npm install -g wscat
-</code></pre>
-
-<p>でインストールできます。</p>
-<h2 id="_3">接続してみる</h2>
-<p>例えばDeviceConnect Managerが 192.168.0.20 で動作している場合、</p>
-<pre><code>$ wscat -c ws://192.168.0.20:4035/websocket -o &quot;Null&quot;
-</code></pre>
-
-<p>で接続できます。接続したらセッションキー（任意の文字列）を指定します。</p>
-<pre><code>&gt; {&quot;sessionKey&quot;: &quot;aaa&quot;}
-&gt; 
-</code></pre>
-
-<p>これでWebSocket側は準備完了です。</p>
-<h2 id="web-api">Web APIをコールする</h2>
-<p>次にWeb API側を準備します。例えば[バッテリーステータス変更API]をコールします。</p>
-<pre><code>$ curl -H &quot;Origin: Null&quot; -X PUT &quot;http://192.168.0.20:4035/gotapi/battery/onchargingchange?serviceId=Host...org&amp;accessToken=16f...5af&amp;sessionKey=aaa&quot;
-{&quot;result&quot;:0,&quot;product&quot;:&quot;Device Connect Manager&quot;,&quot;version&quot;:&quot;2.0.0&quot;}
-</code></pre>
-
-<p>この時、セッションキー（sessionKey）はWebSocketで指定した文字列と同じものを使います。</p>
-<h3 id="_4">イベントを受け取る</h3>
-<p>後はバッテリーを抜き差ししてイベントがWebSocket側に通知されればOKです。</p>
-<pre><code>&lt; {&quot;battery&quot;:{&quot;charging&quot;:false},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
-&lt; {&quot;battery&quot;:{&quot;charging&quot;:true},&quot;profile&quot;:&quot;battery&quot;,&quot;serviceId&quot;:&quot;Host.e87...org&quot;,&quot;attribute&quot;:&quot;onchargingchange&quot;,&quot;sessionKey&quot;:&quot;aaa&quot;}
-</code></pre>
-
-<h2 id="websocket-api">WebSocket APIについて</h2>
-<ul>
-<li><a href="../websocket/battery">バッテリーAPI</a></li>
-<li><a href="../websocket/connect">コネクトAPI</a></li>
-<li><a href="../websocket/deviceorientation">デバイス向き/加速度API</a></li>
-<li><a href="../websocket/fileDescriptor">ファイル参照API</a></li>
-<li><a href="../websocket/keyevent">キーイベントAPI</a></li>
-<li><a href="../websocket/phone">電話API</a></li>
-<li><a href="../websocket/proximity">近接センサーAPI</a></li>
-<li><a href="../websocket/touch">タッチAPI</a></li>
-</ul>
+<h2 id="_2">アプリのインストール</h2>
+<p>今回はアプリのビルドを行わず、GClue社がリリースしている<a href="http://www.gclue.io/dwa/index.html">Device Web API Manager</a>をインストールします。アプリをビルドしてみたい方は<a href="../ios/browser">DeviceConnect Browserをビルドする</a>を参照してください。</p>
+<p><a href="https://itunes.apple.com/jp/app/devicewebapibrowser/id994422987?mt=8&amp;ign-mpt=uo%3D4">DeviceWebAPIBrowserを App Store で</a></p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-1.png" /></p>
+<p>このアプリはDeviceConnectのフロントエンドとして使えるアプリです。</p>
+<h2 id="_3">アプリの起動</h2>
+<p>アプリを起動すると次のような画面が表示されます。</p>
+<p><img alt="" src="../images/ios/deviceconnect-ios-2.png" /></p>
+<p>ここで、URLに <code>http://deviceconnectusers.github.io/manager/</code> と入力して検索ボタンをタップします。次のような画面が出てくればOKです。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-9.png" /></p>
+<p>さらにLaunch UI-App(HTML5)をタップします。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-8.png" /></p>
+<p>この画面が表示されたら、まずはアクセストークンを取得します。accessTokenをタップします。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-8.png" /></p>
+<p>そうすると下の画面のようにアクセストークンを求めるダイアログが出ますので、ACCEPTをタップします。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-7.png" /></p>
+<p>承認すると先ほどと同じ画面に戻ってきますが、今回はアクセストークンが入っているのが確認できるはずです。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-6.png" /></p>
+<h2 id="_4">デバイスを検索する</h2>
+<p>次に利用できるデバイスを検索します。Search Deviceをタップすると利用できるデバイスが一覧表示されます。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-5.png" /></p>
+<p>今回はHost: iPhone 6 Plusをタップします。そうすると利用できる機能が一覧表示されます。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-4.png" /></p>
+<p>例えばバイブレーションを選択します。パターンを選択してVibrateをタップするとデバイスが震えるはずです。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-3.png" /></p>
+<p>Phone APIを使って電話をかけることもできます。</p>
+<p><img alt="" src="../images/ios/getting-started-ios-2.png" /></p>
+<p>DeviceConnectには他にもたくさんのプラグインがリリースされており、それを使うことでウェアラブルデバイスがWeb APIを通して操作できるようになります。ぜひ試してみてください！</p>
               
             </div>
           </div>
@@ -691,10 +674,10 @@ WebSocket</li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="battery/" class="btn btn-neutral float-right" title="バッテリーAPI">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="browser/" class="btn btn-neutral float-right" title="DeviceConnect Browserをビルドする">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../webapi/error/" class="btn btn-neutral" title="エラーについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../android/plugins/pebble/" class="btn btn-neutral" title="Pebbleプラグイン"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -720,10 +703,10 @@ WebSocket</li>
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../webapi/error/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../android/plugins/pebble/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="battery/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="browser/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

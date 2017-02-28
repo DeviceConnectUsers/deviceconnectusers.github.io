@@ -29,6 +29,7 @@ pages:
   - 'BluetoothやWiFiの接続状態を確認する': 'javascript/connect.md'
   - 'THETAで写真撮影を行う': 'javascript/mediastreamrecording.md'
   - 'サービス情報を実行する': 'javascript/serviceinformation.md'
+  - 'ファイル一覧、写真を取得する': 'javascript/file.md'
 - 'Web API':
   - 'Web APIについて': 'webapi.md'
   - '認証API': 'webapi/authorization.md'

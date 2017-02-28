@@ -1,1 +1,0 @@
-ruby convert.rb docs/swagger.json docs/webapi

@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -186,12 +193,52 @@
                 
                     <li><a class="toctree-l4" href="#htmlsdk">HTMLファイルでSDK読み込み</a></li>
                 
-                    <li><a class="toctree-l4" href="#javascript">JavaScriptコードの基本形</a></li>
-                
-                    <li><a class="toctree-l4" href="#deviceconnect">DeviceConnectクラスの作成</a></li>
+                    <li><a class="toctree-l4" href="#javascript">JavaScriptのコード</a></li>
                 
             
             </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../file/">ファイル一覧、写真を取得する</a>
         
     </li>
 
@@ -255,7 +302,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../webapi/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -304,14 +351,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../../webapi/mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../../webapi/mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -346,7 +393,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../../webapi/remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -445,7 +492,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -600,250 +647,54 @@
 </ol>
 <p>までを基本として行わなければなりません。その後のWeb APIを呼ぶ部分については自分で利用したい機能は決まっているので大きな問題はないでしょう。ここではアクセストークンの取得までについて、ごく基本的なコードの書き方を紹介します。</p>
 <h2 id="htmlsdk">HTMLファイルでSDK読み込み</h2>
-<p>まず最初に<a href="https://raw.githubusercontent.com/DeviceConnect/DeviceConnect-JS/master/dConnectSDKForJavascript/dconnectsdk-2.0.0.js">JavaScript SDK</a>を読み込みます。app.jsはこれから作成するDeviceConnectアプリケーションのコードです。</p>
+<p>まず最初に<a href="https://raw.githubusercontent.com/DeviceConnect/DeviceConnect-JS/master/dConnectSDKForJavascript/dconnectsdk-2.0.0.js">JavaScript SDK</a>を読み込みます。</p>
 <pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;javascripts/dconnectsdk-2.0.0.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;javascripts/app.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
-<h2 id="javascript">JavaScriptコードの基本形</h2>
-<p>ではJavaScript（app.js）の基本形です。次のようになります。YOUR_APPLICATION_NAMEはそれぞれ読み替えてください。DeviceConnectクラスはこれから作成します。setupメソッドを叩いたら、上記の<a href="../../webapi/availabillity/">生死確認API</a>、 <a href="../../webapi/grant">認可API</a>、 <a href="../../webapi/authorization">認証API</a>をコールします。</p>
-<pre><code>var dc = new DeviceConnect({
-  applicationName: &quot;YOUR_APPLICATION_NAME&quot;
-});
-dc.setup()
-  .then(function() {
-    // 準備完了
-  }, function(error) {
-    // エラー
-    alert(error.errorMessage)
-  })
-</code></pre>
-
-<h2 id="deviceconnect">DeviceConnectクラスの作成</h2>
-<p>DeviceConnectクラスの基本形は次のようになります。accessTokenとclientIdはWeb API経由で取得できるものですが、一度取得したら2回目以降は使い回したいのでlocalStorageに保存しておきます。</p>
-<pre><code>var DeviceConnect = (function(){
-  var scopes = Array(&quot;battery&quot;, &quot;serviceinformation&quot;,
-                     &quot;servicediscovery&quot;, &quot;file&quot;, 
-                     &quot;mediastream_recording&quot;, &quot;omnidirectional_image&quot;
-                     );
-  var host = &quot;http://localhost:4035&quot;;
-
-  var DeviceConnect = function(args) {
-    this.applicationName = args.applicationName;
-    this.clientId = localStorage.getItem('clientId') || &quot;&quot;;
-    this.host = args.host || host;
-    this.scopes = args.scopes || scopes;
-    this.accessToken = localStorage.getItem('accessToken') || &quot;&quot;;
-    this.services = [];
-  }
-  var p = DeviceConnect.prototype;
-
-  return DeviceConnect;
-});
-</code></pre>
-
-<p>後はprototype（変数p）を拡張していきます。まず setupメソッドを作ります。</p>
-<p>処理としてはPromiseを使っています。そして、check/grant/discoverの順番に処理を行っています。</p>
-<pre><code>p.setup = function() {
-  var me = this;
-  var p = new Promise(function(resolve, reject) {
-    me.check()
-    .then(function(res) {
-      me.grant();
-    }, function(res) {
-      reject(res);
-    })
-    .then(function(res) {
-      me.accessToken = res.accessToken;
-      me.clientId = res.clientId;
-      me.setLocalStorage();
-      me.discover();
-    }, function(res) {
-      reject(res);
-    })
-    .then(function(services) {
-      me.services = services;
-      resolve(res);
-    }, function(res) {
-      reject(res);
-    })
+<h2 id="javascript">JavaScriptのコード</h2>
+<h3 id="_1">生死確認を行う</h3>
+<p>dconnectsdk-*.jsに含まれる dConnect.checkDeviceConnect を使って生死確認を行います。</p>
+<pre><code>dConnect.checkDeviceConnect(
+  function(apiVersion) {
+    // 動作している場合
+  }, function(errorCode, errorMessage) {
+    // 動作していない場合
   });
-  return p;
-};
 </code></pre>
 
-<p>ではまずcheckメソッドです。全体をPromiseで囲んで <code>dConnect.checkDeviceConnect</code> を実行します。</p>
-<pre><code>p.check = function() {
-  var p = new Promise(function(resolve, reject) {
-    dConnect.checkDeviceConnect(
-      function(apiVersion) {
-        return resolve({apiVersion: apiVersion});
-      }, function(errorCode, errorMessage) {
-        return reject({errorCode: errorCode, errorMessage: errorMessage})
-      });
+<h3 id="_2">認可を得る</h3>
+<p>dconnectsdk-*.jsに含まれる dConnect.authorization を使って認可を得ます。</p>
+<pre><code>var scopes = Array(&quot;battery&quot;, &quot;serviceinformation&quot;,
+                   &quot;servicediscovery&quot;, &quot;file&quot;, 
+                   &quot;mediastream_recording&quot;, &quot;omnidirectional_image&quot;
+                   );
+var applicationName = &quot;YOUR_APPLICATION_NAME&quot;;
+dConnect.authorization(scopes, applicationName,
+  function(clientId, accessToken) {
+    // 許可が得られた場合
+  },
+  function(errorCode, errorMessage) {
+    // 許可が得られなかった場合
   });
-  return p;
-}
 </code></pre>
 
-<p>grantメソッドも同様です。こちらはlocalStorageで値がとれた場合は処理を抜けます。</p>
-<pre><code>p.grant = function() {
-  me = this;
-  var p = new Promise(function(resolve, reject) {
-    if (me.clientId &amp;&amp; me.accessToken != &quot;&quot;) {
-      return resolve({clientId: me.clientId, accessToken: me.accessToken});
-    }
-    dConnect.authorization(me.scopes, me.applicationName,
-      function(clientId, accessToken) {
-        return resolve({clientId: clientId, accessToken: accessToken});
-      },
-      function(errorCode, errorMessage) {
-        return reject({errorCode: errorCode, errorMessage: errorMessage})
-      });
+<h3 id="_3">認証を得る</h3>
+<p>dconnectsdk-*.jsに含まれる dConnect.discoverDevices を使って認証を得ます。</p>
+<pre><code>// accessToken は先ほど取得したものを使います
+dConnect.discoverDevices(accessToken,
+  function(json) {
+    // json.servicesの中にデバイス情報が返ってきます
+  },
+  function(errorCode, errorMessage) {
+    // 認証が得られなかった場合
   });
-  return p;
-};
 </code></pre>
 
-<p>最後にdiscoverメソッドです。こちらは <code>dConnect.discoverDevices</code> を実行します。</p>
-<pre><code>p.discover = function() {
-  me = this;
-  var p = new Promise(function(resolve, reject) {
-    dConnect.discoverDevices(me.accessToken,
-      function(json) {
-        return resolve(json.services);
-      },
-      function(errorCode, errorMessage) {
-        return reject({errorCode: errorCode, errorMessage: errorMessage})
-      });
-  });
-  return p;
-};
-</code></pre>
-
-<p>Promiseでは返却値が一つしかできないため、返ってきたデータをオブジェクトとしています。最後にsetLocalStorageです。これはアクセストークンなどをlocalStorageに保存するだけです。</p>
-<pre><code>p.setLocalStorage = function() {
-  localStorage.setItem('clientId', me.clientId);
-  localStorage.setItem('accessToken', me.accessToken);
-}
-</code></pre>
-
-<p>DeviceConnectクラスの全体像は次のようになります。</p>
-<pre><code>var DeviceConnect = (function(){
-  var scopes = Array(&quot;battery&quot;,&quot;serviceinformation&quot;, &quot;servicediscovery&quot;, &quot;file&quot;, &quot;mediastream_recording&quot;, &quot;omnidirectional_image&quot;);
-  var host = &quot;http://localhost:4035&quot;;
-
-  var DeviceConnect = function(args) {
-    this.applicationName = args.applicationName;
-    this.clientId = localStorage.getItem('clientId') || &quot;&quot;;
-    this.host = args.host || host;
-    this.scopes = args.scopes || scopes;
-    this.accessToken = localStorage.getItem('accessToken') || &quot;&quot;;
-    this.services = [];
-  }
-
-  var p = DeviceConnect.prototype;
-
-  p.findService = function(name) {
-    for (i in this.services) {
-      if (this.services[i].id.toLowerCase().indexOf(name.toLowerCase()) == 0) {
-        return this.services[i].id;
-      }
-    }
-  }
-
-  p.setLocalStorage = function() {
-    localStorage.setItem('clientId', me.clientId);
-    localStorage.setItem('accessToken', me.accessToken);
-  }
-
-  p.setup = function() {
-    var me = this;
-    var p = new Promise(function(resolve, reject) {
-      me.check()
-      .then(function(res) {
-        return me.grant()
-      }, function(res) {
-        return reject(res);
-      })
-      .then(function(res) {
-        me.accessToken = res.accessToken;
-        me.clientId = res.clientId;
-        me.setLocalStorage()
-        return me.discover()
-      }, function(res) {
-        return reject(res);
-      })
-      .then(function(services) {
-        me.services = services;
-        return resolve(res);
-      }, function(res) {
-        return reject(res);
-      })
-    });
-    return p;
-  };
-
-  p.discover = function() {
-    me = this;
-    var p = new Promise(function(resolve, reject) {
-      dConnect.discoverDevices(me.accessToken,
-        function(json) {
-          return resolve(json.services);
-        },
-        function(errorCode, errorMessage) {
-          return reject({errorCode: errorCode, errorMessage: errorMessage})
-        });
-    });
-    return p;
-  };
-
-  p.grant = function() {
-    me = this;
-    var p = new Promise(function(resolve, reject) {
-      if (me.clientId &amp;&amp; me.accessToken != &quot;&quot;) {
-        return resolve({clientId: me.clientId, accessToken: me.accessToken});
-      }
-      dConnect.authorization(me.scopes, me.applicationName,
-        function(clientId, accessToken) {
-          return resolve({clientId: clientId, accessToken: accessToken});
-        },
-        function(errorCode, errorMessage) {
-          return reject({errorCode: errorCode, errorMessage: errorMessage})
-        });
-    });
-    return p;
-  };
-
-  p.check = function() {
-    var p = new Promise(function(resolve, reject) {
-      dConnect.checkDeviceConnect(
-        function(apiVersion) {
-          return resolve({apiVersion: apiVersion});
-        }, function(errorCode, errorMessage) {
-          return reject({errorCode: errorCode, errorMessage: errorMessage})
-        });
-    });
-    return p;
-  }
-  return DeviceConnect;
-})();
-</code></pre>
-
-<p>この基本形さえあれば、</p>
-<pre><code>var dc = new DeviceConnect({
-  applicationName: &quot;YOUR_APPLICATION_NAME&quot;
-});
-dc.setup()
-  .then(function() {
-    // 準備完了
-  }, function(error) {
-    // エラー
-    alert(error.errorMessage)
-  })
-</code></pre>
-
-<p>のようにして開発が簡単にはじめられるようになります。後はservicesの中から使いたいデバイスを選択し、必要な処理を実装していくだけです。</p>
+<p>ここまでの処理は<a href="../../javascript/examples/base/">DeviceConnectへの接続</a>を使って確認できます。DeviceConnectの動いているAndroidデバイスのIPアドレスを入力して実行してみてください。</p>
+<hr />
+<p>ここからはデバイス毎に処理が分かれます。以下を参照にしてください。</p>
+<h3 id="api"><a href="../vibration">バイブレーションAPIを使ってデバイスを揺らす</a></h3>
+<p><a href="../../webapi/vibration/">バイブレーションAPI</a>を使うデモです。</p>
               
             </div>
           </div>
@@ -851,7 +702,7 @@ dc.setup()
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../webapi/" class="btn btn-neutral float-right" title="Web APIについて">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../app/" class="btn btn-neutral float-right" title="JavaScript SDKをPromiseベースにする">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../" class="btn btn-neutral" title="はじめてみよう（JavaScript）"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -883,7 +734,7 @@ dc.setup()
         <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../webapi/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../app/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

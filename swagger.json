@@ -491,79 +491,6 @@
                 }
             }
         },
-        "/gotapi/serviceinformation": {
-            "get": {
-                "summary": "サービス情報を得る",
-                "description": "各デバイスがサポートしている機能一覧を取得します。",
-                "parameters": [
-                    {
-                        "name": "serviceId",
-                        "in": "query",
-                        "description": "以前の処理で取得したサービスIDを指定します",
-                        "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "accessToken",
-                        "in": "query",
-                        "description": "以前の処理で取得したアクセストークン",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "取得成功",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "result": {
-                                    "type": "number",
-                                    "description": "エラーがなければ0、エラーがあれば1"
-                                },
-                                "product": {
-                                    "type": "string",
-                                    "description": "DeviceConnectを提供しているアプリの名前"
-                                },
-                                "version": {
-                                    "type": "string",
-                                    "description": "バージョン番号が返ってきます。執筆時点では2.0.0と入っています"
-                                },
-                                "supports": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "description": "利用できる機能（スコープ）が配列になっています。[スコープについて](./webapi/scope)を参照してください"
-                                    }
-                                },
-                                "connect": {
-                                    "type": "object",
-                                    "description": "接続状態が返ってきます",
-                                    "properties": {
-                                        "wifi": {
-                                            "type": "boolean",
-                                            "description": "WiFiの接続状態。trueなら接続中"
-                                        },
-                                        "bluetooth": {
-                                            "type": "boolean",
-                                            "description": "Bluetoothの接続状態。trueなら接続中"
-                                        },
-                                        "nfc": {
-                                            "type": "boolean",
-                                            "description": "NFCの接続状態。trueなら接続中"
-                                        },
-                                        "ble": {
-                                            "type": "boolean",
-                                            "description": "BLEの接続状態。trueなら接続中"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/gotapi/battery": {
             "get": {
                 "summary": "バッテリー情報の取得",
@@ -750,7 +677,7 @@
                 }
             }
         },
-        "/gotapi/mediastream_recording/record": {
+        "/gotapi/mediaStreamRecording/record": {
             "post": {
                 "summary": "録画を開始する",
                 "description": "デバイスのカメラを使って録画を開始します。",
@@ -794,7 +721,7 @@
                 }
             }
         },
-        "/gotapi/mediastream_recording/stop": {
+        "/gotapi/mediaStreamRecording/stop": {
             "put": {
                 "summary": "録画を停止する",
                 "description": "録画を停止します。",
@@ -838,7 +765,7 @@
                 }
             }
         },
-        "/gotapi/mediastream_recording/mediarecorder": {
+        "/gotapi/mediaStreamRecording/mediarecorder": {
             "get": {
                 "summary": "レコーダーの情報を取得",
                 "description": "デバイスが持っているレコーダーに関する情報を取得します。複数返ってきます。",
@@ -911,6 +838,58 @@
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/gotapi/mediaStreamRecording/takephoto": {
+            "post": {
+                "summary": "写真を撮影",
+                "description": "MediaStreamRecordingを使って写真を撮影します",
+                "parameters": [
+                    {
+                        "name": "serviceId",
+                        "type": "string",
+                        "in": "query",
+                        "description": "サービスIDを指定します",
+                        "required": true
+                    },
+                    {
+                        "name": "accessToken",
+                        "type": "string",
+                        "in": "query",
+                        "description": "取得したアクセストークン",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "result": {
+                                    "type": "number",
+                                    "description": "エラーがなければ0"
+                                },
+                                "product": {
+                                    "type": "string",
+                                    "description": "DeviceConnectを提供しているアプリの名前"
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": "バージョン番号"
+                                },
+                                "uri": {
+                                    "type": "string",
+                                    "description": "撮影した写真を見るためのURL"
+                                },
+                                "path": {
+                                    "type": "string",
+                                    "description": "写真のパス"
                                 }
                             }
                         }
@@ -1107,7 +1086,7 @@
                 }
             }
         },
-        "/gotapi/mediastream_recording/onphoto": {
+        "/gotapi/mediaStreamRecording/onphoto": {
             "put": {
                 "summary": "写真撮影を実行",
                 "description": "写真を撮影します。非同期で実行されるのでレスポンスに画像情報は入っていきません。",
@@ -1158,7 +1137,7 @@
                 }
             }
         },
-        "/gotapi/mediastream_recording/preview": {
+        "/gotapi/mediaStreamRecording/preview": {
             "put": {
                 "summary": "カメラの映像をプレビューする",
                 "description": "カメラの映像をリアルタイムプレビューするためのURIを取得します。URIはmultipart/x-mixed-replaceとなっているのでimgタグのsrcに適用するだけでリアルタイムにプレビューが更新されます。",
@@ -1213,7 +1192,7 @@
                 }
             }
         },
-        "/gotapi/file_descriptor/open": {
+        "/gotapi/fileDescriptor/open": {
             "get": {
                 "summary": "デバイス上のファイルを開く",
                 "description": "デバイス上にあるファイルを開きます。このファイルは新規作成されます。",
@@ -1271,7 +1250,7 @@
                 }
             }
         },
-        "/gotapi/file_descriptor/write": {
+        "/gotapi/fileDescriptor/write": {
             "put": {
                 "summary": "指定したパスに書き込む",
                 "description": "指定したファイルの内容をそのまま書き込みます。書き込みを開始する場所が指定できます。",
@@ -1343,7 +1322,7 @@
                 }
             }
         },
-        "/gotapi/file_descriptor/read": {
+        "/gotapi/fileDescriptor/read": {
             "get": {
                 "summary": "ファイルを読み込む",
                 "description": "指定したパスのファイルを読み込みます。読み込み開始する場所、長さを指定できます。",
@@ -1416,7 +1395,7 @@
                 }
             }
         },
-        "/gotapi/file_descriptor/close": {
+        "/gotapi/fileDescriptor/close": {
             "put": {
                 "summary": "ファイルのポインタを閉じる",
                 "description": "ファイルを閉じます。",
@@ -1467,7 +1446,7 @@
                 }
             }
         },
-        "/gotapi/file_descriptor/onwatchfile": {
+        "/gotapi/fileDescriptor/onwatchfile": {
             "put": {
                 "summary": "ファイルの変更を監視する",
                 "description": "ファイルが変更されるとWebSocket経由でイベントを受け取れるようになります。",
@@ -2598,7 +2577,7 @@
         "/gotapi/keyevent/ondown": {
             "put": {
                 "summary": "キーが押された時に呼ばれるイベントを設定",
-                "description": "デバイスでキーが押された際に通知を行うイベントを設定します。実際の通知はWebSocketを使いますので[キーイベントAPI（WebSocket）](/websocket/keyevent.md)を参考にしてください。",
+                "description": "デバイスでキーが押された際に通知を行うイベントを設定します。実際の通知はWebSocketを使いますので[キーイベントAPI（WebSocket）](/websocket/keyevent)を参考にしてください。",
                 "parameters": [
                     {
                         "name": "serviceId",
@@ -2698,7 +2677,7 @@
         "/gotapi/keyevent/onup": {
             "put": {
                 "summary": "キーが押された後に呼ばれるイベントを設定",
-                "description": "デバイスでキーが押された**後**に通知を行うイベントを設定します。実際の通知はWebSocketを使いますので[キーイベントAPI（WebSocket）](/websocket/keyevent.md)を参考にしてください。",
+                "description": "デバイスでキーが押された**後**に通知を行うイベントを設定します。実際の通知はWebSocketを使いますので[キーイベントAPI（WebSocket）](/websocket/keyevent)を参考にしてください。",
                 "parameters": [
                     {
                         "name": "serviceId",
@@ -4339,7 +4318,7 @@
                 }
             }
         },
-        "/gotapi/media_player/media_list": {
+        "/gotapi/mediaPlayer/media_list": {
             "get": {
                 "summary": "レコーダーの情報を取得",
                 "description": "デバイスが持っているレコーダーに関する情報を取得します。複数返ってきます。",
@@ -4429,7 +4408,7 @@
                 }
             }
         },
-        "/gotapi/media_player/mute": {
+        "/gotapi/mediaPlayer/mute": {
             "put": {
                 "summary": "デバイスのミュートを設定",
                 "description": "デバイスをミュートにします。変更後はWebSocket経由でイベントが通知されます。",
@@ -4515,7 +4494,7 @@
                 }
             }
         },
-        "/gotapi/media_player/play": {
+        "/gotapi/mediaPlayer/play": {
             "put": {
                 "summary": "音楽ファイルを再生",
                 "description": "デバイスの中にある音楽ファイルを再生します。デバイス側で再生します。その際、再生開始や完了がWebSocketを経由して通知されます。",
@@ -4559,10 +4538,10 @@
                 }
             }
         },
-        "/gotapi/media_player/pause": {
+        "/gotapi/mediaPlayer/pause": {
             "put": {
                 "summary": "音楽の再生を一時停止",
-                "description": "デバイスの音楽を一時停止します。その際、イベントの通知がWebSocket経由で行われます。WebSocketについては[メディアプレイヤーAPI（WebSocket）](/websocket/media_player)を参照してください。",
+                "description": "デバイスの音楽を一時停止します。その際、イベントの通知がWebSocket経由で行われます。WebSocketについては[メディアプレイヤーAPI（WebSocket）](/websocket/mediaPlayer)を参照してください。",
                 "parameters": [
                     {
                         "name": "serviceId",
@@ -4603,7 +4582,7 @@
                 }
             }
         },
-        "/gotapi/media_player/stop": {
+        "/gotapi/mediaPlayer/stop": {
             "put": {
                 "summary": "音楽を停止",
                 "description": "メディアプレイヤーの再生を停止します。停止した際のイベントはWebSocketで通知されます。",
@@ -4647,7 +4626,7 @@
                 }
             }
         },
-        "/gotapi/media_player/resume": {
+        "/gotapi/mediaPlayer/resume": {
             "put": {
                 "summary": "音楽を再開",
                 "description": "メディアプレイヤーの再生を再開します。停止した際のイベントはWebSocketで通知されます。",
@@ -4691,7 +4670,7 @@
                 }
             }
         },
-        "/gotapi/media_player/seek": {
+        "/gotapi/mediaPlayer/seek": {
             "put": {
                 "summary": "音楽の再生位置を変更",
                 "description": "メディアプレイヤーの再生位置を変更します。",
@@ -4742,7 +4721,7 @@
                 }
             }
         },
-        "/gotapi/media_player/volume": {
+        "/gotapi/mediaPlayer/volume": {
             "put": {
                 "summary": "ボリュームを変更",
                 "description": "メディアプレイヤーのボリュームを変更します。変更した際のイベントはWebSocketで通知されます。",
@@ -4793,10 +4772,10 @@
                 }
             }
         },
-        "/gotapi/media_player/onstatuschange": {
+        "/gotapi/mediaPlayer/onstatuschange": {
             "put": {
                 "summary": "メディアレコーダーの通知イベントを設定",
-                "description": "メディアレコーダーの各種通知イベントを設定します。イベントの通知はWebSocketで行われるので、[メディアレコーダーAPI（WebSocket）](/websocket/media_player)を参照してください。",
+                "description": "メディアレコーダーの各種通知イベントを設定します。イベントの通知はWebSocketで行われるので、[メディアレコーダーAPI（WebSocket）](/websocket/mediaPlayer)を参照してください。",
                 "parameters": [
                     {
                         "name": "serviceId",
@@ -4901,7 +4880,7 @@
                 }
             }
         },
-        "/gotapi/remote_controller": {
+        "/gotapi/remoteController": {
             "get": {
                 "summary": "デバイスが持っている赤外線設定を取得",
                 "description": "デバイス側で保存されている赤外線設定を取得します。",
@@ -4991,6 +4970,75 @@
                                 "version": {
                                     "type": "string",
                                     "description": "バージョン番号"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/gotapi/serviceinformation": {
+            "get": {
+                "summary": "",
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "serviceId",
+                        "type": "string",
+                        "in": "query",
+                        "description": "",
+                        "required": true
+                    },
+                    {
+                        "name": "accessToken",
+                        "type": "string",
+                        "in": "query",
+                        "description": "",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "supportApis": {
+                                    "type": "object",
+                                    "properties": {
+                                        "path": {
+                                            "type": "object",
+                                            "properties": {
+                                                "swagger": {
+                                                    "type": "string",
+                                                    "description": "Swagger形式でAPIフォーマットが入ってきます"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "supports": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "description": ""
+                                    }
+                                },
+                                "result": {
+                                    "type": "number",
+                                    "description": ""
+                                },
+                                "product": {
+                                    "type": "string",
+                                    "description": ""
+                                },
+                                "version": {
+                                    "type": "string",
+                                    "description": ""
+                                },
+                                "connect": {
+                                    "type": "object",
+                                    "properties": {}
                                 }
                             }
                         }

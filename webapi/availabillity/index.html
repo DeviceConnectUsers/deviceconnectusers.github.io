@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -183,6 +190,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -210,6 +259,11 @@
         <a class="current" href="./">死活確認API</a>
         
             <ul>
+            
+                <li class="toctree-l3"><a href="#api">死活確認 API</a></li>
+                
+                    <li><a class="toctree-l4" href="#deviceconnect">DeviceConnectが使えるかどうかをチェック</a></li>
+                
             
             </ul>
         
@@ -246,7 +300,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../file_descriptor/">ファイル参照API</a>
+        <a class="" href="../fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -295,14 +349,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -337,7 +391,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -436,7 +490,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -579,27 +633,17 @@
           <div role="main">
             <div class="section">
               
-                <h1>死活確認 API</h1>
-
-<h2>DeviceConnectが使えるかどうかをチェック</h2>
-
+                <h1 id="api">死活確認 API</h1>
+<h2 id="deviceconnect">DeviceConnectが使えるかどうかをチェック</h2>
 <p>DeviceConnect Managerが動作しているかどうか、利用できる状態
 になっているかをチェックします。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /availabillity</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_1">基本情報</h3>
+<p>APIパス
+: /availabillity</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_2">リクエスト</h3>
+<h4 id="http">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -614,10 +658,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_3">レスポンス</h3>
+<h4 id="http_1">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -632,10 +674,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_4">レスポンス内容</h4>
 <table>
 <thead>
 <tr>

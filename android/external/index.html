@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -113,6 +120,8 @@
                 <li class="toctree-l3"><a href="#_1">外部から操作してみる</a></li>
                 
                     <li><a class="toctree-l4" href="#_2">アクセスする</a></li>
+                
+                    <li><a class="toctree-l4" href="#adb">adbを使う</a></li>
                 
             
             </ul>
@@ -192,6 +201,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -251,7 +302,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../webapi/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -300,14 +351,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../../webapi/mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../../webapi/mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -342,7 +393,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../webapi/remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../../webapi/remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -441,7 +492,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -599,6 +650,15 @@
 <p>バッテリーが充電状態かどうかの判定もできます。</p>
 <p><img alt="" src="../../images/android/deviceconnect-android-4.png" /></p>
 <p>このままDeviceConnectのJavaScript SDKを使ってスマートデバイスを使ったアプリケーション開発が行えるでしょう。</p>
+<h2 id="adb">adbを使う</h2>
+<p>もう一つの方法として、実機をUSB接続した上でadbでポートフォワードを使う方法があります。Android SDKに含まれるadbコマンドを使います。9000、9001番は画像のストリーミング配信用です。</p>
+<pre><code>adb forward tcp:4035 tcp:4035
+adb forward tcp:8080 tcp:8080
+adb forward tcp:9000 tcp:9000
+adb forward tcp:9001 tcp:9001
+</code></pre>
+
+<p>後は http://deviceconnectusers.github.io/manager/ にアクセスします。Originヘッダーのチェックを外すか、http://deviceconnectusers.github.io からのアクセスを許可してください。</p>
               
             </div>
           </div>

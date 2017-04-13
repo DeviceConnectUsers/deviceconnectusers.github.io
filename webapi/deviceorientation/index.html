@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -183,6 +190,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -239,6 +288,15 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#api">デバイス向き/加速度API</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">デバイスの加速度を取得</a></li>
+                
+                    <li><a class="toctree-l4" href="#_7">加速度を継続的に受け取るイベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_13">加速度を受け取るイベントを停止</a></li>
+                
+            
             </ul>
         
     </li>
@@ -246,7 +304,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../file_descriptor/">ファイル参照API</a>
+        <a class="" href="../fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -295,14 +353,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -337,7 +395,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -436,7 +494,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -579,26 +637,16 @@
           <div role="main">
             <div class="section">
               
-                <h1>デバイス向き/加速度API</h1>
-
-<h2>デバイスの加速度を取得</h2>
-
+                <h1 id="api">デバイス向き/加速度API</h1>
+<h2 id="_1">デバイスの加速度を取得</h2>
 <p>デバイスの加速度を取得します。このWeb APIでは継続的ではありません。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/deviceorientation/ondeviceorientation</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_2">基本情報</h3>
+<p>APIパス
+: /gotapi/deviceorientation/ondeviceorientation</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_3">リクエスト</h3>
+<h4 id="http">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -613,8 +661,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_4">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -642,10 +689,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_5">レスポンス</h3>
+<h4 id="http_1">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -660,54 +705,131 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_6">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
 <th>キー</th>
 <th>型</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>orientation</td>
 <td>Object</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>acceleration</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>x</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>y</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>z</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>interval</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>rotationRate</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>beta</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>alpha</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>gamma</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>accelerationIncludingGravity</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>x</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>y</td>
+<td>数値</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>z</td>
+<td>数値</td>
+<td></td>
 </tr>
 <tr>
 <td>result</td>
 <td>数値</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>product</td>
 <td>文字列</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>version</td>
 <td>文字列</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h2>加速度を継続的に受け取るイベントを設定</h2>
-
-<p>加速度を継続的に受け取るイベントを設定します。実際のデータはWebSocket経由なので、<a href="/websocket/deviceorientation">デバイス向き/加速度API（WebSocket）</a>を参照してください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/deviceorientation/ondeviceorientation</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_7">加速度を継続的に受け取るイベントを設定</h2>
+<p>加速度を継続的に受け取るイベントを設定します。実際のデータはWebSocket経由なので、<a href="../../websocket/deviceorientation">デバイス向き/加速度API（WebSocket）</a>を参照してください。</p>
+<h3 id="_8">基本情報</h3>
+<p>APIパス
+: /gotapi/deviceorientation/ondeviceorientation</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_9">リクエスト</h3>
+<h4 id="http_2">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -722,8 +844,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_10">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -758,10 +879,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_11">レスポンス</h3>
+<h4 id="http_3">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -776,10 +895,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_12">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -806,24 +923,15 @@
 </tr>
 </tbody>
 </table>
-<h2>加速度を受け取るイベントを停止</h2>
-
+<h2 id="_13">加速度を受け取るイベントを停止</h2>
 <p>WebSocket経由で継続的に受け取っていた加速度のイベントを停止します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/deviceorientation/ondeviceorientation</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_14">基本情報</h3>
+<p>APIパス
+: /gotapi/deviceorientation/ondeviceorientation</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_15">リクエスト</h3>
+<h4 id="http_4">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -838,8 +946,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_16">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -874,10 +981,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_17">レスポンス</h3>
+<h4 id="http_5">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -892,10 +997,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_18">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -929,7 +1032,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../file_descriptor/" class="btn btn-neutral float-right" title="ファイル参照API">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../fileDescriptor/" class="btn btn-neutral float-right" title="ファイル参照API">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../canvas/" class="btn btn-neutral" title="Canvas API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -961,7 +1064,7 @@
         <span><a href="../canvas/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../file_descriptor/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../fileDescriptor/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

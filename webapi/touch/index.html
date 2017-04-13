@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -183,6 +190,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -242,7 +291,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../file_descriptor/">ファイル参照API</a>
+        <a class="" href="../fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -291,14 +340,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -333,7 +382,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -371,6 +420,27 @@
         <a class="current" href="./">タッチAPI</a>
         
             <ul>
+            
+                <li class="toctree-l3"><a href="#api">タッチ API</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">タッチイベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_7">タッチを開始した際の通知イベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_13">タッチを開始した際の通知イベントを削除</a></li>
+                
+                    <li><a class="toctree-l4" href="#_19">タッチを終了した際の通知イベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_25">タッチを終了した際の通知イベントを削除</a></li>
+                
+                    <li><a class="toctree-l4" href="#_31">タッチし続けている際の通知イベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_37">タッチをし続けている際の通知イベントを削除</a></li>
+                
+                    <li><a class="toctree-l4" href="#_43">タッチをキャンセルした際の通知イベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_49">タッチをキャンセルした際の通知イベントを削除</a></li>
+                
             
             </ul>
         
@@ -436,7 +506,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -579,26 +649,16 @@
           <div role="main">
             <div class="section">
               
-                <h1>タッチ API</h1>
-
-<h2>タッチイベントを設定</h2>
-
-<p>タッチイベントが発生した際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="/websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouch</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+                <h1 id="api">タッチ API</h1>
+<h2 id="_1">タッチイベントを設定</h2>
+<p>タッチイベントが発生した際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="../../websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_2">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouch</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_3">リクエスト</h3>
+<h4 id="http">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -613,8 +673,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_4">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -649,10 +708,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_5">レスポンス</h3>
+<h4 id="http_1">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -667,10 +724,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_6">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -693,24 +748,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチを開始した際の通知イベントを設定</h2>
-
-<p>タッチイベントが開始した際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="/websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchstart</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_7">タッチを開始した際の通知イベントを設定</h2>
+<p>タッチイベントが開始した際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="../../websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_8">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchstart</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_9">リクエスト</h3>
+<h4 id="http_2">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -725,8 +771,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_10">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -761,10 +806,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_11">レスポンス</h3>
+<h4 id="http_3">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -779,10 +822,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_12">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -805,24 +846,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチを開始した際の通知イベントを削除</h2>
-
+<h2 id="_13">タッチを開始した際の通知イベントを削除</h2>
 <p>タッチを開始した時点での通知イベントを削除します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchstart</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_14">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchstart</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_15">リクエスト</h3>
+<h4 id="http_4">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -837,8 +869,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_16">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -873,10 +904,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_17">レスポンス</h3>
+<h4 id="http_5">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -891,10 +920,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_18">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -917,24 +944,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチを終了した際の通知イベントを設定</h2>
-
-<p>タッチイベントが終了した際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="/websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchend</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_19">タッチを終了した際の通知イベントを設定</h2>
+<p>タッチイベントが終了した際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="../../websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_20">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchend</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_21">リクエスト</h3>
+<h4 id="http_6">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -949,8 +967,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_22">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -985,10 +1002,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_23">レスポンス</h3>
+<h4 id="http_7">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1003,10 +1018,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_24">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1029,24 +1042,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチを終了した際の通知イベントを削除</h2>
-
+<h2 id="_25">タッチを終了した際の通知イベントを削除</h2>
 <p>タッチを終了した時点での通知イベントを削除します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchend</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_26">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchend</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_27">リクエスト</h3>
+<h4 id="http_8">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1061,8 +1065,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_28">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1097,10 +1100,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_29">レスポンス</h3>
+<h4 id="http_9">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1115,10 +1116,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_30">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1141,24 +1140,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチし続けている際の通知イベントを設定</h2>
-
-<p>タッチイベントを続けている際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="/websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchmove</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_31">タッチし続けている際の通知イベントを設定</h2>
+<p>タッチイベントを続けている際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="../../websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_32">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchmove</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_33">リクエスト</h3>
+<h4 id="http_10">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1173,8 +1163,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_34">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1209,10 +1198,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_35">レスポンス</h3>
+<h4 id="http_11">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1227,10 +1214,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_36">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1253,24 +1238,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチをし続けている際の通知イベントを削除</h2>
-
+<h2 id="_37">タッチをし続けている際の通知イベントを削除</h2>
 <p>タッチをし続けている通知イベントを削除します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchmove</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_38">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchmove</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_39">リクエスト</h3>
+<h4 id="http_12">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1285,8 +1261,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_40">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1321,10 +1296,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_41">レスポンス</h3>
+<h4 id="http_13">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1339,10 +1312,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_42">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1365,24 +1336,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチをキャンセルした際の通知イベントを設定</h2>
-
-<p>タッチイベントをキャンセル際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="/websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchcancel</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_43">タッチをキャンセルした際の通知イベントを設定</h2>
+<p>タッチイベントをキャンセル際に通知する設定を行います。実際の通知はWebSocketでくるので、<a href="../../websocket/touch">タッチAPI（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_44">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchcancel</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_45">リクエスト</h3>
+<h4 id="http_14">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1397,8 +1359,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_46">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1433,10 +1394,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_47">レスポンス</h3>
+<h4 id="http_15">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1451,10 +1410,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_48">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1477,24 +1434,15 @@
 </tr>
 </tbody>
 </table>
-<h2>タッチをキャンセルした際の通知イベントを削除</h2>
-
+<h2 id="_49">タッチをキャンセルした際の通知イベントを削除</h2>
 <p>タッチをキャンセルした時点での通知イベントを削除します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/touch/ontouchcancel</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_50">基本情報</h3>
+<p>APIパス
+: /gotapi/touch/ontouchcancel</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_51">リクエスト</h3>
+<h4 id="http_16">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1509,8 +1457,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_52">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1545,10 +1492,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_53">レスポンス</h3>
+<h4 id="http_17">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1563,10 +1508,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_54">レスポンス内容</h4>
 <table>
 <thead>
 <tr>

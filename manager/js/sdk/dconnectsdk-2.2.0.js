@@ -1280,17 +1280,9 @@ var dConnect = (function(parent, global) {
     if (state === undefined) {
         state = '';
     }
-    if (isFirefox()) {
-        url = uriSchemeName + '://start/' + state
-                  + '?origin=' + origin
-                  + '&key=' + _currentHmacKey;
-    } else {
-       urlScheme.setPath('start/' + state);
-      urlScheme.addParameter('package', 'org.deviceconnect.android.manager');
-      urlScheme.addParameter('S.origin', origin);
-      urlScheme.addParameter('S.key', _currentHmacKey);
-      url = urlScheme.build();
-    }
+    url = uriSchemeName + '://start/' + state
+              + '?origin=' + origin
+              + '&key=' + _currentHmacKey;
     location.href = url;
   };
 
@@ -1338,17 +1330,9 @@ var dConnect = (function(parent, global) {
     if (state === undefined) {
         state = '';
     }
-    if (isFirefox()) {
-        url = uriSchemeName + '://stop/' + state
+    url = uriSchemeName + '://stop/' + state
               + '?origin=' + origin
               + '&key=' + _currentHmacKey;
-    } else {
-       urlScheme.setPath('stop/' + state);
-      urlScheme.addParameter('package', 'org.deviceconnect.android.manager');
-      urlScheme.addParameter('S.origin', origin);
-      urlScheme.addParameter('S.key', _currentHmacKey);
-      url = urlScheme.build();
-    }
     location.href = url;
   };
 
@@ -2154,7 +2138,7 @@ var dConnect = (function(parent, global) {
    * @return {String} URIスキームの文字列表現
    */
   AndroidURISchemeBuilder.prototype.build = function() {
-    var urlScheme = 'intent://' + this.path + '#Intent;scheme=' +
+    var urlScheme = 'intent://' + this.path + '/#Intent;scheme=' +
                             this.scheme + ';';
     for (var key in this.params) {
       urlScheme += key + '=' + this.params[key] + ';';

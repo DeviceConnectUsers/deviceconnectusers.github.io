@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -200,6 +207,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -259,7 +308,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../webapi/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -308,14 +357,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../webapi/mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../webapi/mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -350,7 +399,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../webapi/remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../webapi/remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -449,7 +498,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -603,7 +652,7 @@
 <p>まず<a href="https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip">デモファイル</a>をダウンロード、解凍します。</p>
 <p><img alt="" src="../images/android/deviceconnect-android-34.png" /></p>
 <h2 id="web">Webブラウザでアクセス</h2>
-<p><a href="../android">Android用ドキュメントの外部から操作してみる</a>に沿ってインストールとDeviceConnect Managerの起動、設定を行ってください。それが終わったら、デスクトップのブラウザ（Google Chromeなど）で <code>file:///path/to/demoWebSite/index.html?ip=(Android端末のIPアドレス)</code> にアクセスします。Android端末のIPアドレスはそれぞれ読み替えてください。</p>
+<p><a href="../android">Android用ドキュメントの外部から操作してみる</a>に沿ってインストールとDeviceConnect Managerの起動、設定を行ってください。それが終わったら、デスクトップのブラウザ（Google Chromeなど）で <code>http://deviceconnectusers.github.io/manager/?ip=(Android端末のIPアドレス)</code> にアクセスします。Android端末のIPアドレスはそれぞれ読み替えてください。またはadbのポートフォワードを使うこともできます。詳しくは<a href="http://localhost:8000/android/external/#adb">外部ブラウザからの利用 - DeviceConnect Users</a>を参照してください。</p>
 <p>後はDevToolsのコンソールを使って試していきたいと思います。</p>
 <h3 id="_3">アクセストークンを取得する</h3>
 <p>まず最初に行うのはアクセストークンの取得です。次のようにアクセスします。 myAppNameは自由に決められます。</p>
@@ -636,18 +685,18 @@ dConnect.authorization(scopes, myAppName,
 <li>battery</li>
 <li>connect</li>
 <li>deviceorientation</li>
-<li>file_descriptor</li>
+<li>fileDescriptor</li>
 <li>file</li>
-<li>media_player</li>
-<li>mediastream_recording</li>
+<li>mediaPlayer</li>
+<li>mediastreamRecording</li>
 <li>notification</li>
 <li>phone</li>
 <li>proximity</li>
 <li>settings</li>
 <li>vibration</li>
 <li>light</li>
-<li>remote_controller</li>
-<li>drive_controller</li>
+<li>remoteController</li>
+<li>driveController</li>
 <li>mhealth</li>
 <li>sphero</li>
 <li>dice</li>
@@ -658,7 +707,7 @@ dConnect.authorization(scopes, myAppName,
 <li>touch</li>
 <li>humandetect</li>
 <li>keyevent</li>
-<li>omnidirectional_image</li>
+<li>omnidirectionalImage</li>
 <li>tv</li>
 <li>powermeter</li>
 <li>humidity</li>

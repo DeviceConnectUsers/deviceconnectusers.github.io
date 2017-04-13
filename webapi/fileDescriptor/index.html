@@ -24,8 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "ファイル参照API";
-    var mkdocs_page_input_path = "webapi/file_descriptor.md";
-    var mkdocs_page_url = "/webapi/file_descriptor/";
+    var mkdocs_page_input_path = "webapi/fileDescriptor.md";
+    var mkdocs_page_url = "/webapi/fileDescriptor/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -81,6 +81,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../../demosite/">デモサイトの使い方</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
         
     </li>
 <li>
@@ -183,6 +190,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -246,6 +295,19 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#filedescriptor-api">Filedescriptor API</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">デバイス上のファイルを開く</a></li>
+                
+                    <li><a class="toctree-l4" href="#_7">指定したパスに書き込む</a></li>
+                
+                    <li><a class="toctree-l4" href="#_13">ファイルを読み込む</a></li>
+                
+                    <li><a class="toctree-l4" href="#_19">ファイルのポインタを閉じる</a></li>
+                
+                    <li><a class="toctree-l4" href="#_25">ファイルの変更を監視する</a></li>
+                
+            
             </ul>
         
     </li>
@@ -295,14 +357,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -337,7 +399,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -436,7 +498,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -579,26 +641,16 @@
           <div role="main">
             <div class="section">
               
-                <h1>ファイル参照 API</h1>
-
-<h2>デバイス上のファイルを開く</h2>
-
+                <h1 id="filedescriptor-api">Filedescriptor API</h1>
+<h2 id="_1">デバイス上のファイルを開く</h2>
 <p>デバイス上にあるファイルを開きます。このファイルは新規作成されます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/file_descriptor/open</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_2">基本情報</h3>
+<p>APIパス
+: /gotapi/fileDescriptor/open</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_3">リクエスト</h3>
+<h4 id="http">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -613,8 +665,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_4">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -656,10 +707,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_5">レスポンス</h3>
+<h4 id="http_1">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -674,10 +723,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_6">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -700,24 +747,15 @@
 </tr>
 </tbody>
 </table>
-<h2>指定したパスに書き込む</h2>
-
+<h2 id="_7">指定したパスに書き込む</h2>
 <p>指定したファイルの内容をそのまま書き込みます。書き込みを開始する場所が指定できます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/file_descriptor/write</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_8">基本情報</h3>
+<p>APIパス
+: /gotapi/fileDescriptor/write</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_9">リクエスト</h3>
+<h4 id="http_2">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -732,8 +770,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_10">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -789,10 +826,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_11">レスポンス</h3>
+<h4 id="http_3">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -807,10 +842,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_12">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -833,24 +866,15 @@
 </tr>
 </tbody>
 </table>
-<h2>ファイルを読み込む</h2>
-
+<h2 id="_13">ファイルを読み込む</h2>
 <p>指定したパスのファイルを読み込みます。読み込み開始する場所、長さを指定できます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/file_descriptor/read</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_14">基本情報</h3>
+<p>APIパス
+: /gotapi/fileDescriptor/read</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_15">リクエスト</h3>
+<h4 id="http_4">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -865,8 +889,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_16">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -915,10 +938,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_17">レスポンス</h3>
+<h4 id="http_5">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -933,10 +954,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_18">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -967,24 +986,15 @@
 </tr>
 </tbody>
 </table>
-<h2>ファイルのポインタを閉じる</h2>
-
+<h2 id="_19">ファイルのポインタを閉じる</h2>
 <p>ファイルを閉じます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/file_descriptor/close</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_20">基本情報</h3>
+<p>APIパス
+: /gotapi/fileDescriptor/close</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_21">リクエスト</h3>
+<h4 id="http_6">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -999,8 +1009,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_22">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1035,10 +1044,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_23">レスポンス</h3>
+<h4 id="http_7">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1053,10 +1060,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_24">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1079,24 +1084,15 @@
 </tr>
 </tbody>
 </table>
-<h2>ファイルの変更を監視する</h2>
-
+<h2 id="_25">ファイルの変更を監視する</h2>
 <p>ファイルが変更されるとWebSocket経由でイベントを受け取れるようになります。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/file_descriptor/onwatchfile</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_26">基本情報</h3>
+<p>APIパス
+: /gotapi/fileDescriptor/onwatchfile</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_27">リクエスト</h3>
+<h4 id="http_8">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1111,8 +1107,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_28">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1147,10 +1142,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_29">レスポンス</h3>
+<h4 id="http_9">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1165,10 +1158,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_30">レスポンス内容</h4>
 <table>
 <thead>
 <tr>

@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -183,6 +190,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -242,7 +291,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../file_descriptor/">ファイル参照API</a>
+        <a class="" href="../fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -291,14 +340,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -315,6 +364,17 @@
         <a class="current" href="./">電話API</a>
         
             <ul>
+            
+                <li class="toctree-l3"><a href="#api">電話 API</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">電話をかける</a></li>
+                
+                    <li><a class="toctree-l4" href="#_7">通話ステータス変更イベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_13">通話ステータスの変更イベントを削除</a></li>
+                
+                    <li><a class="toctree-l4" href="#_19">受電設定の変更</a></li>
+                
             
             </ul>
         
@@ -337,7 +397,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -436,7 +496,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -579,26 +639,16 @@
           <div role="main">
             <div class="section">
               
-                <h1>電話 API</h1>
-
-<h2>電話をかける</h2>
-
+                <h1 id="api">電話 API</h1>
+<h2 id="_1">電話をかける</h2>
 <p>電話をかけます。電話番号は数字のみで指定する必要があります。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/phone/call</p>
-
-<p>HTTPメソッド</p>
-
-<p>: POST</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_2">基本情報</h3>
+<p>APIパス
+: /gotapi/phone/call</p>
+<p>HTTPメソッド
+: POST</p>
+<h3 id="_3">リクエスト</h3>
+<h4 id="http">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -613,8 +663,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_4">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -649,10 +698,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_5">レスポンス</h3>
+<h4 id="http_1">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -667,10 +714,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_6">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -693,24 +738,15 @@
 </tr>
 </tbody>
 </table>
-<h2>通話ステータス変更イベントを設定</h2>
-
-<p>デバイスに対して行った通話のステータスが変わった際に受け取るイベントを設定します。登録した後のイベントはWebSocketにきますので、<a href="/websocket/phone">電話API</a> を参照してください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/phone/onconnect</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_7">通話ステータス変更イベントを設定</h2>
+<p>デバイスに対して行った通話のステータスが変わった際に受け取るイベントを設定します。登録した後のイベントはWebSocketにきますので、<a href="../../websocket/phone">電話API</a> を参照してください。</p>
+<h3 id="_8">基本情報</h3>
+<p>APIパス
+: /gotapi/phone/onconnect</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_9">リクエスト</h3>
+<h4 id="http_2">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -725,8 +761,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_10">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -761,10 +796,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_11">レスポンス</h3>
+<h4 id="http_3">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -779,10 +812,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_12">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -805,24 +836,15 @@
 </tr>
 </tbody>
 </table>
-<h2>通話ステータスの変更イベントを削除</h2>
-
+<h2 id="_13">通話ステータスの変更イベントを削除</h2>
 <p>通話ステータスが変わった時のイベント設定を削除します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/phone/onconnect</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_14">基本情報</h3>
+<p>APIパス
+: /gotapi/phone/onconnect</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_15">リクエスト</h3>
+<h4 id="http_4">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -837,8 +859,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_16">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -873,10 +894,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_17">レスポンス</h3>
+<h4 id="http_5">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -891,10 +910,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_18">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -917,24 +934,15 @@
 </tr>
 </tbody>
 </table>
-<h2>受電設定の変更</h2>
-
+<h2 id="_19">受電設定の変更</h2>
 <p>サウンドやバイブレーションなど、受電した際の設定を変更します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/phone/set</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_20">基本情報</h3>
+<p>APIパス
+: /gotapi/phone/set</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_21">リクエスト</h3>
+<h4 id="http_6">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -949,8 +957,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_22">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -985,10 +992,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_23">レスポンス</h3>
+<h4 id="http_7">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1003,10 +1008,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_24">レスポンス内容</h4>
 <table>
 <thead>
 <tr>

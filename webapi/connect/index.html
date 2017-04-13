@@ -86,6 +86,13 @@
 <li>
           
             <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
+        
+    </li>
+<li>
+          
+            <li>
     <ul class="subnav">
     <li><span>Android</span></li>
 
@@ -183,6 +190,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -225,6 +274,41 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#api">コネクト API</a></li>
+                
+                    <li><a class="toctree-l4" href="#bluetooth">Bluetoothの状態を取得</a></li>
+                
+                    <li><a class="toctree-l4" href="#bluetooth_1">Bluetoothを有効にする</a></li>
+                
+                    <li><a class="toctree-l4" href="#bluetooth_2">Bluetoothを停止する</a></li>
+                
+                    <li><a class="toctree-l4" href="#ble">BLEの状態を取得</a></li>
+                
+                    <li><a class="toctree-l4" href="#bluetooth-low-energy">Bluetooth Low Energyを有効にする</a></li>
+                
+                    <li><a class="toctree-l4" href="#bluetooth-low-energy_1">Bluetooth Low Energyを停止する</a></li>
+                
+                    <li><a class="toctree-l4" href="#wifi">WiFiの状態を取得</a></li>
+                
+                    <li><a class="toctree-l4" href="#wifi_1">WiFiを有効にする</a></li>
+                
+                    <li><a class="toctree-l4" href="#wifi_2">WiFiを停止する</a></li>
+                
+                    <li><a class="toctree-l4" href="#nfc">NFCの状態を取得</a></li>
+                
+                    <li><a class="toctree-l4" href="#nfc_1">NFCを有効にする</a></li>
+                
+                    <li><a class="toctree-l4" href="#nfc_2">NFCを停止する</a></li>
+                
+                    <li><a class="toctree-l4" href="#wifi_3">WiFiステータス変更イベントの設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#bluetooth_3">Bluetoothステータス変更イベントの設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#ble_1">BLEステータス変更イベントの設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#nfc_3">NFCステータス変更イベントの設定</a></li>
+                
+            
             </ul>
         
     </li>
@@ -246,7 +330,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../file_descriptor/">ファイル参照API</a>
+        <a class="" href="../fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -295,14 +379,14 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../media_player/">メディアプレイヤーAPI</a>
+        <a class="" href="../mediaPlayer/">メディアプレイヤーAPI</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -337,7 +421,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -436,7 +520,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -579,26 +663,16 @@
           <div role="main">
             <div class="section">
               
-                <h1>コネクト API</h1>
-
-<h2>Bluetoothの状態を取得</h2>
-
+                <h1 id="api">コネクト API</h1>
+<h2 id="bluetooth">Bluetoothの状態を取得</h2>
 <p>Bluetoothが使える状態かどうかを取得します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/bluetooth</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_1">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/bluetooth</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_2">リクエスト</h3>
+<h4 id="http">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -613,8 +687,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_3">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -642,10 +715,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_4">レスポンス</h3>
+<h4 id="http_1">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -660,10 +731,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_5">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -690,24 +759,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Bluetoothを有効にする</h2>
-
+<h2 id="bluetooth_1">Bluetoothを有効にする</h2>
 <p>Bluetoothを有効にします。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/bluetooth</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_6">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/bluetooth</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_7">リクエスト</h3>
+<h4 id="http_2">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -722,8 +782,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_8">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -751,10 +810,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_9">レスポンス</h3>
+<h4 id="http_3">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -769,10 +826,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_10">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -795,24 +850,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Bluetoothを停止する</h2>
-
+<h2 id="bluetooth_2">Bluetoothを停止する</h2>
 <p>Bluetooth機能を停止します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/bluetooth</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_11">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/bluetooth</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_12">リクエスト</h3>
+<h4 id="http_4">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -827,8 +873,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_13">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -856,10 +901,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_14">レスポンス</h3>
+<h4 id="http_5">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -874,10 +917,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_15">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -900,24 +941,15 @@
 </tr>
 </tbody>
 </table>
-<h2>BLEの状態を取得</h2>
-
+<h2 id="ble">BLEの状態を取得</h2>
 <p>Bluetooth Low Energyが使えるかどうか取得します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/ble</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_16">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/ble</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_17">リクエスト</h3>
+<h4 id="http_6">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -932,8 +964,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_18">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -961,10 +992,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_19">レスポンス</h3>
+<h4 id="http_7">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -979,10 +1008,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_20">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1009,24 +1036,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Bluetooth Low Energyを有効にする</h2>
-
+<h2 id="bluetooth-low-energy">Bluetooth Low Energyを有効にする</h2>
 <p>Bluetooth Low Energyを有効にします。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/ble</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_21">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/ble</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_22">リクエスト</h3>
+<h4 id="http_8">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1041,8 +1059,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_23">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1070,10 +1087,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_24">レスポンス</h3>
+<h4 id="http_9">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1088,10 +1103,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_25">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1114,24 +1127,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Bluetooth Low Energyを停止する</h2>
-
+<h2 id="bluetooth-low-energy_1">Bluetooth Low Energyを停止する</h2>
 <p>Bluetooth Low Energy機能を停止します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/ble</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_26">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/ble</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_27">リクエスト</h3>
+<h4 id="http_10">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1146,8 +1150,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_28">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1175,10 +1178,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_29">レスポンス</h3>
+<h4 id="http_11">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1193,10 +1194,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_30">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1219,24 +1218,15 @@
 </tr>
 </tbody>
 </table>
-<h2>WiFiの状態を取得</h2>
-
+<h2 id="wifi">WiFiの状態を取得</h2>
 <p>WiFiが使えるかどうか取得します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/wifi</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_31">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/wifi</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_32">リクエスト</h3>
+<h4 id="http_12">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1251,8 +1241,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_33">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1280,10 +1269,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_34">レスポンス</h3>
+<h4 id="http_13">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1298,10 +1285,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_35">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1328,24 +1313,15 @@
 </tr>
 </tbody>
 </table>
-<h2>WiFiを有効にする</h2>
-
+<h2 id="wifi_1">WiFiを有効にする</h2>
 <p>WiFiを有効にします。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/wifi</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_36">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/wifi</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_37">リクエスト</h3>
+<h4 id="http_14">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1360,8 +1336,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_38">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1389,10 +1364,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_39">レスポンス</h3>
+<h4 id="http_15">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1407,10 +1380,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_40">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1433,24 +1404,15 @@
 </tr>
 </tbody>
 </table>
-<h2>WiFiを停止する</h2>
-
+<h2 id="wifi_2">WiFiを停止する</h2>
 <p>WiFi機能を停止します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/wifi</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_41">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/wifi</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_42">リクエスト</h3>
+<h4 id="http_16">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1465,8 +1427,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_43">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1494,10 +1455,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_44">レスポンス</h3>
+<h4 id="http_17">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1512,10 +1471,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_45">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1538,24 +1495,15 @@
 </tr>
 </tbody>
 </table>
-<h2>NFCの状態を取得</h2>
-
+<h2 id="nfc">NFCの状態を取得</h2>
 <p>NFCが使えるかどうか取得します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/nfc</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_46">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/nfc</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_47">リクエスト</h3>
+<h4 id="http_18">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1570,8 +1518,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_48">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1599,10 +1546,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_49">レスポンス</h3>
+<h4 id="http_19">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1617,10 +1562,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_50">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1647,24 +1590,15 @@
 </tr>
 </tbody>
 </table>
-<h2>NFCを有効にする</h2>
-
+<h2 id="nfc_1">NFCを有効にする</h2>
 <p>NFCを有効にします。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/nfc</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_51">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/nfc</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_52">リクエスト</h3>
+<h4 id="http_20">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1679,8 +1613,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_53">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1708,10 +1641,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_54">レスポンス</h3>
+<h4 id="http_21">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1726,10 +1657,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_55">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1752,24 +1681,15 @@
 </tr>
 </tbody>
 </table>
-<h2>NFCを停止する</h2>
-
+<h2 id="nfc_2">NFCを停止する</h2>
 <p>NFC機能を停止します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/nfc</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_56">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/nfc</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_57">リクエスト</h3>
+<h4 id="http_22">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1784,8 +1704,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_58">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1813,10 +1732,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_59">レスポンス</h3>
+<h4 id="http_23">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1831,10 +1748,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_60">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1857,24 +1772,15 @@
 </tr>
 </tbody>
 </table>
-<h2>WiFiステータス変更イベントの設定</h2>
-
-<p>WiFiのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="/websocket/connect">WiFiステータス変更API（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/onwifichange</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="wifi_3">WiFiステータス変更イベントの設定</h2>
+<p>WiFiのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="../../websocket/connect">WiFiステータス変更API（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_61">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/onwifichange</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_62">リクエスト</h3>
+<h4 id="http_24">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1889,8 +1795,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_63">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1925,10 +1830,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_64">レスポンス</h3>
+<h4 id="http_25">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1943,10 +1846,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_65">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1969,24 +1870,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Bluetoothステータス変更イベントの設定</h2>
-
-<p>Bluetoothのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="/websocket/connect">Bluetoothステータス変更API（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/onbluetoothchange</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="bluetooth_3">Bluetoothステータス変更イベントの設定</h2>
+<p>Bluetoothのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="../../websocket/connect">Bluetoothステータス変更API（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_66">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/onbluetoothchange</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_67">リクエスト</h3>
+<h4 id="http_26">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -2001,8 +1893,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_68">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -2037,10 +1928,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_69">レスポンス</h3>
+<h4 id="http_27">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -2055,10 +1944,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_70">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -2081,24 +1968,15 @@
 </tr>
 </tbody>
 </table>
-<h2>BLEステータス変更イベントの設定</h2>
-
-<p>BLEのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="/websocket/connect">BLEステータス変更API（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/onblechange</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="ble_1">BLEステータス変更イベントの設定</h2>
+<p>BLEのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="../../websocket/connect">BLEステータス変更API（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_71">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/onblechange</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_72">リクエスト</h3>
+<h4 id="http_28">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -2113,8 +1991,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_73">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -2149,10 +2026,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_74">レスポンス</h3>
+<h4 id="http_29">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -2167,10 +2042,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_75">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -2193,24 +2066,15 @@
 </tr>
 </tbody>
 </table>
-<h2>NFCステータス変更イベントの設定</h2>
-
-<p>NFCのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="/websocket/connect">NFCステータス変更API（WebSocket）</a>を参考にしてください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/connect/onnfcchange</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="nfc_3">NFCステータス変更イベントの設定</h2>
+<p>NFCのステータスが変わったらイベント通知します。イベント通知はWebSocketを使うので、<a href="../../websocket/connect">NFCステータス変更API（WebSocket）</a>を参考にしてください。</p>
+<h3 id="_76">基本情報</h3>
+<p>APIパス
+: /gotapi/connect/onnfcchange</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_77">リクエスト</h3>
+<h4 id="http_30">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -2225,8 +2089,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_78">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -2261,10 +2124,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_79">レスポンス</h3>
+<h4 id="http_31">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -2279,10 +2140,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_80">レスポンス内容</h4>
 <table>
 <thead>
 <tr>

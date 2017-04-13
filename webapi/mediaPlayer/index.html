@@ -24,8 +24,8 @@
   <script>
     // Current page data
     var mkdocs_page_name = "メディアプレイヤーAPI";
-    var mkdocs_page_input_path = "webapi/media_player.md";
-    var mkdocs_page_url = "/webapi/media_player/";
+    var mkdocs_page_input_path = "webapi/mediaPlayer.md";
+    var mkdocs_page_url = "/webapi/mediaPlayer/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -81,6 +81,13 @@
             <li>
     <li class="toctree-l1 ">
         <a class="" href="../../demosite/">デモサイトの使い方</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../toManager/">→ デモサイトはこちら</a>
         
     </li>
 <li>
@@ -183,6 +190,48 @@
     </li>
 
         
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/app/">JavaScript SDKをPromiseベースにする</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/vibration/">バイブレーションを実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/connect/">BluetoothやWiFiの接続状態を確認する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/mediastreamrecording/">THETAで写真撮影を行う</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/serviceinformation/">サービス情報を実行する</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../javascript/file/">ファイル一覧、写真を取得する</a>
+        
+    </li>
+
+        
     </ul>
 <li>
           
@@ -242,7 +291,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../file_descriptor/">ファイル参照API</a>
+        <a class="" href="../fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -295,6 +344,31 @@
         
             <ul>
             
+                <li class="toctree-l3"><a href="#mediaplayer-api">Mediaplayer API</a></li>
+                
+                    <li><a class="toctree-l4" href="#_1">レコーダーの情報を取得</a></li>
+                
+                    <li><a class="toctree-l4" href="#_7">デバイスのミュートを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_13">デバイスのミュートを解除</a></li>
+                
+                    <li><a class="toctree-l4" href="#_19">音楽ファイルを再生</a></li>
+                
+                    <li><a class="toctree-l4" href="#_25">音楽の再生を一時停止</a></li>
+                
+                    <li><a class="toctree-l4" href="#_31">音楽を停止</a></li>
+                
+                    <li><a class="toctree-l4" href="#_37">音楽を再開</a></li>
+                
+                    <li><a class="toctree-l4" href="#_43">音楽の再生位置を変更</a></li>
+                
+                    <li><a class="toctree-l4" href="#_49">ボリュームを変更</a></li>
+                
+                    <li><a class="toctree-l4" href="#_55">メディアレコーダーの通知イベントを設定</a></li>
+                
+                    <li><a class="toctree-l4" href="#_61">メディアプレイヤーの通知設定を削除</a></li>
+                
+            
             </ul>
         
     </li>
@@ -302,7 +376,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../mediastream_recording/">メディアストリーミング録画API</a>
+        <a class="" href="../mediastreamRecording/">メディアストリーミング録画API</a>
         
     </li>
 
@@ -337,7 +411,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../remote_controller/">リモートコントローラーAPI</a>
+        <a class="" href="../remoteController/">リモートコントローラーAPI</a>
         
     </li>
 
@@ -436,7 +510,7 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../websocket/file_descriptor/">ファイル参照API</a>
+        <a class="" href="../../websocket/fileDescriptor/">ファイル参照API</a>
         
     </li>
 
@@ -579,26 +653,16 @@
           <div role="main">
             <div class="section">
               
-                <h1>メディアプレイヤー API</h1>
-
-<h2>レコーダーの情報を取得</h2>
-
+                <h1 id="mediaplayer-api">Mediaplayer API</h1>
+<h2 id="_1">レコーダーの情報を取得</h2>
 <p>デバイスが持っているレコーダーに関する情報を取得します。複数返ってきます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media<em>player/media</em>list</p>
-
-<p>HTTPメソッド</p>
-
-<p>: GET</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_2">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/media_list</p>
+<p>HTTPメソッド
+: GET</p>
+<h3 id="_3">リクエスト</h3>
+<h4 id="http">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -613,8 +677,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_4">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -642,10 +705,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_5">レスポンス</h3>
+<h4 id="http_1">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -660,64 +721,47 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_6">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
 <th>キー</th>
 <th>型</th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>result</td>
 <td>数値</td>
-<td></td>
 </tr>
 <tr>
 <td>product</td>
 <td>文字列</td>
-<td></td>
 </tr>
 <tr>
 <td>count</td>
 <td>数値</td>
-<td></td>
 </tr>
 <tr>
 <td>media</td>
 <td>配列</td>
-<td></td>
 </tr>
 <tr>
 <td>version</td>
 <td>文字列</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<h2>デバイスのミュートを設定</h2>
-
+<h2 id="_7">デバイスのミュートを設定</h2>
 <p>デバイスをミュートにします。変更後はWebSocket経由でイベントが通知されます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/mute</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_8">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/mute</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_9">リクエスト</h3>
+<h4 id="http_2">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -732,8 +776,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_10">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -761,10 +804,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_11">レスポンス</h3>
+<h4 id="http_3">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -779,10 +820,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_12">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -805,24 +844,15 @@
 </tr>
 </tbody>
 </table>
-<h2>デバイスのミュートを解除</h2>
-
+<h2 id="_13">デバイスのミュートを解除</h2>
 <p>デバイスのミュート設定を解除します。変更後はWebSocket経由でイベントが通知されます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/mute</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_14">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/mute</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_15">リクエスト</h3>
+<h4 id="http_4">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -837,8 +867,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_16">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -866,10 +895,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_17">レスポンス</h3>
+<h4 id="http_5">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -884,10 +911,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_18">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -910,24 +935,15 @@
 </tr>
 </tbody>
 </table>
-<h2>音楽ファイルを再生</h2>
-
+<h2 id="_19">音楽ファイルを再生</h2>
 <p>デバイスの中にある音楽ファイルを再生します。デバイス側で再生します。その際、再生開始や完了がWebSocketを経由して通知されます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/play</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_20">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/play</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_21">リクエスト</h3>
+<h4 id="http_6">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -942,8 +958,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_22">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -971,10 +986,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_23">レスポンス</h3>
+<h4 id="http_7">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -989,10 +1002,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_24">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1015,24 +1026,15 @@
 </tr>
 </tbody>
 </table>
-<h2>音楽の再生を一時停止</h2>
-
-<p>デバイスの音楽を一時停止します。その際、イベントの通知がWebSocket経由で行われます。WebSocketについては<a href="/websocket/media_player">メディアプレイヤーAPI（WebSocket）</a>を参照してください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/pause</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_25">音楽の再生を一時停止</h2>
+<p>デバイスの音楽を一時停止します。その際、イベントの通知がWebSocket経由で行われます。WebSocketについては<a href="../../websocket/mediaPlayer">メディアプレイヤーAPI（WebSocket）</a>を参照してください。</p>
+<h3 id="_26">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/pause</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_27">リクエスト</h3>
+<h4 id="http_8">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1047,8 +1049,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_28">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1076,10 +1077,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_29">レスポンス</h3>
+<h4 id="http_9">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1094,10 +1093,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_30">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1120,24 +1117,15 @@
 </tr>
 </tbody>
 </table>
-<h2>音楽を停止</h2>
-
+<h2 id="_31">音楽を停止</h2>
 <p>メディアプレイヤーの再生を停止します。停止した際のイベントはWebSocketで通知されます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/stop</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_32">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/stop</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_33">リクエスト</h3>
+<h4 id="http_10">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1152,8 +1140,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_34">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1181,10 +1168,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_35">レスポンス</h3>
+<h4 id="http_11">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1199,10 +1184,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_36">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1225,24 +1208,15 @@
 </tr>
 </tbody>
 </table>
-<h2>音楽を再開</h2>
-
+<h2 id="_37">音楽を再開</h2>
 <p>メディアプレイヤーの再生を再開します。停止した際のイベントはWebSocketで通知されます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/resume</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_38">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/resume</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_39">リクエスト</h3>
+<h4 id="http_12">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1257,8 +1231,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_40">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1286,10 +1259,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_41">レスポンス</h3>
+<h4 id="http_13">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1304,10 +1275,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_42">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1330,24 +1299,15 @@
 </tr>
 </tbody>
 </table>
-<h2>音楽の再生位置を変更</h2>
-
+<h2 id="_43">音楽の再生位置を変更</h2>
 <p>メディアプレイヤーの再生位置を変更します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/seek</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_44">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/seek</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_45">リクエスト</h3>
+<h4 id="http_14">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1362,8 +1322,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_46">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1398,10 +1357,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_47">レスポンス</h3>
+<h4 id="http_15">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1416,10 +1373,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_48">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1442,24 +1397,15 @@
 </tr>
 </tbody>
 </table>
-<h2>ボリュームを変更</h2>
-
+<h2 id="_49">ボリュームを変更</h2>
 <p>メディアプレイヤーのボリュームを変更します。変更した際のイベントはWebSocketで通知されます。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/volume</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_50">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/volume</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_51">リクエスト</h3>
+<h4 id="http_16">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1474,8 +1420,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_52">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1510,10 +1455,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_53">レスポンス</h3>
+<h4 id="http_17">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1528,10 +1471,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_54">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1554,24 +1495,15 @@
 </tr>
 </tbody>
 </table>
-<h2>メディアレコーダーの通知イベントを設定</h2>
-
-<p>メディアレコーダーの各種通知イベントを設定します。イベントの通知はWebSocketで行われるので、<a href="/websocket/media_player">メディアレコーダーAPI（WebSocket）</a>を参照してください。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/onstatuschange</p>
-
-<p>HTTPメソッド</p>
-
-<p>: PUT</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h2 id="_55">メディアレコーダーの通知イベントを設定</h2>
+<p>メディアレコーダーの各種通知イベントを設定します。イベントの通知はWebSocketで行われるので、<a href="../../websocket/mediaPlayer">メディアレコーダーAPI（WebSocket）</a>を参照してください。</p>
+<h3 id="_56">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/onstatuschange</p>
+<p>HTTPメソッド
+: PUT</p>
+<h3 id="_57">リクエスト</h3>
+<h4 id="http_18">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1586,8 +1518,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_58">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1622,10 +1553,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_59">レスポンス</h3>
+<h4 id="http_19">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1640,10 +1569,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_60">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1670,24 +1597,15 @@
 </tr>
 </tbody>
 </table>
-<h2>メディアプレイヤーの通知設定を削除</h2>
-
+<h2 id="_61">メディアプレイヤーの通知設定を削除</h2>
 <p>メディアプレイヤーで設定していたイベント通知設定を削除します。</p>
-
-<h3>基本情報</h3>
-
-<p>APIパス</p>
-
-<p>: /gotapi/media_player/onstatuschange</p>
-
-<p>HTTPメソッド</p>
-
-<p>: DELETE</p>
-
-<h3>リクエスト</h3>
-
-<h4>HTTPヘッダー</h4>
-
+<h3 id="_62">基本情報</h3>
+<p>APIパス
+: /gotapi/mediaPlayer/onstatuschange</p>
+<p>HTTPメソッド
+: DELETE</p>
+<h3 id="_63">リクエスト</h3>
+<h4 id="http_20">HTTPヘッダー</h4>
 <table>
 <thead>
 <tr>
@@ -1702,8 +1620,7 @@
 </tr>
 </tbody>
 </table>
-<h4>パラメータ</h4>
-
+<h4 id="_64">パラメータ</h4>
 <table>
 <thead>
 <tr>
@@ -1738,10 +1655,8 @@
 </tr>
 </tbody>
 </table>
-<h3>レスポンス</h3>
-
-<h4>HTTPレスポンス</h4>
-
+<h3 id="_65">レスポンス</h3>
+<h4 id="http_21">HTTPレスポンス</h4>
 <table>
 <thead>
 <tr>
@@ -1756,10 +1671,8 @@
 </tr>
 </tbody>
 </table>
-<p>エラーについては <a href="./error.md">エラーについて</a> を参照してください。</p>
-
-<h4>レスポンス内容</h4>
-
+<p>エラーについては <a href="../error/">エラーについて</a> を参照してください。</p>
+<h4 id="_66">レスポンス内容</h4>
 <table>
 <thead>
 <tr>
@@ -1793,7 +1706,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mediastream_recording/" class="btn btn-neutral float-right" title="メディアストリーミング録画API">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mediastreamRecording/" class="btn btn-neutral float-right" title="メディアストリーミング録画API">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../light/" class="btn btn-neutral" title="ライトAPI"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -1825,7 +1738,7 @@
         <span><a href="../light/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../mediastream_recording/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../mediastreamRecording/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

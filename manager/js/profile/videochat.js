@@ -7,7 +7,6 @@
 
 var _skywayApiKey = "[ YOUR API KEY ]";
 var _skywayDomain = "[ YOUR DOMAIN ]";
-
 /**
  * Show VideoChat Menu
  *

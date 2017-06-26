@@ -6,7 +6,7 @@
 
 ## ダウンロード
 
-[こちらのデモファイル](https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip) をダウンロードして、解凍した内容をAndroidの内部ストレージにコピーします。
+[こちらのデモファイル](https://github.com/DeviceConnectUsers/deviceconnectusers.github.io/releases/tag/v2.2.4-release-20170623-demo) をダウンロードして、解凍した内容をAndroidの内部ストレージにコピーします。
 
 後はAndroidのChromeアプリでindex.htmlを開けばOKです。
 

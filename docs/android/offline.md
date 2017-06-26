@@ -10,7 +10,7 @@
 
 ## デモのダウンロード
 
-まず[デモファイル](https://github.com/DeviceConnect/DeviceConnect-Docs/blob/master/Bin/demoWebSite.zip)をダウンロード、解凍します。
+まず[デモファイル](https://github.com/DeviceConnectUsers/deviceconnectusers.github.io/releases/tag/v2.2.4-release-20170623-demo)をダウンロード、解凍します。
 
 ![](/images/android/deviceconnect-android-34.png)
 

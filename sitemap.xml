@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>https://deviceconnectusers.github.io/</loc>
+     <loc>https://takayukihoshi1984.github.io/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>https://deviceconnectusers.github.io/about/</loc>
+     <loc>https://takayukihoshi1984.github.io/about/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,7 +19,7 @@
 
     
     <url>
-     <loc>https://deviceconnectusers.github.io/demosite/</loc>
+     <loc>https://takayukihoshi1984.github.io/demosite/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -27,7 +27,7 @@
 
     
     <url>
-     <loc>https://deviceconnectusers.github.io/toManager/</loc>
+     <loc>https://takayukihoshi1984.github.io/toManager/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -36,59 +36,37 @@
     
         
     <url>
-     <loc>https://deviceconnectusers.github.io/android/</loc>
+     <loc>https://takayukihoshi1984.github.io/android/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/android/offline/</loc>
+     <loc>https://takayukihoshi1984.github.io/android/offline/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/android/external/</loc>
+     <loc>https://takayukihoshi1984.github.io/android/external/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/android/device_connect_manager/</loc>
+     <loc>https://takayukihoshi1984.github.io/android/device_connect_manager/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/android/plugin/</loc>
+     <loc>https://takayukihoshi1984.github.io/android/plugin/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/android/plugins/pebble/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/ios/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/ios/browser/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/ios/external/</loc>
+     <loc>https://takayukihoshi1984.github.io/android/plugins/pebble/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -98,49 +76,19 @@
     
         
     <url>
-     <loc>https://deviceconnectusers.github.io/javascript/</loc>
+     <loc>https://takayukihoshi1984.github.io/ios/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/javascript/basic/</loc>
+     <loc>https://takayukihoshi1984.github.io/ios/browser/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/javascript/app/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/javascript/vibration/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/javascript/connect/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/javascript/mediastreamrecording/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/javascript/serviceinformation/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/javascript/file/</loc>
+     <loc>https://takayukihoshi1984.github.io/ios/external/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -150,175 +98,49 @@
     
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/authorization/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/basic/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/availabillity/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/app/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/battery/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/vibration/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/connect/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/connect/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/canvas/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/mediastreamrecording/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/deviceorientation/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/serviceinformation/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/webapi/fileDescriptor/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/file/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/grant/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/humidity/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/illuminance/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/keyevent/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/light/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/mediaPlayer/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/mediastreamRecording/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/notification/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/phone/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/powermeter/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/proximity/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/remoteController/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/servicediscovery/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/serviceinformation/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/settings/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/temperature/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/touch/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/vibration/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/scope/</loc>
-     <lastmod>2017-06-26</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://deviceconnectusers.github.io/webapi/error/</loc>
+     <loc>https://takayukihoshi1984.github.io/javascript/file/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -328,55 +150,175 @@
     
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/battery/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/authorization/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/connect/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/availabillity/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/deviceorientation/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/battery/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/fileDescriptor/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/connect/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/keyevent/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/canvas/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/phone/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/deviceorientation/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/proximity/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/fileDescriptor/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/websocket/touch/</loc>
+     <loc>https://takayukihoshi1984.github.io/webapi/file/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/grant/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/humidity/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/illuminance/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/keyevent/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/light/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/mediaPlayer/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/mediastreamRecording/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/notification/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/phone/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/powermeter/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/proximity/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/remoteController/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/servicediscovery/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/serviceinformation/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/settings/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/temperature/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/touch/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/vibration/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/scope/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/webapi/error/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -386,49 +328,107 @@
     
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/moverio/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/battery/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/theta_m15/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/connect/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/theta_s/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/deviceorientation/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/color_1000/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/fileDescriptor/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/f_plug/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/keyevent/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/chromecast/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/phone/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>https://deviceconnectusers.github.io/devices/android/</loc>
+     <loc>https://takayukihoshi1984.github.io/websocket/proximity/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/websocket/touch/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/moverio/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/theta_m15/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/theta_s/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/color_1000/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/f_plug/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/chromecast/</loc>
+     <lastmod>2017-06-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://takayukihoshi1984.github.io/devices/android/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -437,7 +437,7 @@
 
     
     <url>
-     <loc>https://deviceconnectusers.github.io/pros-cons/</loc>
+     <loc>https://takayukihoshi1984.github.io/pros-cons/</loc>
      <lastmod>2017-06-26</lastmod>
      <changefreq>daily</changefreq>
     </url>

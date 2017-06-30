@@ -1,6 +1,6 @@
 /**
- @preserve Device Connect SDK Library v2.2.0
- Copyright (c) 2017 NTT DOCOMO,INC.
+ @preserve Device Connect SDK Library v2.1.0
+ Copyright (c) 2014 NTT DOCOMO,INC.
  Released under the MIT license
  http://opensource.org/licenses/mit-license.php
  */
@@ -202,12 +202,7 @@ var dConnect = (function(parent, global) {
       /** エラーコード: サーバの状態異常エラー. */
       ILLEGAL_SERVER_STATE: 17,
       /** エラーコード: 不正オリジンエラー. */
-      INVALID_ORIGIN: 18,
-      /** エラーコード: 不正URLエラー. */
-      INVALID_URL: 19,
-      /** エラーコード: 不正Profileエラー. */
-      INVALID_PROFILE: 20
-
+      INVALID_ORIGIN: 18
     },
 
     /**
@@ -324,14 +319,14 @@ var dConnect = (function(parent, global) {
     },
 
     /**
-     * Connectionプロファイルの定数
+     * Connectプロファイルの定数
      * @namespace
      * @type {Object.<String, String>}
      */
-    connection: {
+    connect: {
       // Profile Name
       /** プロファイル名。 */
-      PROFILE_NAME: 'connection',
+      PROFILE_NAME: 'connect',
 
       // Interface
       /** インターフェース: bluetooth */
@@ -403,6 +398,56 @@ var dConnect = (function(parent, global) {
       PARAM_ACCELERATION_INCLUDEING_GRAVITY: 'accelerationIncludingGravity'
     },
 
+    /**
+     * File Descriptorプロファイルの定数
+     * @namespace
+     * @type {Object.<String, String>}
+     */
+    file_descriptor: {
+      // Profile name
+      /** プロファイル名。 */
+      PROFILE_NAME: 'filedescriptor',
+
+      // Attribute
+      /** アトリビュート: open */
+      ATTR_OPEN: 'open',
+      /** アトリビュート: close */
+      ATTR_CLOSE: 'close',
+      /** アトリビュート: read */
+      ATTR_READ: 'read',
+      /** アトリビュート: write */
+      ATTR_WRITE: 'write',
+      /** アトリビュート: onwatchfile */
+      ATTR_ON_WATCH_FILE: 'onwatchfile',
+
+      // Parameter
+      /** パラメータ: flag */
+      PARAM_FLAG: 'flag',
+      /** パラメータ: position */
+      PARAM_POSITION: 'position',
+      /** パラメータ: length */
+      PARAM_LENGTH: 'length',
+      /** パラメータ: size */
+      PARAM_SIZE: 'size',
+      /** パラメータ: file */
+      PARAM_FILE: 'file',
+      /** パラメータ: curr */
+      PARAM_CURR: 'curr',
+      /** パラメータ: prev */
+      PARAM_PREV: 'prev',
+      /** パラメータ: fileData */
+      PARAM_FILE_DATA: 'fileData',
+      /** パラメータ: path */
+      PARAM_PATH: 'path',
+      /** パラメータ: media */
+      PARAM_MEDIA: 'media',
+
+      // ===== ファイルフラグ =====
+      /** ファイルフラグ: 読み込みのみ. */
+      FLAG_R: 'r',
+      /** ファイルフラグ: 読み込み書き込み */
+      FLAG_RW: 'rw'
+    },
 
     /**
      * Fileプロファイルの定数
@@ -415,10 +460,20 @@ var dConnect = (function(parent, global) {
       PROFILE_NAME: 'file',
 
       // Attribute
+      /** アトリビュート: receive */
+      ATTR_RECEIVE: 'receive',
+      /** アトリビュート: send */
+      ATTR_SEND: 'send',
       /** アトリビュート: list */
       ATTR_LIST: 'list',
-      /** アトリビュート: directory */
-      ATTR_DIRECTORY: 'directory',
+      /** アトリビュート: update */
+      ATTR_UPDATE: 'update',
+      /** アトリビュート: remove */
+      ATTR_REMOVE: 'remove',
+      /** アトリビュート: mkdir */
+      ATTR_MKDIR: 'mkdir',
+      /** アトリビュート: rmdir */
+      ATTR_RMDIR: 'rmdir',
 
       // Parameter
       /** パラメータ: mimeType */
@@ -462,8 +517,7 @@ var dConnect = (function(parent, global) {
       ATTR_ON_DOWN: 'ondown',
       /** アトリビュート: onup */
       ATTR_ON_UP: 'onup',
-      /** アトリビュート: onkeychange */
-      ATTR_ON_KEY_CHANGE: 'onkeychange',
+
       // Parameter
       /** パラメータ: keyevent */
       PARAM_KEY_EVENT: 'keyevent',
@@ -932,14 +986,14 @@ var dConnect = (function(parent, global) {
     },
 
     /**
-     * Settingプロファイルの定数
+     * Settingsプロファイルの定数
      * @namespace
      * @type {Object.<String, (String|Number)>}
      */
-    setting: {
+    settings: {
       // Profile name
       /** プロファイル名。 */
-      PROFILE_NAME: 'setting',
+      PROFILE_NAME: 'settings',
 
       // Interface
       /** インターフェース: sound */
@@ -952,8 +1006,8 @@ var dConnect = (function(parent, global) {
       ATTR_VOLUME: 'volume',
       /** アトリビュート: date */
       ATTR_DATE: 'date',
-      /** アトリビュート: brightness */
-      ATTR_BRIGHTNESS: 'brightness',
+      /** アトリビュート: light */
+      ATTR_LIGHT: 'light',
       /** アトリビュート: sleep */
       ATTR_SLEEP: 'sleep',
 
@@ -1048,8 +1102,6 @@ var dConnect = (function(parent, global) {
       ATTR_ON_TOUCH_CANCEL: 'ontouchcancel',
       /** アトリビュート: ondoubletap */
       ATTR_ON_DOUBLE_TAP: 'ondoubletap',
-      /** アトリビュート: ontouchchange */
-      ATTR_ON_TOUCH_CHANGE: 'ontouchchange',
 
       // Parameter
       /** パラメータ: touch */
@@ -1113,46 +1165,6 @@ var dConnect = (function(parent, global) {
 
       /** モードフラグ：フィルモード */
       MODE_FILLS: 'fills'
-    },
-    /**
-     * Geolocationプロファイルの定数
-     * @namespace
-     * @type {Object.<String, String>}
-     */
-    geolocation: {
-      // Profile name
-      /** プロファイル名。 */
-      PROFILE_NAME: 'geolocation',
-
-      // Attribute
-      /** アトリビュート: currentposition */
-      ATTR_CURRENT_POSITION: 'currentposition',
-      /** アトリビュート: onwatchposition */
-      ATTR_ON_WATCH_POSITION: 'onwatchposition',
-
-      // Parameter
-      /** パラメータ: position */
-      PARAM_POSITION: 'position',
-      /** パラメータ: coordinates */
-      PARAM_COORDINATES: 'coordinates',
-      /** パラメータ: latitude */
-      PARAM_LATITUDE: 'latitude',
-      /** パラメータ: longitude */
-      PARAM_LONGNITUDE: 'longitude',
-      /** パラメータ: altitude */
-      PARAM_ALTITUDE: 'altitude',
-      /** パラメータ: accuracy */
-      PARAM_ACCURACY: 'accuracy',
-      /** パラメータ: altitudeAccuracy */
-      PARAM_ALTITUDE_ACCURACY: 'altitudeAccuracy',
-      /** パラメータ: heading */
-      PARAM_HEADING: 'heading',
-      /** パラメータ: speed */
-      PARAM_SPEED: 'speed',
-      /** パラメータ: timeStamp */
-      PARAM_TIME_STAMP: 'timeStamp',
-      /** パラメータ: timeStampString */
-      PARAM_TIME_STAMP_STRING: 'timeStampString'
     }
   };
   parent.constants = constants;
@@ -1280,17 +1292,9 @@ var dConnect = (function(parent, global) {
     if (state === undefined) {
         state = '';
     }
-    if (isFirefox()) {
-        url = uriSchemeName + '://start/' + state
-                  + '?origin=' + origin
-                  + '&key=' + _currentHmacKey;
-    } else {
-       urlScheme.setPath('start/' + state);
-      urlScheme.addParameter('package', 'org.deviceconnect.android.manager');
-      urlScheme.addParameter('S.origin', origin);
-      urlScheme.addParameter('S.key', _currentHmacKey);
-      url = urlScheme.build();
-    }
+    url = uriSchemeName + '://start/' + state
+              + '?origin=' + origin
+              + '&key=' + _currentHmacKey;
     location.href = url;
   };
 
@@ -1338,17 +1342,9 @@ var dConnect = (function(parent, global) {
     if (state === undefined) {
         state = '';
     }
-    if (isFirefox()) {
-        url = uriSchemeName + '://stop/' + state
+    url = uriSchemeName + '://stop/' + state
               + '?origin=' + origin
               + '&key=' + _currentHmacKey;
-    } else {
-       urlScheme.setPath('stop/' + state);
-      urlScheme.addParameter('package', 'org.deviceconnect.android.manager');
-      urlScheme.addParameter('S.origin', origin);
-      urlScheme.addParameter('S.key', _currentHmacKey);
-      url = urlScheme.build();
-    }
     location.href = url;
   };
 
@@ -2154,7 +2150,7 @@ var dConnect = (function(parent, global) {
    * @return {String} URIスキームの文字列表現
    */
   AndroidURISchemeBuilder.prototype.build = function() {
-    var urlScheme = 'intent://' + this.path + '#Intent;scheme=' +
+    var urlScheme = 'intent://' + this.path + '/#Intent;scheme=' +
                             this.scheme + ';';
     for (var key in this.params) {
       urlScheme += key + '=' + this.params[key] + ';';

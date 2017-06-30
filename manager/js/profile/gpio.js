@@ -21,6 +21,18 @@ function showGPIO(serviceId) {
 
     setTitle('GPIO Profile');
 
+    // Open websocket.
+    var sessionKey = currentClientId;
+    dConnect.connectWebSocket(sessionKey, function(eventCode, message) {
+        if (eventCode == 0) {
+            // オープン
+        } else if (eventCode == 1) {
+            // クローズ
+        } else {
+            // エラー
+        }
+    });
+
     var str = '';
     str += '<div data-role="controlgroup" data-type="horizontal" style="text-align:center" >';
     str += '<input data-icon="plus" onclick="javascript:doRegisterOnChangeEvent(\'' + serviceId + '\');" type="button" value="add onChange Event" /><br>';
@@ -71,7 +83,7 @@ function showGPIO(serviceId) {
             str +=  i + '(A' + d + ')';
             str += '</td>';
             str += '<td>';
-            str += '<select id="A' + d + '" onChange=\"doGPIOExport(\'' + serviceId + '\',this)\">';
+            str += '<select id="' + i + '" onChange=\"doGPIOExport(\'' + serviceId + '\',this)\">';
             str += '<option value="0">Input</option>';
             str += '<option value="1">Output</option>';
             str += '<option value="2" selected>Analog</option>';
@@ -79,7 +91,7 @@ function showGPIO(serviceId) {
             str += '</td>';
             str += '<td>';
             str += '<center>';
-            str += '<span id=\'pinNoA' + d + 'Value\' >';
+            str += '<span id=\'pinNo' + i + 'Value\' >';
             str += '0';
             str += '</span>';
             str += '</center>';
@@ -187,9 +199,6 @@ function doGPIOAnalogRead(serviceId, pin) {
     builder.setServiceId(serviceId);
     builder.setAccessToken(accessToken);
     var uri = builder.build();
-    if (DEBUG) {
-        console.log('Uri: ' + uri);
-    }
     var tagId = "pinNo" + pin + "Value";
     dConnect.get(uri, null, function(json) {
         if (json.result == 0) {
@@ -220,9 +229,6 @@ function doGPIODigitalRead(serviceId, pin) {
     builder.setServiceId(serviceId);
     builder.setAccessToken(accessToken);
     var uri = builder.build();
-    if (DEBUG) {
-        console.log('Uri: ' + uri);
-    }
     var tagId = "pinNo" + pin + "Value";
     dConnect.get(uri, null, function(json) {
         if (json.result == 0) {
@@ -255,10 +261,9 @@ function doGPIOAnalogWrite(serviceId, pin, value) {
     builder.addParameter("value", value);
     builder.setServiceId(serviceId);
     builder.setAccessToken(accessToken);
+
     var uri = builder.build();
-    if (DEBUG) {
-        console.log('Uri: ' + uri);
-    }
+
     dConnect.post(uri, null, null,
         function(json) {
             if (json.result == 0) {} else {}
@@ -285,10 +290,8 @@ function doGPIODigitalWrite(serviceId, pin, value) {
     builder.addParameter("value", value);
     builder.setServiceId(serviceId);
     builder.setAccessToken(accessToken);
+
     var uri = builder.build();
-    if (DEBUG) {
-        console.log('Uri: ' + uri);
-    }
     var tagId = "#pinNo" + pin;
     var tagIdValue = "#pinNo" + pin + "Value";
 
@@ -345,13 +348,10 @@ function doRegisterOnChangeEvent(serviceId) {
     builder.setServiceId(serviceId);
     builder.setAccessToken(accessToken);
     var uri = builder.build();
-    if (DEBUG) {
-        console.log('Uri: ' + uri);
-    }
+
     dConnect.addEventListener(uri,
         //イベントのメッセージ
         function(message) {
-            console.log(message);
             var json = JSON.parse(message);
             var pins = json.pins;
             for (var pin in pins) {
@@ -366,7 +366,7 @@ function doRegisterOnChangeEvent(serviceId) {
         },
         //イベント登録が成功した
         function() {
-            console.log("SUCCESS");
+
         },
         //イベント登録が失敗した
         function(errorCode, errorMessage) {
@@ -391,14 +391,10 @@ function doUnregisterOnChangeEvent(serviceId) {
     builder.setServiceId(serviceId);
     builder.setAccessToken(accessToken);
     var uri = builder.build();
-    if (DEBUG) {
-        console.log('Uri: ' + uri);
-    }
+
     dConnect.removeEventListener(uri, function() {
-        if (DEBUG) {
-          console.log('Successed register Device Orientation.');
-        }
+
     }, function(errorCode, errorMessage) {
-        console.log(errorMessage);
+
     });
 }

@@ -7,6 +7,7 @@
 
 var _skywayApiKey = "[ YOUR API KEY ]";
 var _skywayDomain = "[ YOUR DOMAIN ]";
+
 /**
  * Show VideoChat Menu
  *
@@ -153,7 +154,7 @@ function doVideoChatStopCall(serviceId){
 }
 
 function registVideoChatIncomingEvent(serviceId,sessionKey){
-  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'onincoming');
+  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'incoming');
   builder.addParameter('config', vcMakeConfig());
   var eventCallback = function(message){
     console.log('Event-Message:' + message);
@@ -180,7 +181,7 @@ function registVideoChatIncomingEvent(serviceId,sessionKey){
 }
 
 function unregistVideoChatIncomingEvent(serviceId,sessionKey){
-  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'onincoming');
+  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'incoming');
   builder.addParameter('config', vcMakeConfig());
   dConnect.removeEventListener(builder.build(), vcEventUnregistSuccess, vcAlertError);
 }
@@ -209,7 +210,7 @@ function unregistVideoChatOnCallEvent(serviceId,sessionKey){
 }
 
 function registVideoChatHangupEvent(serviceId,sessionKey){
-  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'onhangup');
+  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'hangup');
   builder.addParameter('config', vcMakeConfig());
   var eventCallback = function(message){
     console.log('Event-Message:' + message);
@@ -223,7 +224,7 @@ function registVideoChatHangupEvent(serviceId,sessionKey){
 }
 
 function unregistVideoChatHangupEvent(serviceId,sessionKey){
-  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'onhangup');
+  var builder = vcMakeEventUriBuilder(serviceId,sessionKey,'hangup');
   builder.addParameter('config', vcMakeConfig());
   dConnect.removeEventListener(builder.build(), vcEventUnregistSuccess, vcAlertError);
 }

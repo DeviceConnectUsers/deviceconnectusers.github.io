@@ -391,19 +391,17 @@ function showOmnidirectionalImage(serviceId) {
     }
     var width = option.pattern.name === 'width' ? num : defaultWidth;
     var height = option.pattern.name === 'height' ? num : defaultHeight;
-    var builder = new dConnect.URIBuilder()
+    var uri = new dConnect.URIBuilder()
       .setProfile('omnidirectionalimage')
       .setInterface('roi')
       .setAttribute('settings')
       .setServiceId(serviceId)
       .setAccessToken(accessToken)
       .addParameter('uri', roiUri)
-      .addParameter('width', parseInt(width).toString())
-      .addParameter('height', parseInt(height).toString())
-    if (option.pattern.name !== 'width' && option.pattern.name !== 'height') {
-      builder.addParameter(option.pattern.name, parseFloat(num.toString()).toFixed(3));
-    }
-    var uri = builder.build();
+      .addParameter('width', width.toString())
+      .addParameter('height', height.toString())
+      .addParameter(option.pattern.name, parseFloat(num.toString()).toFixed(3))
+      .build();
     dConnect.put(uri, null, null,
       function(json) {
 

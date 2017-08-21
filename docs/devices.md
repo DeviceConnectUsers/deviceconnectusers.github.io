@@ -23,7 +23,7 @@
 |-|[Android端末 Ver4.2以降](/devices/android)|Android端末|AndroidHost プラグイン|○|×|Ver4.2以降|
 |LG|G Watch|Android Wear端末|Wear プラグイン|○|×|仮対応のため、ADBでのAPKのインストールが必要|
 |Samsung|Gear Live|Android Wear端末|Wear プラグイン|○|×|仮対応のため、ADBでのAPKのインストールが必要|
-|Google|[ChromeCast](/devices/chromecat)|HDMIドングル|ChromeCast プラグイン|○|○|Google Cast SDK Developer ConsoleのページでデバイスとReceiverアプリの登録が必要|
+|Google|[ChromeCast](/devices/chromecast)|HDMIドングル|ChromeCast プラグイン|○|○|Google Cast SDK Developer ConsoleのページでデバイスとReceiverアプリの登録が必要|
 |Google|NexusPlayer|AndroidTV|ChromeCast プラグイン|○|○|Google Cast SDK Developer ConsoleのページでデバイスとReceiverアプリの登録が必要|
 |Polar|H7|心拍計|BLE HeartRate プラグイン|○|×||
 |Mio Global|Mio Alpha|心拍計|BLE HeartRate プラグイン|○|×||

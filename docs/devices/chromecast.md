@@ -24,5 +24,5 @@ Chromecastプラグインがサポートしている機能は次の通りです�
 
 - [Canvas](/webapi/canvas)
 - [通知](/webapi/notification)
-- [メディアプレイヤー](/webapi/media_player)
+- [メディアプレイヤー](/webapi/mediaPlayer)
 

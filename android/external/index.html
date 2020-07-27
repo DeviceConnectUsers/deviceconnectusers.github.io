@@ -653,7 +653,7 @@
                 <h1 id="_1">外部から操作してみる</h1>
 <p>DeviceConnectはWeb APIなので、外部からコールすることもできます。ただしセキュリティの問題もあり、デフォルトでは弾いています。DeviceConnect Managerアプリを立ち上げて、外部IPを許可にチェックをします。</p>
 <p><img alt="" src="../../images/android/external-access-1.png" /></p>
-<p>さらにOriginブロック機能が無効になっていることを確認してください。もしセキュアに使いたい場合は、Originブロック機能は有効にしつつ、Originホワイトリスト管理を使ってアクセス元ドメインを登録してください。例えば今回の例のように <code>http://deviceconnectusers.github.io/manager/</code> からアクセスする場合は <code>http://deviceconnectusers.github.io</code> を登録してください（最後はスラッシュなし）。</p>
+<p>さらにOriginブロック機能が無効になっていることを確認してください。もしセキュアに使いたい場合は、Originブロック機能は有効にしつつ、Origin許可リスト管理を使ってアクセス元ドメインを登録してください。例えば今回の例のように <code>http://deviceconnectusers.github.io/manager/</code> からアクセスする場合は <code>http://deviceconnectusers.github.io</code> を登録してください（最後はスラッシュなし）。</p>
 <h2 id="_2">アクセスする</h2>
 <p>ではデスクトップのブラウザ（ChromeやFirefoxなど）で同じようにローカルのindex.htmlを開きます。この時、index.htmlの後に <strong>?ip=(DeviceConnectが立ち上がっているAndroidのIPアドレス)</strong> を指定します。例えば <code>http://deviceconnectusers.github.io/manager/?ip=192.168.0.20</code> のようになります。表示したらAndroidと同じようにaccessTokenを取得します。</p>
 <p><img alt="" src="../../images/android/deviceconnect-android-6.png" /></p>

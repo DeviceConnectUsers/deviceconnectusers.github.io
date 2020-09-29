@@ -1,6 +1,6 @@
 /**
  notification.js
- Copyright (c) 2014 NTT DOCOMO,INC.
+ Copyright (c) 2020 NTT DOCOMO,INC.
  Released under the MIT license
  http://opensource.org/licenses/mit-license.php
  */
@@ -14,38 +14,23 @@ function showNotification(serviceId) {
 
   initAll();
 
-  var sessionKey = currentClientId;
-
-  var btnStr = '';
-  btnStr += getBackButton('Device Top', 'doNotificationBack',
-                            serviceId, sessionKey);
+  let btnStr = '';
+  btnStr += getBackButton('Device Top', 'doNotificationBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
   if (myDeviceName.indexOf('Pebble') == -1 &&
       myDeviceName.indexOf('SmartWatch') == -1 &&
       myDeviceName.indexOf('Chromecast') == -1) {
-    dConnect.connectWebSocket(sessionKey, function(errorCode, errorMessage) {
-    });
-
-    doRegisterNotificationShow(serviceId, sessionKey);
-    doRegisterNotificationClick(serviceId, sessionKey);
-    doRegisterNotificationClose(serviceId, sessionKey);
+    doRegisterNotificationShow(serviceId);
+    doRegisterNotificationClick(serviceId);
+    doRegisterNotificationClose(serviceId);
   }
 
   setTitle('Notification Profile(Notify)');
 
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('notify');
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-  var str = '';
-  str += '<form action="' + uri + '" method="POST" id="notificationForm"' +
-        ' name="notificationForm" enctype="multipart/form-data"' +
-        ' onsubmit="return false;">';
+  let str = '';
+  str += '<form id="notificationForm" name="notificationForm">';
 
   if (myDeviceName.indexOf('Pebble') == -1 &&
       myDeviceName.indexOf('SmartWatch') == -1 &&
@@ -66,7 +51,7 @@ function showNotification(serviceId) {
   str += '<input type="file" name="icon" id="icon"/>';
   str += '<input type="hidden" name="serviceId" value="' + serviceId + '"/>';
   str += '<input type="hidden" name="accessToken" value="' +
-          accessToken + '"/>';
+          sdk.getAccessToken() + '"/>';
   str += '<input type="button" name="sendButton" id="sendButton"' +
         ' value="Notify" onclick="doNotificationNotify(\'' +
         serviceId + '\');"/>';
@@ -80,17 +65,15 @@ function showNotification(serviceId) {
  * Back Button
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doNotificationBack(serviceId, sessionKey) {
+function doNotificationBack(serviceId) {
 
   if (myDeviceName.indexOf('Pebble') == -1 &&
       myDeviceName.indexOf('SmartWatch') == -1 &&
       myDeviceName.indexOf('Chromecast') == -1) {
-    doUnregisterNotificationShow(serviceId, sessionKey);
-    doUnregisterNotificationClick(serviceId, sessionKey);
-    doUnregisterNotificationClose(serviceId, sessionKey);
-    //doUnregisterNotificationError(serviceId, sessionKey);
+    doUnregisterNotificationShow(serviceId);
+    doUnregisterNotificationClick(serviceId);
+    doUnregisterNotificationClose(serviceId);
   }
   searchSystem(serviceId);
 }
@@ -99,30 +82,25 @@ function doNotificationBack(serviceId, sessionKey) {
  * onShowイベントの登録
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doRegisterNotificationShow(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onshow');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
+function doRegisterNotificationShow(serviceId) {
 
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-
-  dConnect.addEventListener(uri, function(message) {
+  sdk.addEventListener({
+    profile: 'notification',
+    attribute: 'onshow',
+    params: {
+      serviceId: serviceId
+    }
+  }, message => {
     // イベントメッセージが送られてくる
     if (DEBUG) {
       console.log('Event-Message:' + message);
     }
 
-    var json = JSON.parse(message);
+    let json = JSON.parse(message);
     document.notificationForm.show.value = json.notificationId;
-  }, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -130,22 +108,16 @@ function doRegisterNotificationShow(serviceId, sessionKey) {
  * onShowイベントの解除
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doUnregisterNotificationShow(serviceId, sessionKey) {
-
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onshow');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-
-  dConnect.removeEventListener(uri, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+function doUnregisterNotificationShow(serviceId) {
+  sdk.removeEventListener({
+    profile: 'notification',
+    attribute: 'onshow',
+    params: {
+      serviceId: serviceId
+    }
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -153,29 +125,24 @@ function doUnregisterNotificationShow(serviceId, sessionKey) {
  * onClickイベントの登録
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doRegisterNotificationClick(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onclick');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-
-  dConnect.addEventListener(uri, function(message) {
+function doRegisterNotificationClick(serviceId) {
+  sdk.addEventListener({
+    profile: 'notification',
+    attribute: 'onclick',
+    params: {
+      serviceId: serviceId
+    }
+  }, message => {
     // イベントメッセージが送られてくる
     if (DEBUG) {
       console.log('Event-Message:' + message);
     }
 
-    var json = JSON.parse(message);
+    let json = JSON.parse(message);
     document.notificationForm.click.value = json.notificationId;
-  }, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -183,20 +150,16 @@ function doRegisterNotificationClick(serviceId, sessionKey) {
  * onClickイベントの解除
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doUnregisterNotificationClick(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onclick');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-  dConnect.removeEventListener(uri, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+function doUnregisterNotificationClick(serviceId) {
+  sdk.removeEventListener({
+    profile: 'notification',
+    attribute: 'onclick',
+    params: {
+      serviceId: serviceId
+    }
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -204,27 +167,23 @@ function doUnregisterNotificationClick(serviceId, sessionKey) {
  * onCloseイベントの登録
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doRegisterNotificationClose(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onclose');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-  dConnect.addEventListener(uri, function(message) {
+function doRegisterNotificationClose(serviceId) {
+  sdk.addEventListener({
+    profile: 'notification',
+    attribute: 'onclose',
+    params: {
+      serviceId: serviceId
+    }
+  }, message => {
     // イベントメッセージが送られてくる
     if (DEBUG) {
       console.log('Event-Message:' + message)
     }
-    var json = JSON.parse(message);
+    let json = JSON.parse(message);
     document.notificationForm.close.value = json.notificationId;
-  }, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -232,21 +191,16 @@ function doRegisterNotificationClose(serviceId, sessionKey) {
  * onCloseイベントの解除
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doUnregisterNotificationClose(serviceId, sessionKey) {
-
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onclose');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-  dConnect.removeEventListener(uri, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+function doUnregisterNotificationClose(serviceId) {
+  sdk.removeEventListener({
+    profile: 'notification',
+    attribute: 'onclose',
+    params: {
+      serviceId: serviceId
+    }
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -254,27 +208,23 @@ function doUnregisterNotificationClose(serviceId, sessionKey) {
  * onErrorイベントの登録
  *
  * @param {String}serviceId サービスID
- * @param {String}sessionKey セッションキー
  */
-function doRegisterNotificationError(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onerror');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-  dConnect.addEventListener(uri, function(message) {
+function doRegisterNotificationError(serviceId) {
+  sdk.addEventListener({
+    profile: 'notification',
+    attribute: 'onerror',
+    params: {
+      serviceId: serviceId
+    }
+  }, message => {
     // イベントメッセージが送られてくる
     if (DEBUG) {
       console.log('Event-Message:' + message)
     }
-    var json = JSON.parse(message);
+    let json = JSON.parse(message);
     document.notificationForm.error.value = json.notificationId;
-  }, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -282,20 +232,16 @@ function doRegisterNotificationError(serviceId, sessionKey) {
  * onErrorイベントの解除
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションキー
  */
-function doUnregisterNotificationError(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('onerror');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-  dConnect.removeEventListener(uri, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+function doUnregisterNotificationError(serviceId) {
+  sdk.removeEventListener({
+    profile: 'notification',
+    attribute: 'onerror',
+    params: {
+      serviceId: serviceId
+    }
+  }).catch(e => {
+    alert(e.errorMessage);
   });
 }
 
@@ -305,40 +251,33 @@ function doUnregisterNotificationError(serviceId, sessionKey) {
  * @param {String} serviceId サービスID
  */
 function doNotificationNotify(serviceId) {
-  var myForm = document.getElementById('notificationForm');
-  var myFormData = new FormData(myForm);
-  var myXhr = new XMLHttpRequest();
-  myXhr.open(myForm.method, myForm.action, true);
-  myXhr.onreadystatechange = function() {
-    if (myXhr.readyState === 4) {
-      if (myXhr.status === 200 || myXhr.status == 0) {
-        if (DEBUG) {
-          console.log('Response:' + myXhr.responseText)
-        }
-        var obj = JSON.parse(myXhr.responseText);
-        if (obj.result == 0) {
-          var str = '';
-          if (myDeviceName.indexOf('Pebble') != -1) {
-          } else if (myDeviceName.indexOf('SmartWatch') != -1) {
-          } else {
-            str += '<center>';
-            str += '<input type="button" onclick="notificationDel(\'' +
-                    serviceId + '\',\'' + obj.notificationId +
-                    '\');" value="Delete" type="button" >';
-            str += '</center>';
-            reloadMenu(str)
-          }
-        } else {
-          showError('POST notification/notify',
-                    obj.errorCode, obj.errorMessage);
-        }
-      } else {
-        alert('error:' + myXhr.status);
-      }
-      closeLoading();
+  let myForm = document.getElementById('notificationForm');
+  let inputs = myForm.elements;
+  let params = { serviceId };
+  parseInputElements(inputs, params);
+
+  sdk.post({
+    profile: 'notification',
+    attribute: 'notify',
+    params
+  }).then(json => {
+    closeLoading();
+
+    let str = '';
+    if (myDeviceName.indexOf('Pebble') != -1) {
+    } else if (myDeviceName.indexOf('SmartWatch') != -1) {
+    } else {
+      str += '<center>';
+      str += '<input type="button" onclick="notificationDel(\'' +
+              serviceId + '\',\'' + json.notificationId +
+              '\');" value="Delete" type="button" >';
+      str += '</center>';
+      reloadMenu(str)
     }
-  };
-  myXhr.send(myFormData);
+  }).catch(e => {
+    closeLoading();
+    showError('POST notification/notify', e.errorCode, e.errorMessage);
+  });
 }
 
 /**
@@ -347,24 +286,19 @@ function doNotificationNotify(serviceId) {
  * @param {String} serviceId サービスID
  */
 function notificationDel(serviceId, notificationId) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('notification');
-  builder.setAttribute('notify');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  builder.addParameter('notificationId', notificationId);
-  var uri = builder.build();
-
-  if (DEBUG) {
-    console.log('Uri:' + uri)
-  }
-
-  dConnect.delete(uri, null, function(json) {
+  sdk.delete({
+    profile: 'notification',
+    attribute: 'notify',
+    params: {
+      serviceId: serviceId,
+      notificationId: notificationId
+    }
+  }).then(json => {
     if (DEBUG) {
       console.log('Response: ', json);
     }
     reloadMenu('');
-  }, function(errorCode, errorMessage) {
-    showError('POST notification/notify', errorCode, errorMessage);
+  }).catch(e => {
+    showError('POST notification/notify', e.errorCode, e.errorMessage);
   });
 }

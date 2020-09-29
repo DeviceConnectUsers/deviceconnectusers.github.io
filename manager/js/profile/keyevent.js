@@ -1,6 +1,6 @@
 /**
  keyevent.js
- Copyright (c) 2015 NTT DOCOMO,INC.
+ Copyright (c) 2020 NTT DOCOMO,INC.
  Released under the MIT license
  http://opensource.org/licenses/mit-license.php
  */
@@ -12,13 +12,11 @@ function showKeyEvent(serviceId) {
   initAll();
   setTitle('Key Event Profile(Event)');
 
-  var sessionKey = currentClientId;
-  var btnStr = getBackButton('Device Top', 'doKeyEventBack', serviceId,
-                 sessionKey);
+  let btnStr = getBackButton('Device Top', 'searchSystem', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '';
+  let str = '';
   str += '<li><a href="javascript:showOnDown(\'' + serviceId +
             '\');" >Show Key(onDown)</a></li>';
   str += '<li><a href="javascript:showOnUp(\'' + serviceId +
@@ -43,13 +41,11 @@ function showOnKeyChange(serviceId) {
   initAll();
   setTitle('Show Key Change');
 
-  var sessionKey = currentClientId;
-
-  var btnStr = getBackButton('KeyEvent Top', 'doKeyBack', serviceId, sessionKey);
+  let btnStr = getBackButton('KeyEvent Top', 'doKeyBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '';
+  let str = '';
   str += '<form name="onkeychangeForm">';
   str += 'KeyChange<br>';
   str += '<input type="button" name="getButton" id="getButton" value="Get"' +
@@ -67,17 +63,13 @@ function showOnKeyChange(serviceId) {
  * @param {String}serviceId サービスID
  */
 function doGetOnKeyChange(serviceId) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('onkeychange');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-
-  dConnect.get(uri, null, function(json) {
+  sdk.get({
+    profile: 'keyevent',
+    attribute: 'onkeychange',
+    params: {
+      serviceId: serviceId
+    }
+  }).then(json => {
     if (DEBUG) {
       console.log('Response: ', json);
     }
@@ -91,8 +83,8 @@ function doGetOnKeyChange(serviceId) {
       $('#idDU').val('KeyID: ' + json.keyevent.id);
       $('#configDU').val('config: ' + json.keyevent.config);
     }
-  }, function(errorCode, errorMessage) {
-    showError('GET onkeychange', errorCode, errorMessage);
+  }).catch(e => {
+    showError('GET onkeychange', e.errorCode, e.errorMessage);
   });
 }
 
@@ -105,28 +97,34 @@ function showKeyChangeEvent(serviceId) {
   initAll();
   setTitle('Key Change Event');
 
-  var sessionKey = currentClientId;
-
-  var btnStr = getBackButton('KeyEvent Top', 'doKeyChangeEventBack', serviceId,
-                 sessionKey);
+  let btnStr = getBackButton('KeyEvent Top', 'doKeyChangeEventBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '';
+  let str = '';
   str += '<form name="keyChangeForm">';
   str += 'KeyChange<br>';
   str += '<input type="text" id="state" width="100%">';
   str += '<input type="text" id="idD" width="100%">';
   str += '<input type="text" id="configD" width="100%">';
   str += '</form>';
+  str += '<hr>';
+  str += '<div>イベント登録状態: <span id="statusOnKeyChange"></span></div>';
+  str += '<fieldset class="ui-grid-a">';
+  str += '<div class="ui-block-a"><button id="btnRegisterOnKeyChange">登録</button></div>';
+  str += '<div class="ui-block-b"><button id="btnUnegisterOnKeyChange">解除</button></div>';
+  str += '</fieldset>';
   reloadContent(str);
 
-  doKeyChangeRegister(serviceId, sessionKey);
-  dConnect.connectWebSocket(sessionKey, function(errorCode, errorMessage) {});
+  $('#btnRegisterOnKeyChange').on('click', function() {
+    doKeyChangeRegister(serviceId);
+  });
+  $('#btnUnegisterOnKeyChange').on('click', function() {
+    doKeyChangeUnregister(serviceId);
+  });
+
+  doKeyChangeRegister(serviceId);
 }
-
-
-
 
 /**
  * Show OnDown
@@ -137,13 +135,11 @@ function showOnDown(serviceId) {
   initAll();
   setTitle('Show Down');
 
-  var sessionKey = currentClientId;
-
-  var btnStr = getBackButton('KeyEvent Top', 'doKeyBack', serviceId, sessionKey);
+  let btnStr = getBackButton('KeyEvent Top', 'doKeyBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '';
+  let str = '';
   str += '<form name="ondownForm">';
   str += 'Down<br>';
   str += '<input type="button" name="getButton" id="getButton" value="Get"' +
@@ -160,17 +156,13 @@ function showOnDown(serviceId) {
  * @param {String}serviceId サービスID
  */
 function doGetOnDown(serviceId) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('ondown');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-
-  dConnect.get(uri, null, function(json) {
+  sdk.get({
+    profile: 'keyevent',
+    attribute: 'ondown',
+    params: {
+      serviceId: serviceId
+    }
+  }).then(json => {
     if (DEBUG) {
       console.log('Response: ', json);
     }
@@ -183,8 +175,8 @@ function doGetOnDown(serviceId) {
       $('#idD').val('KeyID: ' + json.keyevent.id);
       $('#configD').val('config: ' + json.keyevent.config);
     }
-  }, function(errorCode, errorMessage) {
-    showError('GET ondown', errorCode, errorMessage);
+  }).catch(e => {
+    showError('GET ondown', e.errorCode, e.errorMessage);
   });
 }
 
@@ -196,24 +188,32 @@ function doGetOnDown(serviceId) {
 function showDownEvent(serviceId) {
   initAll();
   setTitle('Down Event');
-
-  var sessionKey = currentClientId;
-
-  var btnStr = getBackButton('KeyEvent Top', 'doDownEventBack', serviceId,
-                 sessionKey);
+  let btnStr = getBackButton('KeyEvent Top', 'doDownEventBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '';
+  let str = '';
   str += '<form name="downForm">';
   str += 'Down<br>';
   str += '<input type="text" id="idD" width="100%">';
   str += '<input type="text" id="configD" width="100%">';
   str += '</form>';
+  str += '<hr>';
+  str += '<div>イベント登録状態: <span id="statusOnDown"></span></div>';
+  str += '<fieldset class="ui-grid-a">';
+  str += '<div class="ui-block-a"><button id="btnRegisterOnDown">登録</button></div>';
+  str += '<div class="ui-block-b"><button id="btnUnegisterOnDown">解除</button></div>';
+  str += '</fieldset>';
   reloadContent(str);
 
-  doDownRegister(serviceId, sessionKey);
-  dConnect.connectWebSocket(sessionKey, function(errorCode, errorMessage) {});
+  $('#btnRegisterOnDown').on('click', function() {
+    doDownRegister(serviceId);
+  });
+  $('#btnUnegisterOnDown').on('click', function() {
+    doDownUnregister(serviceId);
+  });
+
+  doDownRegister(serviceId);
 }
 
 /**
@@ -224,14 +224,11 @@ function showDownEvent(serviceId) {
 function showOnUp(serviceId) {
   initAll();
   setTitle('Show Up');
-
-  var sessionKey = currentClientId;
-
-  var btnStr = getBackButton('KeyEvent Top', 'doKeyBack', serviceId, sessionKey);
+  let btnStr = getBackButton('KeyEvent Top', 'doKeyBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '';
+  let str = '';
   str += '<form name="onupForm">';
   str += 'Up<br>';
   str += '<input type="button" name="getButton" id="getButton" value="Get"' +
@@ -248,17 +245,13 @@ function showOnUp(serviceId) {
  * @param {String}serviceId サービスID
  */
 function doGetOnUp(serviceId) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('onup');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-
-  dConnect.get(uri, null, function(json) {
+  sdk.get({
+    profile: 'keyevent',
+    attribute: 'onup',
+    params: {
+      serviceId: serviceId
+    }
+  }).then(json => {
     if (DEBUG) {
       console.log('Response: ', json);
     }
@@ -272,8 +265,8 @@ function doGetOnUp(serviceId) {
       $('#idU').val('KeyID: ' + json.keyevent.id);
       $('#configU').val('config: ' + json.keyevent.config);
     }
-  }, function(errorCode, errorMessage) {
-    showError('GET ondown', errorCode, errorMessage);
+  }).catch(e => {
+    showError('GET ondown', e.errorCode, e.errorMessage);
   });
 }
 
@@ -286,42 +279,41 @@ function showUpEvent(serviceId) {
   initAll();
   setTitle('Up Event');
 
-  var sessionKey = currentClientId;
-
-  var btnStr = getBackButton('KeyEvent Top', 'doUpEventBack', serviceId,
-                 sessionKey);
+  let btnStr = getBackButton('KeyEvent Top', 'doUpEventBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '';
+  let str = '';
   str += '<form name="upForm">';
   str += 'Up<br>';
   str += '<input type="text" id="idU" width="100%">';
   str += '<input type="text" id="configU" width="100%">';
   str += '</form>';
+  str += '<hr>';
+  str += '<div>イベント登録状態: <span id="statusOnUp"></span></div>';
+  str += '<fieldset class="ui-grid-a">';
+  str += '<div class="ui-block-a"><button id="btnRegisterOnUp">登録</button></div>';
+  str += '<div class="ui-block-b"><button id="btnUnegisterOnUp">解除</button></div>';
+  str += '</fieldset>';
   reloadContent(str);
 
-  doUpRegister(serviceId, sessionKey);
-  dConnect.connectWebSocket(sessionKey, function(errorCode, errorMessage) {});
+  $('#btnRegisterOnUp').on('click', function() {
+    doUpRegister(serviceId);
+  });
+  $('#btnUnegisterOnUp').on('click', function() {
+    doUpUnregister(serviceId);
+  });
+
+  doUpRegister(serviceId);
 }
+
 
 /**
  * Backボタン
  *
  * serviceId サービスID
- * sessionKey セッションKEY
  */
-function doKeyEventBack(serviceId, sessionKey) {
-  searchSystem(serviceId);
-}
-
-/**
- * Backボタン
- *
- * serviceId サービスID
- * sessionKey セッションKEY
- */
-function doKeyBack(serviceId, sessionKey) {
+function doKeyBack(serviceId) {
   showKeyEvent(serviceId);
 }
 
@@ -329,10 +321,9 @@ function doKeyBack(serviceId, sessionKey) {
  * Backボタン
  *
  * serviceId サービスID
- * sessionKey セッションKEY
  */
-function doDownEventBack(serviceId, sessionKey) {
-  doDownUnregister(serviceId, sessionKey);
+function doDownEventBack(serviceId) {
+  doDownUnregister(serviceId);
   showKeyEvent(serviceId);
 }
 
@@ -340,167 +331,163 @@ function doDownEventBack(serviceId, sessionKey) {
  * Backボタン
  *
  * serviceId サービスID
- * sessionKey セッションKEY
  */
-function doUpEventBack(serviceId, sessionKey) {
-  doUpUnregister(serviceId, sessionKey);
+function doUpEventBack(serviceId) {
+  doUpUnregister(serviceId);
   showKeyEvent(serviceId);
 }
 /**
  * Backボタン
  *
  * serviceId サービスID
- * sessionKey セッションKEY
  */
-function doKeyChangeEventBack(serviceId, sessionKey) {
-  doKeyChangeUnregister(serviceId, sessionKey);
+function doKeyChangeEventBack(serviceId) {
+  doKeyChangeUnregister(serviceId);
   showKeyEvent(serviceId);
 }
 /**
  * Key Change Event Register.
  */
-function doKeyChangeRegister(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('onkeychange');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-
-  dConnect.addEventListener(uri, function(message) {
+function doKeyChangeRegister(serviceId) {
+  $('#statusOnKeyChange').text('登録処理中...');
+  sdk.addEventListener({
+    profile: 'keyevent',
+    attribute: 'onkeychange',
+    params: {
+      serviceId: serviceId
+    }
+  }, message => {
     // イベントメッセージが送られてくる
     if (DEBUG) {
       console.log('Event-Message:' + message)
     }
 
-    var json = JSON.parse(message);
+    let json = JSON.parse(message);
     if (json.keyevent) {
       $('#state').val('State: ' + json.keyevent.state);
       $('#idD').val('KeyID: ' + json.keyevent.id);
       $('#configD').val('config: ' + json.keyevent.config);
     }
-  }, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+  }).then(json => {
+    $('#statusOnKeyChange').text('登録済み');
+  }).catch(e => {
+    $('#statusOnKeyChange').text('登録失敗');
+    alert(e.errorMessage);
   });
 }
 /**
  * Down Event Register.
  */
-function doDownRegister(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('ondown');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-
-  dConnect.addEventListener(uri, function(message) {
+function doDownRegister(serviceId) {
+  $('#statusOnDown').text('登録処理中...');
+  sdk.addEventListener({
+    profile: 'keyevent',
+    attribute: 'ondown',
+    params: {
+      serviceId: serviceId
+    }
+  }, message => {
     // イベントメッセージが送られてくる
     if (DEBUG) {
       console.log('Event-Message:' + message)
     }
 
-    var json = JSON.parse(message);
+    let json = JSON.parse(message);
     if (json.keyevent) {
       $('#idD').val('KeyID: ' + json.keyevent.id);
       $('#configD').val('config: ' + json.keyevent.config);
     }
-  }, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+  }).then(json => {
+    $('#statusOnDown').text('登録済み');
+  }).catch(e =>  {
+    $('#statusOnDown').text('登録失敗');
+    alert(e.errorMessage);
   });
 }
 
 /**
  * Up Event Register.
  */
-function doUpRegister(serviceId, sessionKey) {
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('onup');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-
-  dConnect.addEventListener(uri, function(message) {
+function doUpRegister(serviceId) {
+  $('#statusOnUp').text('登録処理中...');
+  sdk.addEventListener({
+    profile: 'keyevent',
+    attribute: 'onup',
+    params: {
+      serviceId: serviceId
+    }
+  }, message => {
     // イベントメッセージが送られてくる
     if (DEBUG) {
       console.log('Event-Message:' + message);
     }
 
-    var json = JSON.parse(message);
+    let json = JSON.parse(message);
     if (json.keyevent) {
       $('#idU').val('KeyID: ' + json.keyevent.id);
       $('#configU').val('config: ' + json.keyevent.config);
     }
-  }, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+  }).then(json => {
+    $('#statusOnUp').text('登録済み');
+  }).catch(e => {
+    $('#statusOnUp').text('登録失敗');
+    alert(e.errorMessage);
   });
 }
 
 /**
  * Key Change Event Unregist
  */
-function doKeyChangeUnregister(serviceId, sessionKey) {
-
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('onkeychange');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri : ' + uri);
-  }
-
-  dConnect.removeEventListener(uri, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+function doKeyChangeUnregister(serviceId) {
+  $('#statusOnKeyChange').text('解除処理中...');
+  sdk.removeEventListener({
+    profile: 'keyevent',
+    attribute: 'onkeychange',
+    params: {
+      serviceId: serviceId
+    }
+  }).then(json => {
+    $('#statusOnKeyChange').text('解除済み');
+  }).catch(e => {
+    $('#statusOnKeyChange').text('解除失敗');
+    alert(e.errorMessage);
   });
 }
+
 /**
  * Down Event Unregist
  */
-function doDownUnregister(serviceId, sessionKey) {
-
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('ondown');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri : ' + uri);
-  }
-
-  dConnect.removeEventListener(uri, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+function doDownUnregister(serviceId) {
+  $('#statusOnDown').text('解除処理中...');
+  sdk.removeEventListener({
+    profile: 'keyevent',
+    attribute: 'ondown',
+    params: {
+      serviceId: serviceId
+    }
+  }).then(json => {
+    $('#statusOnDown').text('解除済み');
+  }).catch(e => {
+    $('#statusOnDown').text('解除失敗');
+    alert(e.errorMessage);
   });
 }
 
 /**
  * Up Event Unregist
  */
-function doUpUnregister(serviceId, sessionKey) {
-
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('keyevent');
-  builder.setAttribute('onup');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-  if (DEBUG) {
-    console.log('Uri : ' + uri);
-  }
-
-  dConnect.removeEventListener(uri, null, function(errorCode, errorMessage) {
-    alert(errorMessage);
+function doUpUnregister(serviceId) {
+  $('#statusOnUp').text('解除処理中...');
+  sdk.removeEventListener({
+    profile: 'keyevent',
+    attribute: 'onup',
+    params: {
+      serviceId: serviceId
+    }
+  }).then(json => {
+    $('#statusOnUp').text('解除済み');
+  }).catch(e => {
+    $('#statusOnUp').text('解除失敗');
+    alert(e.errorMessage);
   });
 }

@@ -1,12 +1,10 @@
 /**
  canvas.js
- Copyright (c) 2014 NTT DOCOMO,INC.
+ Copyright (c) 2020 NTT DOCOMO,INC.
  Released under the MIT license
  http://opensource.org/licenses/mit-license.php
  */
 
-var currentPath = '/';
-var deleteMode;
 
 /**
  * Canvasプロファイルのメニューを表示する.
@@ -17,11 +15,11 @@ function showCanvas(serviceId) {
   initAll();
   setTitle('Canvas Profile', 'black');
 
-  var btnStr = getBackButton('Device Top', 'doCanvasBack', serviceId, '');
+  let btnStr = getBackButton('Device Top', 'doCanvasBack', serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var str = '<li><a href="javascript:showCanvasDrawImage(\'' + serviceId +
+  let str = '<li><a href="javascript:showCanvasDrawImage(\'' + serviceId +
           '\');" value="send">Canvas DrawImage</a></li>';
   reloadList(str);
 }
@@ -30,9 +28,8 @@ function showCanvas(serviceId) {
  * Backボタン
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションKEY
  */
-function doCanvasBack(serviceId, sessionKey) {
+function doCanvasBack(serviceId) {
   searchDevice(serviceId);
 }
 
@@ -40,9 +37,8 @@ function doCanvasBack(serviceId, sessionKey) {
  * Backボタン
  *
  * @param {String} serviceId サービスID
- * @param {String} sessionKey セッションKEY
  */
-function doCanvasDrawImageBack(serviceId, sessionKey) {
+function doCanvasDrawImageBack(serviceId) {
   showCanvas(serviceId);
 }
 
@@ -55,30 +51,16 @@ function showCanvasDrawImage(serviceId) {
   initAll();
   setTitle('Canvas Profile(DrawImage)');
 
-  var btnStr = getBackButton('Canvas Top', 'doCanvasDrawImageBack',
-                  serviceId, '');
+  let btnStr = getBackButton('Canvas Top', 'doCanvasDrawImageBack',
+                  serviceId);
   reloadHeader(btnStr);
   reloadFooter(btnStr);
 
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('canvas');
-  builder.setAttribute('drawimage');
-  var uri = builder.build();
-
-  if (DEBUG) {
-    console.log('Uri: ' + uri);
-  }
-
   /* ※省略パラメータがあり1種類のformでは対応できないため2つformを用意しています。 */
 
-  var str = '';
+  let str = '';
 
-  str += '<form action="' + uri + '" method="POST"' +
-          ' enctype="multipart/form-data" id="fileForm"><br>';
-  str += '<input type="hidden" name="serviceId" value="' + serviceId + '"/>';
-  str += '<input type="hidden" name="accessToken" value="' +
-          accessToken + '"/>';
-
+  str += '<form id="fileForm"><br>';
   str += makeInputText('path', 'path', 'path');
   str += makeInputText('uri', 'uri', 'uri');
   str += makeInputText('MIME-Type', 'mimeType', 'mimeType');
@@ -110,7 +92,7 @@ function showCanvasDrawImage(serviceId) {
           alert('File is null');
           return;
         } else {
-          var file = '/' + this.files[0].name;
+          let file = '/' + this.files[0].name;
           $('#path').val(file);
         }
       }
@@ -127,39 +109,23 @@ function doCanvasDrawImage(serviceId, fileFormId) {
   closeLoading();
   showLoading();
 
-  var myForm = document.getElementById(fileFormId);
-  var myFormData = new FormData(myForm);
-  var myXhr = new XMLHttpRequest();
-  try {
-    if (!myFormData.get('mode')) {
-      myFormData.delete('mode');
-    }
-  } catch (e) {
-    // Safariなどでは、FormData#append以外はサポートしていないため、エラーが出る
-  }
-  myXhr.open(myForm.method, myForm.action, true);
-  myXhr.onreadystatechange = function() {
-    if (myXhr.readyState === 4) {
-      if (myXhr.status === 200 || myXhr.status == 0) {
-        if (DEBUG) {
-          console.log('Response:' + myXhr.responseText)
-        }
-        var str = '';
-        var obj = JSON.parse(myXhr.responseText);
-        if (obj.result == 0) {
-          //alert('success:canvas/drawimage');
-          $('#path').val('');
-          $('#data').val('');
-        } else {
-          showError('POST canvas/drawimage', obj.errorCode, obj.errorMessage);
-        }
-      } else {
-        alert('error:' + myXhr.status);
-      }
-      closeLoading();
-    }
-  };
-  myXhr.send(myFormData);
+  let myForm = document.getElementById(fileFormId);
+  let inputs = myForm.elements;
+  let params = { serviceId };
+  parseInputElements(inputs, params);
+
+  sdk.post({
+    profile: 'canvas',
+    attribute: 'drawImage',
+    params
+  }).then(json => {
+    closeLoading();
+    $('#path').val('');
+    $('#data').val('');
+  }).catch(e => {
+    closeLoading();
+    showError('POST canvas/drawimage', e.errorCode, e.errorMessage);
+  });
 }
 
 /**
@@ -172,24 +138,19 @@ function doDeleteCanvasDrawImage(serviceId) {
   closeLoading();
   showLoading();
 
-  var builder = new dConnect.URIBuilder();
-  builder.setProfile('canvas');
-  builder.setAttribute('drawimage');
-  builder.setServiceId(serviceId);
-  builder.setAccessToken(accessToken);
-  var uri = builder.build();
-
-  if (DEBUG) {
-    console.log('Uri:' + uri);
-  }
-
-  dConnect.delete(uri, null, function(json) {
+  sdk.delete({
+    profile: 'canvas',
+    attribute: 'drawimage',
+    params: {
+      serviceId: serviceId
+    }
+  }).then(json => {
     closeLoading();
     if (DEBUG) {
       console.log('Response: ', json);
     }
-  }, function(errorCode, errorMessage) {
+  }).catch(e => {
     closeLoading();
-    showError('DELETE canvas/drawimage', errorCode, errorMessage);
+    showError('DELETE canvas/drawimage', e.errorCode, e.errorMessage);
   });
 }

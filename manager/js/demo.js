@@ -65,10 +65,12 @@ function init() {
     location.href.indexOf('file:///') == -1) {
       sdk.setAntiSpoofing(true);
   }
+  console.log("protocol:" + location.origin);
   // ファイルから直接開かれた場合には、originを格納
   if (location.origin == 'file://') {
     sdk.setExtendedOrigin('file://');
   } else if (location.origin == 'https://') {
+
     sdk.setSSLEnabled(true);
   }
   openWebsocketIfNeeded();

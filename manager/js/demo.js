@@ -67,9 +67,9 @@ function init() {
   }
   console.log("protocol:" + location.origin);
   // ファイルから直接開かれた場合には、originを格納
-  if (location.origin == 'file://') {
+  if (location.origin.indexOf('file://') !== -1) {
     sdk.setExtendedOrigin('file://');
-  } else if (location.origin == 'https://') {
+  } else if (location.origin.indexOf('https://') !== -1) {
 
     sdk.setSSLEnabled(true);
   }

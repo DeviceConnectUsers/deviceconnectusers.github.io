@@ -65,7 +65,6 @@ function init() {
     location.href.indexOf('file:///') == -1) {
       sdk.setAntiSpoofing(true);
   }
-  console.log("protocol:" + location.origin);
   // ファイルから直接開かれた場合には、originを格納
   if (location.origin.indexOf('file://') !== -1) {
     sdk.setExtendedOrigin('file://');

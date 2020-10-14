@@ -305,7 +305,19 @@ function showOmnidirectionalImage(serviceId) {
         output: concat(outputParams)
       }
     }).then(json => {
-      cb.onstart(json.uri, ((imageServerSwitch === 'off') ? null : imageServerSwitch));
+      console.log("json:" + JSON.stringify(json));
+      let myUri = json.uri;
+      for (let u in json.streams) {
+        if (!sdk.isSSLEnabled() && json.streams[u].uri.indexOf('http') !== -1) {
+          myUri = json.streams[u].uri;
+          break;
+        } else if (sdk.isSSLEnabled() && json.streams[u].uri.indexOf('https') !== -1) {
+          myUri = json.streams[u].uri;
+          break;
+        }
+      }
+      console.log("roiUri:" + myUri);
+      cb.onstart(myUri, ((imageServerSwitch === 'off') ? null : imageServerSwitch));
     },
       function(errorCode, errorMessage) {
     });
@@ -386,7 +398,7 @@ function showOmnidirectionalImage(serviceId) {
       }
     };
     if (option.pattern.name !== 'width' && option.pattern.name !== 'height') {
-      params[option.pattern.name] = parseFloat(num.toString()).toFixed(3);
+      params.params[option.pattern.name] = parseFloat(num.toString()).toFixed(3);
     }
     sdk.put(params).then(json => {
       setTimeout(() => {
